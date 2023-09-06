@@ -4,9 +4,9 @@
 	"properties": {
 		"description": "Rest CVR linked service",
 		"parameters": {
-			"test": {
+			"min": {
 				"type": "string",
-				"defaultValue": "tt"
+				"defaultValue": "2m"
 			}
 		},
 		"annotations": [],
@@ -16,7 +16,7 @@
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Basic",
 			"userName": "FIFONETWORK_CVR_I_SKYEN",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDRFMkE1ODIxLUExRkUtNDhBMi1CRDI5LUJBMzE4ODA5ODFDRV9jYjI2MTE2MS0wOWZlLTQ4ODMtYjA0NS1kM2E4MjA4N2I0NTYiDQp9"
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDRFMkE1ODIxLUExRkUtNDhBMi1CRDI5LUJBMzE4ODA5ODFDRV83MDBlZWM1ZS04MDY0LTQxOTUtOWYxOS1hZjViNGI4ZDQ5ODEiDQp9"
 		}
 	}
 }
