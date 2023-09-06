@@ -107,8 +107,37 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "setScrollID",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "CVR_API_TO_SQL",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "scroll_id",
+					"value": {
+						"value": "@pipeline().Pipeline",
+						"type": "Expression"
+					}
+				}
 			}
 		],
+		"variables": {
+			"scroll_id": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2023-09-05T09:01:09Z"
 	},
