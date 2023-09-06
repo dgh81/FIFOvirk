@@ -15,7 +15,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "_search?scroll={min}",
+				"value": "_search?scroll=@dataset().{min}",
 				"type": "Expression"
 			}
 		},
