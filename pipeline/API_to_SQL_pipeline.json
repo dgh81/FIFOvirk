@@ -95,7 +95,10 @@
 				"inputs": [
 					{
 						"referenceName": "input_CVR",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"{min}": "2m"
+						}
 					}
 				],
 				"outputs": [
