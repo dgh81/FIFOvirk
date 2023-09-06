@@ -41,6 +41,9 @@
 							{
 								"source": {
 									"path": "$['_scroll_id']"
+								},
+								"sink": {
+									"name": "_scroll_id"
 								}
 							},
 							{
@@ -89,7 +92,7 @@
 								}
 							}
 						],
-						"collectionReference": "$['hits']['hits']"
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
