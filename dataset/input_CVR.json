@@ -3,15 +3,12 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "RestService1",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"{min}": "2m"
-			}
+			"type": "LinkedServiceReference"
 		},
 		"parameters": {
 			"min": {
 				"type": "string",
-				"defaultValue": "2"
+				"defaultValue": "2m"
 			}
 		},
 		"annotations": [],
