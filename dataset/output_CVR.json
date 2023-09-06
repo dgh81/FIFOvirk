@@ -29,10 +29,6 @@
 				"name": "sidstIndlaest",
 				"type": "date"
 			}
-		],
-		"typeProperties": {
-			"schema": "dbo",
-			"table": "TESTCVR"
-		}
+		]
 	}
 }
