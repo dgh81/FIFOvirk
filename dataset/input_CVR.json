@@ -1,5 +1,5 @@
 {
-	"name": "RestResource_CVR",
+	"name": "input_CVR",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "RestService1",
