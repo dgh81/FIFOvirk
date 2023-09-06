@@ -40,6 +40,11 @@
 						"mappings": [
 							{
 								"source": {
+									"path": "$['_scroll_id']"
+								}
+							},
+							{
+								"source": {
 									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
 								},
 								"sink": {
@@ -84,7 +89,7 @@
 								}
 							}
 						],
-						"collectionReference": ""
+						"collectionReference": "$['hits']['hits']"
 					}
 				},
 				"inputs": [
