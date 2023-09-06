@@ -3,12 +3,15 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "RestService1",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"min": "2m"
+			}
 		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "_search?scroll=2m"
+			"relativeUrl": "_search?scroll={min}"
 		},
 		"schema": []
 	}
