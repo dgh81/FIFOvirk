@@ -36,71 +36,6 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['_scroll_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['took']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['timed_out']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['successful']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['skipped']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['failed']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['max_score']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_index']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_type']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_score']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
 								},
 								"sink": {
@@ -110,26 +45,11 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['regNummer'][0]"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['brancheAnsvarskode']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['reklamebeskyttet']"
 								},
 								"sink": {
 									"name": "reklamebeskyttet",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['navn']"
 								}
 							},
 							{
