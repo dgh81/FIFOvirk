@@ -1,0 +1,38 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "cvrNummer",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "gyldigTil",
+				"type": "date"
+			},
+			{
+				"name": "gyldigFra",
+				"type": "date"
+			},
+			{
+				"name": "reklamebeskyttet",
+				"type": "nvarchar"
+			},
+			{
+				"name": "sidstIndlaest",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "TESTCVR"
+		}
+	}
+}
