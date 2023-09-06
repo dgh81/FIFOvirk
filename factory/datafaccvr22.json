@@ -1,0 +1,9 @@
+{
+	"name": "datafaccvr22",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "89cf4e42-2e8f-49d5-9f23-933e3bf5018f",
+		"tenantId": "24803583-b63e-427b-857f-ff71b1863978"
+	}
+}

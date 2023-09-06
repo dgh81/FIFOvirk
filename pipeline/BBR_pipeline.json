@@ -1,0 +1,2076 @@
+{
+	"name": "BBR_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_4uz",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "virkcontainer//csv_210.csv"
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.BBR_test"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings",
+							"skipLineCount": 0
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ois_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ois_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ois_ts",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ois_ts",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Enhed_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Enhed_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ObjStatus",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ObjStatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nybyg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Nybyg",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CRUD_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CRUD_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ByggeSag_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ByggeSag_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EnhedStam_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EnhedStam_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EnhAdr_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EnhAdr_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Etage_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Etage_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Opgang_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Opgang_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HenvEnh_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HenvEnh_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "REF_Enhed_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "REF_Enhed_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENH_ANVEND_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ENH_ANVEND_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Klassifikation",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Klassifikation",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AnvKonvKilde",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AnvKonvKilde",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BOLIGTYPE_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BOLIGTYPE_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BOLIG_KONDEM",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BOLIG_KONDEM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IdentOpretDato",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IdentOpretDato",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENH_ARL_SAML",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ENH_ARL_SAML",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BEBO_ARL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BEBO_ARL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENH_ERHV_ARL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ENH_ERHV_ARL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KILDE_ARL_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "KILDE_ARL_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VAERELSE_ANT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VAERELSE_ANT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TOILET_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TOILET_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BAD_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BAD_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KOEKKEN_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "KOEKKEN_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENERGI_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ENERGI_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENH_UDLEJ1_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ENH_UDLEJ1_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HusLeje",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HusLeje",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HuslejeOplysDato",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HuslejeOplysDato",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AndetAreal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AndetAreal",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GodkTomBoligGL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GodkTomBoligGL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOVLIG_ANVEND_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LOVLIG_ANVEND_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DispTidsbegraensetDato",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DispTidsbegraensetDato",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SagsType",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SagsType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENH_DEL_IBRUG_DATO",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ENH_DEL_IBRUG_DATO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENH_UDLEJ2_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ENH_UDLEJ2_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OFF_STOETTE_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OFF_STOETTE_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IndflytDato",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IndflytDato",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GodkTomBolig",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GodkTomBolig",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VARMEINSTAL_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VARMEINSTAL_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OPVARMNING_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OPVARMNING_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VARME_SUPPL_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VARME_SUPPL_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FaellesAdgArealAndel",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FaellesAdgArealAndel",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AabenOverdaekAreal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AabenOverdaekAreal",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LukOverdaekAreal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LukOverdaekAreal",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VAER_ERHV_ANT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VAER_ERHV_ANT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AntVandskylToilleter",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AntVandskylToilleter",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AntBadevaerelser",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AntBadevaerelser",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KomFelt1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "KomFelt1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KomFelt2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "KomFelt2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KomFelt3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "KomFelt3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KomFelt4",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "KomFelt4",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KomFelt5",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "KomFelt5",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KomFelt6",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "KomFelt6",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "JourNr",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "JourNr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ESDH_Ref",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ESDH_Ref",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SikKlas",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SikKlas",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OPRET_TS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OPRET_TS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AENDR_TS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AENDR_TS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Aendr_Funk",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Aendr_Funk",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Ophoert_ts",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Ophoert_ts",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Gyldighedsdato",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Gyldighedsdato",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_ois_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_ois_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_ois_ts",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_ois_ts",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_Opgang_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_Opgang_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_AdgAdr_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_AdgAdr_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_ObjStatus",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_ObjStatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_NyByg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_NyByg",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_Crud_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_Crud_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_ByggeSag_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_ByggeSag_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_OpgStam_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_OpgStam_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_Bygning_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_Bygning_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_Elevator",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_Elevator",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_DataFelt1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_DataFelt1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_DataFelt2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_DataFelt2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_DataFelt3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_DataFelt3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_SagsType",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_SagsType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_KomFelt1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_KomFelt1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_KomFelt2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_KomFelt2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_KomFelt3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_KomFelt3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_KomFelt4",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_KomFelt4",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_KomFelt5",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_KomFelt5",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_KomFelt6",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_KomFelt6",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_JourNr",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_JourNr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_ESDH_Ref",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_ESDH_Ref",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_SikKlas",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_SikKlas",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_OPRET_TS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_OPRET_TS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_AENDR_TS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_AENDR_TS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_Aendr_Funk",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_Aendr_Funk",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_Ophoert_ts",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_Ophoert_ts",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "opgang_Gyldighedsdato",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "opgang_Gyldighedsdato",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_ois_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_ois_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_ois_ts",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_ois_ts",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Bygning_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Bygning_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Bygningsnr",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Bygningsnr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_ObjStatus",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_ObjStatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_NyByg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_NyByg",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Crud_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Crud_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Grund_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Grund_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Byggesag_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Byggesag_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BygStam_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BygStam_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_AdgAdr_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_AdgAdr_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BYG_ANVEND_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BYG_ANVEND_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Klassifikation",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Klassifikation",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_AnvKonvKilde",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_AnvKonvKilde",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_AntLejMKoekken",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_AntLejMKoekken",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_AntLejUKoekken",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_AntLejUKoekken",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_OPFOERELSE_AAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_OPFOERELSE_AAR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_OMBYG_AAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_OMBYG_AAR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_MIDL_OPRET_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_MIDL_OPRET_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_UdloebDatoMidl",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_UdloebDatoMidl",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BYG_VANDFORSY_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BYG_VANDFORSY_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BYG_AFLOEB_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BYG_AFLOEB_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BYG_AFLOEB_TILL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BYG_AFLOEB_TILL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_YDERVAEG_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_YDERVAEG_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_TAG_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_TAG_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_SuppYderVaegMat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_SuppYderVaegMat",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_SuppTagDaekMat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_SuppTagDaekMat",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_AsbestMateriale",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_AsbestMateriale",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_KILDE_MATR_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_KILDE_MATR_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BYG_ARL_SAML",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BYG_ARL_SAML",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BYG_BOLIG_ARL_SAML",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BYG_BOLIG_ARL_SAML",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_ERHV_ARL_SAML",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_ERHV_ARL_SAML",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BYG_BEBYG_ARL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BYG_BEBYG_ARL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_GARAGE_INDB_ARL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_GARAGE_INDB_ARL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_CARPORT_INDB_ARL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_CARPORT_INDB_ARL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_UDHUS_INDB_ARL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_UDHUS_INDB_ARL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_UDESTUE_ARL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_UDESTUE_ARL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_LukOverdaekAreal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_LukOverdaekAreal",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_AFFALDSRUM_ARL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_AFFALDSRUM_ARL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_ANDET_ARL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_ANDET_ARL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_OverdaekAreal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_OverdaekAreal",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_AabenOverdaekAreal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_AabenOverdaekAreal",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_AdgangsAreal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_AdgangsAreal",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Carport_Princip",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Carport_Princip",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_KILDE_ARL_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_KILDE_ARL_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_ETAGER_ANT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_ETAGER_ANT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_ETAGER_AFVIG_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_ETAGER_AFVIG_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_VARMEINSTAL_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_VARMEINSTAL_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_OPVARMNING_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_OPVARMNING_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_VARME_SUPPL_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_VARME_SUPPL_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_SIKRINGSRUM_ANT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_SIKRINGSRUM_ANT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_FREDNING_KODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_FREDNING_KODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BevarVaerdig",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BevarVaerdig",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_UdlejForhold1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_UdlejForhold1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_HusLeje",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_HusLeje",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_HuslejeOplysDato",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_HuslejeOplysDato",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_SagsType",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_SagsType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BygPktNoejagtigKls",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BygPktNoejagtigKls",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BygPkt_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BygPkt_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_FOT_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_FOT_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_StormRaadPaalaeg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_StormRaadPaalaeg",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_StormRaadPaalaegDato",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_StormRaadPaalaegDato",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BygSkadeForsikSelskab",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BygSkadeForsikSelskab",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BygSkadeForsikSelskabDato",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BygSkadeForsikSelskabDato",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_KomFelt1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_KomFelt1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_KomFelt2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_KomFelt2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_KomFelt3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_KomFelt3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_KomFelt4",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_KomFelt4",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_KomFelt5",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_KomFelt5",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_KomFelt6",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_KomFelt6",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_JourNr",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_JourNr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_ESDH_Ref",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_ESDH_Ref",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_SikKlas",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_SikKlas",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_OPRET_TS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_OPRET_TS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_AENDR_TS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_AENDR_TS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Aendr_Funk",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Aendr_Funk",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Ophoert_ts",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Ophoert_ts",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Kommune_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Kommune_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_KomKode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_KomKode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_eRef",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_eRef",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Landsejerlavkode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Landsejerlavkode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_KomEjerlavKode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_KomEjerlavKode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_MatrNr",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_MatrNr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_ESREjdNr",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_ESREjdNr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Matr_art_kode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Matr_art_kode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Delnr",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Delnr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Opdelingsnr",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Opdelingsnr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_BygSkadeOmfatFors",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_BygSkadeOmfatFors",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "bygning_Gyldighedsdato",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bygning_Gyldighedsdato",
+									"type": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_4uz",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_4uz",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-09-05T11:16:42Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
