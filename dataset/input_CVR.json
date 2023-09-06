@@ -7,6 +7,9 @@
 		},
 		"annotations": [],
 		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "_search?scroll=2m"
+		},
 		"schema": []
 	}
 }
