@@ -54,33 +54,6 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['kommune']['periode']['gyldigTil']"
-								},
-								"sink": {
-									"name": "gyldigTil",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['periode']['gyldigFra']"
-								},
-								"sink": {
-									"name": "gyldigFra",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['periode']['gyldigTil']"
-								},
-								"sink": {
-									"name": "gyldigTil",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
 									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['sidstOpdateret']"
 								}
 							},
