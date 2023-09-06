@@ -5,12 +5,6 @@
 			"referenceName": "RestService1",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"{min}": {
-				"type": "string",
-				"defaultValue": "2m"
-			}
-		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
