@@ -1,5 +1,5 @@
 {
-	"name": "AzureSql_CVR",
+	"name": "output_CVR",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase1",
