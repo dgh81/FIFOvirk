@@ -1,0 +1,198 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name"
+		},
+		"RestService1": {
+			"type": "string"
+		},
+		"AzureSqlDatabase1": {
+			"type": "string"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/API_to_SQL_pipeline')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "CVR_API_TO_SQL",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "POST",
+								"requestBody": "{\n    \"_source\":[\n        \"Vrvirksomhed.cvrNummer\",\n        \"Vrvirksomhed.livsforloeb.periode.gyldigTil\", \n        \"Vrvirksomhed.livsforloeb.periode.gyldigFra\",\n        \"Vrvirksomhed.reklamebeskyttet\",\n        \"Vrvirksomhed.sidstIndlaest\"\n    ],\n    \"track_total_hits\": true,\n    \"query\":{\n        \"bool\":{\n            \"must\":[\n                {\"nested\":{\n                    \"path\":\"Vrvirksomhed.livsforloeb\",\n                    \"query\":{\n                        \"bool\": {\n                            \"must_not\":[{\"exists\":{\"field\":\"Vrvirksomhed.livsforloeb.periode.gyldigTil\"}}],\n                            \"filter\": [{\n                                \"range\": {\n                                    \"Vrvirksomhed.livsforloeb.periode.gyldigFra\": {\n                                        \"gte\": \"1910-01-01\"\n                                        ,\n                                        \"lte\": \"1940-01-01\"\n                                    }\n                                }\n                            }]\n                        }\n                    }\n                }}\n            ]\n        }\n    }\n    ,\n    \"size\":20\n}",
+								"additionalHeaders": {
+									"Content-Type": "application/json"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['_scroll_id']"
+										},
+										"sink": {
+											"name": "_scroll_id"
+										}
+									},
+									{
+										"source": {
+											"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
+										},
+										"sink": {
+											"name": "cvrNummer",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['reklamebeskyttet']"
+										},
+										"sink": {
+											"name": "reklamebeskyttet",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
+										},
+										"sink": {
+											"name": "gyldigFra",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+										},
+										"sink": {
+											"name": "gyldigTil",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['sidstIndlaest']"
+										},
+										"sink": {
+											"name": "sidstIndlaest",
+											"type": "DateTime"
+										}
+									}
+								],
+								"collectionReference": ""
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "input_CVR",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "output_CVR",
+								"type": "DatasetReference"
+							}
+						]
+					}
+				],
+				"annotations": [],
+				"lastPublishTime": "2023-09-05T09:01:09Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/input_CVR')]",
+				"[concat(variables('factoryId'), '/datasets/output_CVR')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/input_CVR')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "[parameters('RestService1')]",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"test": "tt"
+					}
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/output_CVR')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "[parameters('AzureSqlDatabase1')]",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "cvrNummer",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "gyldigTil",
+						"type": "date"
+					},
+					{
+						"name": "gyldigFra",
+						"type": "date"
+					},
+					{
+						"name": "reklamebeskyttet",
+						"type": "nvarchar"
+					},
+					{
+						"name": "sidstIndlaest",
+						"type": "date"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "TESTCVR"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
