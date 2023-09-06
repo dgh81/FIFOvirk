@@ -8,6 +8,12 @@
 				"{min}": "2m"
 			}
 		},
+		"parameters": {
+			"min": {
+				"type": "string",
+				"defaultValue": "2"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
