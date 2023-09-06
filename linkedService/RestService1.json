@@ -2,7 +2,7 @@
 	"name": "RestService1",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
-		"description": "m ml mlm kl",
+		"description": "Rest CVR linked service",
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
