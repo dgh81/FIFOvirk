@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"min": {
+			"{min}": {
 				"type": "string",
 				"defaultValue": "2m"
 			}
