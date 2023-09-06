@@ -5,7 +5,7 @@
 			"referenceName": "RestService1",
 			"type": "LinkedServiceReference",
 			"parameters": {
-				"min": "2m"
+				"{min}": "2m"
 			}
 		},
 		"annotations": [],
