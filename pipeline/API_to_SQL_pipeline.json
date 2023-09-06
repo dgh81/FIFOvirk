@@ -97,7 +97,7 @@
 						"referenceName": "input_CVR",
 						"type": "DatasetReference",
 						"parameters": {
-							"{min}": "2m"
+							"scrollMin": "2m"
 						}
 					}
 				],
