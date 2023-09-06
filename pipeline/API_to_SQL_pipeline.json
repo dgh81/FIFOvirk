@@ -36,11 +36,86 @@
 						"mappings": [
 							{
 								"source": {
+									"path": "$['_scroll_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['took']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['timed_out']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['_shards']['total']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['_shards']['successful']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['_shards']['skipped']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['_shards']['failed']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['total']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['max_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_index']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_score']"
+								}
+							},
+							{
+								"source": {
 									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
 								},
 								"sink": {
 									"name": "cvrNummer",
 									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['regNummer'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['brancheAnsvarskode']"
 								}
 							},
 							{
@@ -54,7 +129,214 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['telefonNummer'][0]"
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['navn']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['periode']['gyldigFra']"
+								},
+								"sink": {
+									"name": "gyldigFra",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['periode']['gyldigTil']"
+								},
+								"sink": {
+									"name": "gyldigTil",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['sidstOpdateret']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['binavne'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['postadresse'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['landekode']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['fritekst']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['vejkode']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['kommune']['kommuneKode']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['kommune']['kommuneNavn']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['kommune']['periode']['gyldigFra']"
+								},
+								"sink": {
+									"name": "gyldigFra",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['kommune']['periode']['gyldigTil']"
+								},
+								"sink": {
+									"name": "gyldigTil",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['kommune']['sidstOpdateret']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['husnummerFra']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['adresseId']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['sidstValideret']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['husnummerTil']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['bogstavFra']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['bogstavTil']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['etage']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['sidedoer']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['conavn']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['postboks']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['vejnavn']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['bynavn']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['postnummer']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['postdistrikt']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['periode']['gyldigFra']"
+								},
+								"sink": {
+									"name": "gyldigFra",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['periode']['gyldigTil']"
+								},
+								"sink": {
+									"name": "gyldigTil",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['sidstOpdateret']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['telefonNummer'][0]['kontaktoplysning']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['telefonNummer'][0]['hemmelig']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['telefonNummer'][0]['periode']['gyldigFra']"
+								},
+								"sink": {
+									"name": "gyldigFra",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['telefonNummer'][0]['periode']['gyldigTil']"
+								},
+								"sink": {
+									"name": "gyldigTil",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['telefonNummer'][0]['sidstOpdateret']"
 								}
 							},
 							{
@@ -241,7 +523,42 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['aarsbeskaeftigelse'][0]"
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['aarsbeskaeftigelse'][0]['aar']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['aarsbeskaeftigelse'][0]['antalInklusivEjere']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['aarsbeskaeftigelse'][0]['antalAarsvaerk']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['aarsbeskaeftigelse'][0]['antalAnsatte']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['aarsbeskaeftigelse'][0]['sidstOpdateret']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['aarsbeskaeftigelse'][0]['intervalKodeAntalInklusivEjere']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['aarsbeskaeftigelse'][0]['intervalKodeAntalAarsvaerk']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['aarsbeskaeftigelse'][0]['intervalKodeAntalAnsatte']"
 								}
 							},
 							{
@@ -936,7 +1253,42 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']"
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['aar']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['antalInklusivEjere']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['antalAarsvaerk']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['antalAnsatte']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['sidstOpdateret']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['intervalKodeAntalInklusivEjere']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['intervalKodeAntalAarsvaerk']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['intervalKodeAntalAnsatte']"
 								}
 							},
 							{
