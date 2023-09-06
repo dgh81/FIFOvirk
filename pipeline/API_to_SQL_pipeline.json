@@ -54,64 +54,11 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['periode']['gyldigFra']"
-								},
-								"sink": {
-									"name": "gyldigFra",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['periode']['gyldigTil']"
-								},
-								"sink": {
-									"name": "gyldigTil",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
 									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['kommune']['periode']['gyldigTil']"
 								},
 								"sink": {
 									"name": "gyldigTil",
 									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['sidedoer']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['conavn']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['postboks']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['vejnavn']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['bynavn']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['postnummer']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['beliggenhedsadresse'][0]['postdistrikt']"
 								}
 							},
 							{
