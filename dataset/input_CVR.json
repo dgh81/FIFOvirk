@@ -5,10 +5,19 @@
 			"referenceName": "RestService1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"min": {
+				"type": "string",
+				"defaultValue": "2m"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "_search?scroll={min}"
+			"relativeUrl": {
+				"value": "_search?scroll={min}",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	}
