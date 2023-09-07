@@ -49,42 +49,11 @@
 							},
 							{
 								"source": {
-									"path": "$['took']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['timed_out']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['successful']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['skipped']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['failed']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['hits']['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['max_score']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "Int32"
 								}
 							},
 							{
