@@ -244,31 +244,10 @@
 							{
 								"source": {
 									"path": "$['hits']['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['max_score']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_index']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_type']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_score']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "Int32"
 								}
 							},
 							{
