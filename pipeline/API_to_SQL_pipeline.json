@@ -97,8 +97,11 @@
 						"referenceName": "input_CVR",
 						"type": "DatasetReference",
 						"parameters": {
-							"scrollMin": "2m",
-							"dynamicURL": "cvr-permanent/virksomhed/_search?scroll="
+							"dynamicURL": {
+								"value": "@concat('cvr-permanent/virksomhed/_search?scroll=',variables('timeout'))",
+								"type": "Expression"
+							},
+							"timeout": "4m"
 						}
 					}
 				],
@@ -191,7 +194,7 @@
 						"requestInterval": "00.00:00:00.010",
 						"requestMethod": "POST",
 						"requestBody": {
-							"value": "@concat('{\n        \"scroll\":\"10m\",\n        \"scroll_id\":',variables('last_scroll_id'),'}'\n        )",
+							"value": "@concat('{\n        \"scroll\":',variables('timeout'),\n        '\"scroll_id\":',variables('last_scroll_id'),'}'\n        )",
 							"type": "Expression"
 						},
 						"additionalHeaders": {
