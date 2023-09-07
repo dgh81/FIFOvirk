@@ -133,6 +133,11 @@
 				}
 			}
 		],
+		"variables": {
+			"total": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
