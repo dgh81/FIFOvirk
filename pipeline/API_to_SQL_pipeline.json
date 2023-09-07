@@ -98,7 +98,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"dynamicURL": {
-								"value": "'cvr-permanent/virksomhed/_search?scroll=4m'",
+								"value": "@concat('cvr-permanent/virksomhed/_search?scroll=4m')",
 								"type": "Expression"
 							}
 						}
