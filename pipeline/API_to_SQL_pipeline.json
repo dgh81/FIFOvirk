@@ -211,6 +211,9 @@
 						},
 						"additionalHeaders": {
 							"Content-Type": "application/json"
+						},
+						"paginationRules": {
+							"MaxRequestNumber": "10"
 						}
 					},
 					"sink": {
