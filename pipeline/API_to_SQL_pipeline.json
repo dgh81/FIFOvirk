@@ -214,7 +214,7 @@
 						},
 						"paginationRules": {
 							"MaxRequestNumber": {
-								"value": "@int(variables('total_hits'))",
+								"value": "@activity('Lookup_total_hits').output.firstRow.total_hits",
 								"type": "Expression"
 							}
 						}
