@@ -3,68 +3,10 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Web1",
-				"type": "WebActivity",
+				"name": "ForEach1",
+				"type": "ForEach",
 				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"url": "http://distribution.virk.dk/cvr-permanent/virksomhed/_search?scroll=2m",
-					"method": "POST",
-					"body": {
-						"_source": [
-							"Vrvirksomhed.cvrNummer",
-							"Vrvirksomhed.livsforloeb.periode.gyldigTil",
-							"Vrvirksomhed.livsforloeb.periode.gyldigFra",
-							"Vrvirksomhed.reklamebeskyttet",
-							"Vrvirksomhed.sidstIndlaest"
-						],
-						"track_total_hits": true,
-						"query": {
-							"bool": {
-								"must": [
-									{
-										"nested": {
-											"path": "Vrvirksomhed.livsforloeb",
-											"query": {
-												"bool": {
-													"must_not": [
-														{
-															"exists": {
-																"field": "Vrvirksomhed.livsforloeb.periode.gyldigTil"
-															}
-														}
-													],
-													"filter": [
-														{
-															"range": {
-																"Vrvirksomhed.livsforloeb.periode.gyldigFra": {
-																	"gte": "1910-01-01",
-																	"lte": "1940-01-01"
-																}
-															}
-														}
-													]
-												}
-											}
-										}
-									}
-								]
-							}
-						},
-						"size": 20
-					},
-					"authentication": {
-						"type": "Basic",
-						"username": "FIFONETWORK_CVR_I_SKYEN"
-					}
-				}
+				"userProperties": []
 			}
 		],
 		"annotations": []
