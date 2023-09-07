@@ -9,13 +9,17 @@
 			"dynamicURL": {
 				"type": "string",
 				"defaultValue": "cvr-permanent/virksomhed/_search?scroll="
+			},
+			"timeout": {
+				"type": "string",
+				"defaultValue": "@pipeline().parameters.timeout"
 			}
 		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat(dataset().dynamicURL,dataset().scrollMin)",
+				"value": "@concat(dataset().dynamicURL,pipeline().parameters.timeout)",
 				"type": "Expression"
 			}
 		},
