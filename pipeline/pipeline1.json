@@ -109,7 +109,8 @@
 												"type": "Boolean"
 											}
 										}
-									]
+									],
+									"collectionReference": "$['hits']['hits']"
 								}
 							},
 							"inputs": [
