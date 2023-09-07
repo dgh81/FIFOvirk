@@ -203,7 +203,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"supportRFC5988": "true"
+							"MaxRequestNumber": "20"
 						}
 					},
 					"sink": {
