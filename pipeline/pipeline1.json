@@ -15,6 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"url": "http://distribution.virk.dk/cvr-permanent/virksomhed/_search?scroll=2m",
 					"method": "POST"
 				}
 			}
