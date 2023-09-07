@@ -25,7 +25,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"next": ""
+							"next": "$"
 						}
 					},
 					"sink": {
