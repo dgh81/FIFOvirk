@@ -90,6 +90,11 @@
 									"name": "sidstIndlaest",
 									"type": "DateTime"
 								}
+							},
+							{
+								"source": {
+									"path": "$['Column_1']"
+								}
 							}
 						],
 						"collectionReference": ""
