@@ -93,7 +93,10 @@
 							},
 							{
 								"source": {
-									"path": "$['Column_1']"
+									"path": "$['$[\"hits\"][\"total\"]']"
+								},
+								"sink": {
+									"name": "total_hits"
 								}
 							}
 						],
