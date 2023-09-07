@@ -125,7 +125,7 @@
 				]
 			},
 			{
-				"name": "setScrollID",
+				"name": "Set ScrollID",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
@@ -185,7 +185,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "setScrollID",
+						"activity": "Set ScrollID",
 						"dependencyConditions": [
 							"Completed"
 						]
@@ -213,7 +213,10 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"MaxRequestNumber": "21"
+							"MaxRequestNumber": {
+								"value": "@variables('total_hits')",
+								"type": "Expression"
+							}
 						}
 					},
 					"sink": {
@@ -314,11 +317,70 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Lookup_total_hits",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "CVR_API_TO_SQL",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select total_hits from TESTCVR",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "output_CVR",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "Set total hits",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Lookup_total_hits",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "total_hits",
+					"value": {
+						"value": "@activity('Lookup_total_hits').output.firstRow.total_hits",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
 			"last_scroll_id": {
 				"type": "String"
+			},
+			"total_hits": {
+				"type": "Integer"
 			}
 		},
 		"annotations": [],
