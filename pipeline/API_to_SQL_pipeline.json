@@ -185,7 +185,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Set ScrollID",
+						"activity": "Set total hits",
 						"dependencyConditions": [
 							"Completed"
 						]
@@ -214,7 +214,7 @@
 						},
 						"paginationRules": {
 							"MaxRequestNumber": {
-								"value": "@variables('total_hits')",
+								"value": "@string(variables('total_hits'))",
 								"type": "Expression"
 							}
 						}
@@ -321,7 +321,14 @@
 			{
 				"name": "Lookup_total_hits",
 				"type": "Lookup",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Set ScrollID",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
