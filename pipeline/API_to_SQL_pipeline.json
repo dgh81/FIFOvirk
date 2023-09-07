@@ -99,7 +99,7 @@
 								}
 							}
 						],
-						"collectionReference": ""
+						"collectionReference": "$['hits']['hits']"
 					}
 				},
 				"inputs": [
