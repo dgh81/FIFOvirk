@@ -321,6 +321,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@range(1,activity('CVR_API_TO_SQL').output.hits.total)",
+						"type": "Expression"
+					},
 					"isSequential": true
 				}
 			}
