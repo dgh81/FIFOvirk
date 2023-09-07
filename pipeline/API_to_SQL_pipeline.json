@@ -97,7 +97,8 @@
 						"referenceName": "input_CVR",
 						"type": "DatasetReference",
 						"parameters": {
-							"scrollMin": "2m"
+							"scrollMin": "2m",
+							"dynamicURL": "cvr-permanent/virksomhed/_search?scroll="
 						}
 					}
 				],
@@ -231,6 +232,10 @@
 		"variables": {
 			"last_scroll_id": {
 				"type": "String"
+			},
+			"timeout": {
+				"type": "String",
+				"defaultValue": "2m"
 			}
 		},
 		"annotations": [],
