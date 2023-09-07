@@ -148,7 +148,7 @@
 							"typeProperties": {
 								"variableName": "total",
 								"value": {
-									"value": "@activity('Copy data1').output.hits.total",
+									"value": "@activity('Copy data1').output.firstRow.hits.total\n\n",
 									"type": "Expression"
 								}
 							}
