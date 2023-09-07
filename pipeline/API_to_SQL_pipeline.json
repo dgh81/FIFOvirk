@@ -185,7 +185,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Set ScrollID",
+						"activity": "Set total hits",
 						"dependencyConditions": [
 							"Completed"
 						]
@@ -323,7 +323,7 @@
 				"type": "Lookup",
 				"dependsOn": [
 					{
-						"activity": "CVR_API_TO_SQL",
+						"activity": "Set ScrollID",
 						"dependencyConditions": [
 							"Completed"
 						]
