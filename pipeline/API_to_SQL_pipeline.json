@@ -25,7 +25,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"EndCondition": "Const"
+							"MaxRequestNumber": "20"
 						}
 					},
 					"sink": {
