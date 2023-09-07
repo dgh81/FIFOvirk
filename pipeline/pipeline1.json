@@ -37,7 +37,7 @@
 										"Content-Type": "application/json"
 									},
 									"paginationRules": {
-										"MaxRequestNumber": "4"
+										"supportRFC5988": "true"
 									}
 								},
 								"sink": {
