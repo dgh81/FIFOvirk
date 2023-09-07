@@ -135,7 +135,8 @@
 		],
 		"variables": {
 			"total": {
-				"type": "String"
+				"type": "Integer",
+				"defaultValue": 20
 			}
 		},
 		"annotations": []
