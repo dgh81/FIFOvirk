@@ -147,7 +147,10 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "total",
-								"value": ""
+								"value": {
+									"value": "@activity('Copy data1').output.total",
+									"type": "Expression"
+								}
 							}
 						}
 					]
