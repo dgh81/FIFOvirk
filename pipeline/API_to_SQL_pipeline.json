@@ -127,7 +127,7 @@
 				"typeProperties": {
 					"variableName": "last_scroll_id",
 					"value": {
-						"value": "@activity('Lookup1').output",
+						"value": "@activity('Lookup_scroll_id').output.firstRow._scroll_id",
 						"type": "Expression"
 					}
 				}
@@ -135,7 +135,14 @@
 			{
 				"name": "Lookup_scroll_id",
 				"type": "Lookup",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "CVR_API_TO_SQL",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -156,6 +163,70 @@
 						"type": "DatasetReference"
 					}
 				}
+			},
+			{
+				"name": "CVR_API_TO_SQL_LOOP_PAGES",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "setScrollID",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "POST",
+						"requestBody": {
+							"value": "@concat('{\n        \"scroll\":\"10m\",\n        \"scroll_id\":',variables('last_scroll_id'),'}'\n        )",
+							"type": "Expression"
+						},
+						"additionalHeaders": {
+							"Content-Type": "application/json"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "upsert",
+						"upsertSettings": {
+							"useTempDB": true,
+							"keys": [
+								"cvrNummer"
+							]
+						},
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "input_CVR",
+						"type": "DatasetReference",
+						"parameters": {
+							"scrollMin": "4m",
+							"dynamicURL": "_search/scroll"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "output_CVR",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"variables": {
