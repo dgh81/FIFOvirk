@@ -9,10 +9,6 @@
 			"dynamicURL": {
 				"type": "string",
 				"defaultValue": "cvr-permanent/virksomhed/_search?scroll="
-			},
-			"timeout": {
-				"type": "string",
-				"defaultValue": "@pipeline().parameters.timeout"
 			}
 		},
 		"annotations": [],
