@@ -128,30 +128,6 @@
 									"type": "DatasetReference"
 								}
 							]
-						},
-						{
-							"name": "Set variable1",
-							"type": "SetVariable",
-							"dependsOn": [
-								{
-									"activity": "Copy data1",
-									"dependencyConditions": [
-										"Completed"
-									]
-								}
-							],
-							"policy": {
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "total",
-								"value": {
-									"value": "@activity('Copy data1').output.rowsRead.hits.total\n",
-									"type": "Expression"
-								}
-							}
 						}
 					]
 				}
