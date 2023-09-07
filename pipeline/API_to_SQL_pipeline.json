@@ -25,7 +25,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"EndCondition": "Exist"
+							"supportRFC5988": "true"
 						}
 					},
 					"sink": {
@@ -151,7 +151,14 @@
 			{
 				"name": "Lookup_scroll_id",
 				"type": "Lookup",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "CVR_API_TO_SQL",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -307,26 +314,6 @@
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "ForEach1",
-				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "CVR_API_TO_SQL",
-						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@range(1,activity('CVR_API_TO_SQL').output.hits.total)",
-						"type": "Expression"
-					},
-					"isSequential": true
-				}
 			}
 		],
 		"variables": {
