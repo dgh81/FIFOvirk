@@ -93,7 +93,7 @@
 							},
 							{
 								"source": {
-									"path": "$['$[\"hits\"][\"total\"]']"
+									"path": "$['$[\\'hits\\'][\\'total\\']']"
 								},
 								"sink": {
 									"name": "total_hits"
