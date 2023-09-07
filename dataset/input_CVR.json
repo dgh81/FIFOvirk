@@ -9,6 +9,10 @@
 			"scrollMin": {
 				"type": "string",
 				"defaultValue": "2m"
+			},
+			"dynamicURL": {
+				"type": "string",
+				"defaultValue": "cvr-permanent/virksomhed/_search?scroll="
 			}
 		},
 		"annotations": [],
