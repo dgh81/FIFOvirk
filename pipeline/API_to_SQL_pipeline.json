@@ -216,7 +216,6 @@
 						"referenceName": "input_CVR",
 						"type": "DatasetReference",
 						"parameters": {
-							"scrollMin": "4m",
 							"dynamicURL": "_search/scroll"
 						}
 					}
