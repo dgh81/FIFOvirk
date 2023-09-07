@@ -15,7 +15,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat(dataset().dynamicURL,pipeline().parameters.timeout)",
+				"value": "dataset().dynamicURL",
 				"type": "Expression"
 			}
 		},
