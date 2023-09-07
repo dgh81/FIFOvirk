@@ -14,20 +14,28 @@
 				"precision": 10
 			},
 			{
-				"name": "gyldigTil",
-				"type": "date"
-			},
-			{
 				"name": "gyldigFra",
 				"type": "date"
 			},
 			{
+				"name": "gyldigTil",
+				"type": "date"
+			},
+			{
 				"name": "reklamebeskyttet",
-				"type": "nvarchar"
+				"type": "bit"
 			},
 			{
 				"name": "sidstIndlaest",
 				"type": "date"
+			},
+			{
+				"name": "total_hits",
+				"type": "nvarchar"
+			},
+			{
+				"name": "_scroll_id",
+				"type": "nvarchar"
 			}
 		],
 		"typeProperties": {
