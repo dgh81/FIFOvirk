@@ -15,7 +15,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat('_search?scroll=',dataset().scrollMin)",
+				"value": "@concat('cvr-permanent/virksomhed/_search?scroll=',dataset().scrollMin)",
 				"type": "Expression"
 			}
 		},
