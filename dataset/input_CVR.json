@@ -6,9 +6,6 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"scrollMin": {
-				"type": "string"
-			},
 			"dynamicURL": {
 				"type": "string",
 				"defaultValue": "cvr-permanent/virksomhed/_search?scroll="
