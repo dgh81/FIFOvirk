@@ -373,8 +373,8 @@
 				"type": "String"
 			},
 			"total_hits": {
-				"type": "Integer",
-				"defaultValue": 20
+				"type": "String",
+				"defaultValue": "20"
 			}
 		},
 		"annotations": [],
