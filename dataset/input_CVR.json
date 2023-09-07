@@ -8,7 +8,7 @@
 		"parameters": {
 			"dynamicURL": {
 				"type": "string",
-				"defaultValue": "cvr-permanent/virksomhed/_search?scroll="
+				"defaultValue": "cvr-permanent/virksomhed/_search?scroll=2m"
 			}
 		},
 		"annotations": [],
