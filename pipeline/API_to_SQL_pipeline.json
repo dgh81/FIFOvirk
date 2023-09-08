@@ -609,7 +609,7 @@
 				"type": "String"
 			},
 			"test": {
-				"type": "String"
+				"type": "Integer"
 			}
 		},
 		"annotations": [],
