@@ -595,7 +595,7 @@
 				"typeProperties": {
 					"variableName": "test",
 					"value": {
-						"value": "@activity('CVR_API_TO_SQL').output.dataRead",
+						"value": "@string(activity('CVR_API_TO_SQL').output)",
 						"type": "Expression"
 					}
 				}
@@ -609,7 +609,7 @@
 				"type": "String"
 			},
 			"test": {
-				"type": "Integer"
+				"type": "String"
 			}
 		},
 		"annotations": [],
