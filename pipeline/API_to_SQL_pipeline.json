@@ -423,7 +423,7 @@
 									},
 									"paginationRules": {
 										"MaxRequestNumber": {
-											"value": "@sub(int(variables('total_hits')),1)",
+											"value": "@string(sub(int(variables('total_hits')),1))",
 											"type": "Expression"
 										}
 									}
