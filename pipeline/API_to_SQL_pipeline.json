@@ -544,7 +544,7 @@
 							"typeProperties": {
 								"variableName": "last_scroll_id",
 								"value": {
-									"value": "@activity('Lookup1').output.firstRow._scroll_id",
+									"value": "@activity('Lookup1').output.value[0]['_scroll_id']",
 									"type": "Expression"
 								}
 							}
