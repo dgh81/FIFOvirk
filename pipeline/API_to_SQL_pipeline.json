@@ -217,10 +217,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"EndCondition": {
-								"value": "@activity('Lookup_total_hits').output",
-								"type": "Expression"
-							}
+							"EndCondition:$.data": "Empty"
 						}
 					},
 					"sink": {
