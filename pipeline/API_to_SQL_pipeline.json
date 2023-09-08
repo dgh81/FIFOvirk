@@ -376,8 +376,6 @@
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set total hits",
@@ -572,7 +570,7 @@
 									"referenceName": "output_CVR",
 									"type": "DatasetReference"
 								},
-								"firstRowOnly": true
+								"firstRowOnly": false
 							}
 						}
 					]
