@@ -595,7 +595,7 @@
 				"typeProperties": {
 					"variableName": "last_scroll_id",
 					"value": {
-						"value": "@activity('Lookup2').output.firstRow._scroll_id",
+						"value": "@activity('Lookup2').output.value",
 						"type": "Expression"
 					}
 				}
@@ -622,7 +622,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT * FROM testcvr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
+						"sqlReaderQuery": "SELECT insert_timestamp FROM testcvr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
