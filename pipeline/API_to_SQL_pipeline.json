@@ -25,7 +25,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"supportRFC5988": "true"
+							"EndCondition:$.hits.hits": "Empty"
 						}
 					},
 					"sink": {
