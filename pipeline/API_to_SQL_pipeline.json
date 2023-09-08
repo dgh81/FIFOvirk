@@ -314,11 +314,15 @@
 			{
 				"name": "Lookup_total_hits",
 				"type": "Lookup",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set ScrollID",
+						"dependencyConditions": [
+							"Completed"
+						]
+					},
+					{
+						"activity": "Set variable1",
 						"dependencyConditions": [
 							"Completed"
 						]
@@ -348,8 +352,6 @@
 			{
 				"name": "Set total hits",
 				"type": "SetVariable",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup_total_hits",
@@ -562,7 +564,7 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
-									"sqlReaderQuery": "select _scroll_id from TESTCVR",
+									"sqlReaderQuery": "SELECT _scroll_id FROM testcvr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
