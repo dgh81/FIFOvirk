@@ -420,9 +420,6 @@
 									},
 									"additionalHeaders": {
 										"Content-Type": "application/json"
-									},
-									"paginationRules": {
-										"EndCondition:$['hits']['hits']": "Empty"
 									}
 								},
 								"sink": {
