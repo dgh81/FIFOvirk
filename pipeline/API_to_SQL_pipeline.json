@@ -374,6 +374,10 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@range(1,20)",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Copy data1",
