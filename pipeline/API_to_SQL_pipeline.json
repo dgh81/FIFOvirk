@@ -519,6 +519,8 @@
 						{
 							"name": "Set last scroll id",
 							"type": "SetVariable",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "Lookup1",
@@ -543,6 +545,8 @@
 						{
 							"name": "Lookup1",
 							"type": "Lookup",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "Copy data1",
