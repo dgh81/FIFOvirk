@@ -426,7 +426,127 @@
 									"writeBehavior": "insert",
 									"sqlWriterUseTableLock": false
 								},
-								"enableStaging": false
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"path": "$['_scroll_id']"
+											},
+											"sink": {
+												"name": "_scroll_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['took']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['timed_out']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['total']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['successful']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['skipped']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['failed']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['total']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['max_score']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['hits'][0]['_index']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['hits'][0]['_type']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['hits'][0]['_id']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['hits'][0]['_score']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
+											},
+											"sink": {
+												"name": "gyldigFra",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+											},
+											"sink": {
+												"name": "gyldigTil",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
+											},
+											"sink": {
+												"name": "cvrNummer",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['sidstIndlaest']"
+											},
+											"sink": {
+												"name": "sidstIndlaest",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['reklamebeskyttet']"
+											},
+											"sink": {
+												"name": "reklamebeskyttet",
+												"type": "Boolean"
+											}
+										}
+									],
+									"collectionReference": "$['hits']['hits']"
+								}
 							},
 							"inputs": [
 								{
