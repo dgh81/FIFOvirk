@@ -422,7 +422,7 @@
 										"Content-Type": "application/json"
 									},
 									"paginationRules": {
-										"MaxRequestNumber": "2"
+										"MaxRequestNumber": "10"
 									}
 								},
 								"sink": {
