@@ -392,7 +392,18 @@
 									},
 									"additionalHeaders": {
 										"Content-Type": "application/json"
+									},
+									"paginationRules": {
+										"MaxRequestNumber": {
+											"value": "@string(variables('total_hits'))",
+											"type": "Expression"
+										}
 									}
+								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"writeBehavior": "insert",
+									"sqlWriterUseTableLock": false
 								},
 								"enableStaging": false
 							},
@@ -403,6 +414,12 @@
 									"parameters": {
 										"dynamicURL": "cvr-permanent/virksomhed/_search?scroll=2m"
 									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "output_CVR",
+									"type": "DatasetReference"
 								}
 							]
 						}
