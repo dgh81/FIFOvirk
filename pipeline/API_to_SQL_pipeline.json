@@ -521,7 +521,10 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "last_scroll_id",
-								"value": ""
+								"value": {
+									"value": "@activity('Lookup1').output.firstRow._scroll_id",
+									"type": "Expression"
+								}
 							}
 						},
 						{
