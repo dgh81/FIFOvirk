@@ -127,6 +127,8 @@
 			{
 				"name": "Set ScrollID",
 				"type": "SetVariable",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup_scroll_id",
@@ -151,6 +153,8 @@
 			{
 				"name": "Lookup_scroll_id",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CVR_API_TO_SQL",
@@ -310,6 +314,8 @@
 			{
 				"name": "Lookup_total_hits",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set ScrollID",
@@ -342,6 +348,8 @@
 			{
 				"name": "Set total hits",
 				"type": "SetVariable",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup_total_hits",
@@ -587,7 +595,7 @@
 				"typeProperties": {
 					"variableName": "test",
 					"value": {
-						"value": "@activity('CVR_API_TO_SQL').output._scroll_id",
+						"value": "@activity('CVR_API_TO_SQL').output.hits",
 						"type": "Expression"
 					}
 				}
