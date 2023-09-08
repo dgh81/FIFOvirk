@@ -183,14 +183,9 @@
 			{
 				"name": "CVR_API_TO_SQL_LOOP_PAGES",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Set total hits",
-						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -373,7 +368,14 @@
 				"type": "ForEach",
 				"state": "Inactive",
 				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Set total hits",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
@@ -565,6 +567,30 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "CVR_API_TO_SQL",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "test",
+					"value": {
+						"value": "@activity('CVR_API_TO_SQL').output.total",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
@@ -572,6 +598,9 @@
 				"type": "String"
 			},
 			"total_hits": {
+				"type": "String"
+			},
+			"test": {
 				"type": "String"
 			}
 		},
