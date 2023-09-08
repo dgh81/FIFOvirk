@@ -5,6 +5,8 @@
 			{
 				"name": "CVR_API_TO_SQL",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -127,6 +129,8 @@
 			{
 				"name": "Set ScrollID",
 				"type": "SetVariable",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup_scroll_id",
@@ -151,6 +155,8 @@
 			{
 				"name": "Lookup_scroll_id",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CVR_API_TO_SQL",
@@ -183,6 +189,8 @@
 			{
 				"name": "CVR_API_TO_SQL_LOOP_PAGES",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set total hits",
@@ -315,6 +323,8 @@
 			{
 				"name": "Lookup_total_hits",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set ScrollID",
@@ -347,6 +357,8 @@
 			{
 				"name": "Set total hits",
 				"type": "SetVariable",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup_total_hits",
@@ -378,6 +390,7 @@
 						"value": "@range(1,20)",
 						"type": "Expression"
 					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "Copy data1",
@@ -397,10 +410,7 @@
 									"httpRequestTimeout": "00:01:40",
 									"requestInterval": "00.00:00:00.010",
 									"requestMethod": "POST",
-									"requestBody": {
-										"value": "@concat('{\n        \"scroll\":\"4m\",\n        \"scroll_id\":\"',variables('last_scroll_id'),'\"}'\n        )",
-										"type": "Expression"
-									},
+									"requestBody": "{\n    \"_source\":[\n        \"Vrvirksomhed.cvrNummer\",\n        \"Vrvirksomhed.livsforloeb.periode.gyldigTil\", \n        \"Vrvirksomhed.livsforloeb.periode.gyldigFra\",\n        \"Vrvirksomhed.reklamebeskyttet\",\n        \"Vrvirksomhed.sidstIndlaest\"\n    ],\n    \"track_total_hits\": true,\n    \"query\":{\n        \"bool\":{\n            \"must\":[\n                {\"nested\":{\n                    \"path\":\"Vrvirksomhed.livsforloeb\",\n                    \"query\":{\n                        \"bool\": {\n                            \"must_not\":[{\"exists\":{\"field\":\"Vrvirksomhed.livsforloeb.periode.gyldigTil\"}}],\n                            \"filter\": [{\n                                \"range\": {\n                                    \"Vrvirksomhed.livsforloeb.periode.gyldigFra\": {\n                                        \"gte\": \"1910-01-01\"\n                                        ,\n                                        \"lte\": \"1940-01-01\"\n                                    }\n                                }\n                            }]\n                        }\n                    }\n                }}\n            ]\n        }\n    }\n    ,\n    \"size\":20\n}",
 									"additionalHeaders": {
 										"Content-Type": "application/json"
 									},
