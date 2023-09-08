@@ -595,7 +595,7 @@
 				"typeProperties": {
 					"variableName": "test",
 					"value": {
-						"value": "@activity('CVR_API_TO_SQL').output.hits",
+						"value": "@activity('CVR_API_TO_SQL').output.dataRead",
 						"type": "Expression"
 					}
 				}
