@@ -595,7 +595,7 @@
 				"typeProperties": {
 					"variableName": "last_scroll_id",
 					"value": {
-						"value": "@activity('Lookup2').output.value",
+						"value": "@activity('Lookup2').output.value['insert_timestamp']",
 						"type": "Expression"
 					}
 				}
