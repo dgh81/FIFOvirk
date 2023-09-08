@@ -378,8 +378,6 @@
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set total hits",
@@ -422,10 +420,7 @@
 										"Content-Type": "application/json"
 									},
 									"paginationRules": {
-										"MaxRequestNumber": {
-											"value": "20",
-											"type": "Expression"
-										}
+										"EndCondition:$['hits']['hits']": "Empty"
 									}
 								},
 								"sink": {
