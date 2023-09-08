@@ -343,7 +343,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select total_hits from TESTCVR",
+						"sqlReaderQuery": "SELECT total_hits FROM testcvr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
