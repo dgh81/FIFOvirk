@@ -587,7 +587,7 @@
 				"typeProperties": {
 					"variableName": "test",
 					"value": {
-						"value": "@activity('CVR_API_TO_SQL').output.total",
+						"value": "@activity('CVR_API_TO_SQL').output._scroll_id",
 						"type": "Expression"
 					}
 				}
