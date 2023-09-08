@@ -183,9 +183,14 @@
 			{
 				"name": "CVR_API_TO_SQL_LOOP_PAGES",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Set total hits",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -366,14 +371,9 @@
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Set total hits",
-						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
@@ -502,7 +502,7 @@
 									"referenceName": "input_CVR",
 									"type": "DatasetReference",
 									"parameters": {
-										"dynamicURL": "cvr-permanent/virksomhed/_search?scroll"
+										"dynamicURL": "_search/scroll"
 									}
 								}
 							],
