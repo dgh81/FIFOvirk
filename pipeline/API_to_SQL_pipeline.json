@@ -506,7 +506,14 @@
 						{
 							"name": "Set variable1",
 							"type": "SetVariable",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Lookup1",
+									"dependencyConditions": [
+										"Completed"
+									]
+								}
+							],
 							"policy": {
 								"secureOutput": false,
 								"secureInput": false
@@ -532,7 +539,7 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
-									"sqlReaderQuery": "select _scroll_id from ",
+									"sqlReaderQuery": "select _scroll_id from TESTCVR",
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
