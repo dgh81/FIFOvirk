@@ -426,7 +426,7 @@
 									},
 									"paginationRules": {
 										"MaxRequestNumber": {
-											"value": "@string(variables('total_hits'))",
+											"value": "20",
 											"type": "Expression"
 										}
 									}
