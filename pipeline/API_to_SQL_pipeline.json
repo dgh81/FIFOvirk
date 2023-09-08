@@ -217,7 +217,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"EndCondition:$.data": "Empty"
+							"EndCondition:$.hits": "Empty"
 						}
 					},
 					"sink": {
