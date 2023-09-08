@@ -420,6 +420,9 @@
 									},
 									"additionalHeaders": {
 										"Content-Type": "application/json"
+									},
+									"paginationRules": {
+										"supportRFC5988": "true"
 									}
 								},
 								"sink": {
