@@ -386,11 +386,12 @@
 									"httpRequestTimeout": "00:01:40",
 									"requestInterval": "00.00:00:00.010",
 									"requestMethod": "POST",
+									"requestBody": {
+										"value": "@concat('{\n        \"scroll\":\"4m\",\n        \"scroll_id\":\"',variables('last_scroll_id'),'\"}'\n        )",
+										"type": "Expression"
+									},
 									"additionalHeaders": {
 										"Content-Type": "application/json"
-									},
-									"paginationRules": {
-										"supportRFC5988": "true"
 									}
 								},
 								"enableStaging": false
