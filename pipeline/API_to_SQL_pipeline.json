@@ -5,6 +5,8 @@
 			{
 				"name": "CVR_API_TO_SQL",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -173,6 +175,8 @@
 			{
 				"name": "CVR_API_TO_SQL_LOOP_PAGES",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set total hits",
@@ -302,6 +306,8 @@
 			{
 				"name": "Lookup_total_hits",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set variable1",
@@ -334,6 +340,8 @@
 			{
 				"name": "Set total hits",
 				"type": "SetVariable",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup_total_hits",
@@ -567,6 +575,8 @@
 			{
 				"name": "Set variable1",
 				"type": "SetVariable",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup2",
@@ -591,6 +601,8 @@
 			{
 				"name": "Lookup2",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CVR_API_TO_SQL",
@@ -714,8 +726,142 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "test",
-					"value": ""
+					"value": {
+						"value": "@activity('Web1').output._scroll_id",
+						"type": "Expression"
+					}
 				}
+			},
+			{
+				"name": "CVR_API_TO_SQL_LOOP_PAGES_copy1",
+				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [
+					{
+						"activity": "Set variable2",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "POST",
+						"requestBody": {
+							"value": "@concat('{\n        \"scroll\":\"4m\",\n        \"scroll_id\":\"',variables('test'),'\"}'\n        )",
+							"type": "Expression"
+						},
+						"additionalHeaders": {
+							"Content-Type": "application/json"
+						},
+						"paginationRules": {
+							"EndCondition:$['hits']['hits']": "Empty"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['_scroll_id']"
+								},
+								"sink": {
+									"name": "_scroll_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['total']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
+								},
+								"sink": {
+									"name": "gyldigFra",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+								},
+								"sink": {
+									"name": "gyldigTil",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
+								},
+								"sink": {
+									"name": "cvrNummer",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['sidstIndlaest']"
+								},
+								"sink": {
+									"name": "sidstIndlaest",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['reklamebeskyttet']"
+								},
+								"sink": {
+									"name": "reklamebeskyttet",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "$['hits']['hits']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "input_CVR",
+						"type": "DatasetReference",
+						"parameters": {
+							"dynamicURL": "_search/scroll"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "output_CVR",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"variables": {
