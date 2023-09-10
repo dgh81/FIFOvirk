@@ -680,7 +680,7 @@
 															"range": {
 																"Vrvirksomhed.livsforloeb.periode.gyldigFra": {
 																	"gte": "1970-02-01",
-																	"lte": "1970-02-15"
+																	"lte": "1970-03-15"
 																}
 															}
 														}
