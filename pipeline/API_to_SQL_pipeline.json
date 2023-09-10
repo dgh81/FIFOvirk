@@ -20,7 +20,7 @@
 						"httpRequestTimeout": "00:01:40",
 						"requestInterval": "00.00:00:00.010",
 						"requestMethod": "POST",
-						"requestBody": "{\n    \"_source\":[\n        \"Vrvirksomhed.cvrNummer\",\n        \"Vrvirksomhed.livsforloeb.periode.gyldigTil\", \n        \"Vrvirksomhed.livsforloeb.periode.gyldigFra\",\n        \"Vrvirksomhed.reklamebeskyttet\",\n        \"Vrvirksomhed.sidstIndlaest\"\n    ],\n    \"track_total_hits\": true,\n    \"query\":{\n        \"bool\":{\n            \"must\":[\n                {\"nested\":{\n                    \"path\":\"Vrvirksomhed.livsforloeb\",\n                    \"query\":{\n                        \"bool\": {\n                            \"must_not\":[{\"exists\":{\"field\":\"Vrvirksomhed.livsforloeb.periode.gyldigTil\"}}],\n                            \"filter\": [{\n                                \"range\": {\n                                    \"Vrvirksomhed.livsforloeb.periode.gyldigFra\": {\n                                        \"gte\": \"1970-01-01\"\n                                        ,\n                                        \"lte\": \"1971-01-01\"\n                                    }\n                                }\n                            }]\n                        }\n                    }\n                }}\n            ]\n        }\n    }\n    ,\n    \"size\":1\n}",
+						"requestBody": "{\n    \"_source\":[\n        \"Vrvirksomhed.cvrNummer\",\n        \"Vrvirksomhed.livsforloeb.periode.gyldigTil\", \n        \"Vrvirksomhed.livsforloeb.periode.gyldigFra\",\n        \"Vrvirksomhed.reklamebeskyttet\",\n        \"Vrvirksomhed.sidstIndlaest\"\n    ],\n    \"track_total_hits\": true,\n    \"query\":{\n        \"bool\":{\n            \"must\":[\n                {\"nested\":{\n                    \"path\":\"Vrvirksomhed.livsforloeb\",\n                    \"query\":{\n                        \"bool\": {\n                            \"must_not\":[{\"exists\":{\"field\":\"Vrvirksomhed.livsforloeb.periode.gyldigTil\"}}],\n                            \"filter\": [{\n                                \"range\": {\n                                    \"Vrvirksomhed.livsforloeb.periode.gyldigFra\": {\n                                        \"gte\": \"1970-01-01\"\n                                        ,\n                                        \"lte\": \"1970-05-01\"\n                                    }\n                                }\n                            }]\n                        }\n                    }\n                }}\n            ]\n        }\n    }\n    ,\n    \"size\":1\n}",
 						"additionalHeaders": {
 							"Content-Type": "application/json"
 						},
@@ -222,13 +222,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"writeBehavior": "upsert",
-						"upsertSettings": {
-							"useTempDB": true,
-							"keys": [
-								"cvrNummer"
-							]
-						},
+						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
 					},
