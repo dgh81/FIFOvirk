@@ -765,7 +765,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"supportRFC5988.$['hits']['total']": "true"
+							"supportRFC5988": "true"
 						}
 					},
 					"sink": {
