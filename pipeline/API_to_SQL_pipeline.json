@@ -765,7 +765,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"EndCondition:$['hits']['hits']": "Empty"
+							"EndCondition:$['hits']['total']": "Const:0"
 						}
 					},
 					"sink": {
