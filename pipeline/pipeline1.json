@@ -1131,7 +1131,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "output_CVR",
+						"referenceName": "output_BBR",
 						"type": "DatasetReference"
 					}
 				]
