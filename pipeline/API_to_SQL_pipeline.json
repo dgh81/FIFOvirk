@@ -50,16 +50,77 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['total']"
-								},
-								"sink": {
-									"name": "total_hits",
-									"type": "String"
+									"path": "$['took']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
+									"path": "$['timed_out']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['_shards']['total']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['_shards']['successful']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['_shards']['skipped']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['_shards']['failed']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['total']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['max_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_index']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_type']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['navne'][0]['sidstOpdateret']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['navne'][0]['navn']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['navne'][0]['periode']['gyldigFra']"
 								},
 								"sink": {
 									"name": "gyldigFra",
@@ -68,7 +129,7 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+									"path": "['_source']['Vrvirksomhed']['navne'][0]['periode']['gyldigTil']"
 								},
 								"sink": {
 									"name": "gyldigTil",
@@ -77,7 +138,25 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
+									"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
+								},
+								"sink": {
+									"name": "gyldigFra",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+								},
+								"sink": {
+									"name": "gyldigTil",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['cvrNummer']"
 								},
 								"sink": {
 									"name": "cvrNummer",
@@ -86,7 +165,7 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['sidstIndlaest']"
+									"path": "['_source']['Vrvirksomhed']['sidstIndlaest']"
 								},
 								"sink": {
 									"name": "sidstIndlaest",
@@ -95,7 +174,7 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['reklamebeskyttet']"
+									"path": "['_source']['Vrvirksomhed']['reklamebeskyttet']"
 								},
 								"sink": {
 									"name": "reklamebeskyttet",
