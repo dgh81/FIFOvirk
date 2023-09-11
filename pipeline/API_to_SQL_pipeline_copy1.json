@@ -309,9 +309,6 @@
 						},
 						"additionalHeaders": {
 							"Content-Type": "application/json"
-						},
-						"paginationRules": {
-							"": ""
 						}
 					},
 					"sink": {
