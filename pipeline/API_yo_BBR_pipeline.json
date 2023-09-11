@@ -1469,7 +1469,8 @@
 												"path": "$['bygning']['BygSkadeForsikSelskabDato']"
 											},
 											"sink": {
-												"name": "bygning_BygSkadeForsikSelvskabDato"
+												"name": "bygning_BygSkadeForsikSelvskabDato",
+												"type": "String"
 											}
 										},
 										{
