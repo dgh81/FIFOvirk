@@ -1,0 +1,21 @@
+{
+	"name": "RestService2",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://api.dataforsyningen.dk/",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Basic",
+			"userName": "FIFONETWORK_CVR_I_SKYEN",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "cvrSecret"
+			}
+		}
+	}
+}
