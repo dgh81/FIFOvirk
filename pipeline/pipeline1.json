@@ -11,7 +11,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@range(1,2)",
+						"value": "@variables('byggekoder')",
 						"type": "Expression"
 					},
 					"isSequential": true,
