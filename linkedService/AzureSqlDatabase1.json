@@ -1,18 +1,11 @@
 {
 	"name": "AzureSqlDatabase1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"connectionString": {
-				"type": "AzureKeyVaultSecret",
-				"store": {
-					"referenceName": "AzureKeyVault1",
-					"type": "LinkedServiceReference"
-				},
-				"secretName": "sql"
-			}
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=fifocvrserver.database.windows.net;Initial Catalog=cvrdb"
 		}
-	},
-	"type": "Microsoft.DataFactory/factories/linkedservices"
+	}
 }
