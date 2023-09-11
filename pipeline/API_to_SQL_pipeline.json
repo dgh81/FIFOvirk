@@ -86,7 +86,7 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['navne']"
+									"path": "['_source']['Vrvirksomhed']['navne']['navn'"
 								},
 								"sink": {
 									"name": "navne",
