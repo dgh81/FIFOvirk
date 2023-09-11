@@ -59,32 +59,16 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_index']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_type']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_score']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['sidstOpdateret']"
+								},
+								"sink": {
+									"name": "sidstIndlaest",
+									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['navn']"
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne']"
 								}
 							},
 							{
