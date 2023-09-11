@@ -1,0 +1,441 @@
+{
+	"name": "API_to_SQL_pipeline_copy1",
+	"properties": {
+		"activities": [
+			{
+				"name": "CVR_API_TO_SQL",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "POST",
+						"requestBody": "{\n    \"_source\":[\n        \"Vrvirksomhed.cvrNummer\",\n        \"Vrvirksomhed.livsforloeb.periode.gyldigTil\", \n        \"Vrvirksomhed.livsforloeb.periode.gyldigFra\",\n        \"Vrvirksomhed.reklamebeskyttet\",\n        \"Vrvirksomhed.sidstIndlaest\",\n        \"Vrvirksomhed.virksomhedMetadata\"\n    ],\n    \"track_total_hits\": true,\n    \"query\":{\n        \"bool\":{\n            \"must\":[\n                {\"nested\":{\n                    \"path\":\"Vrvirksomhed.livsforloeb\",\n                    \"query\":{\n                        \"bool\": {\n                            \"must_not\":[{\"exists\":{\"field\":\"Vrvirksomhed.livsforloeb.periode.gyldigTil\"}}],\n                            \"filter\": [{\n                                \"range\": {\n                                    \"Vrvirksomhed.livsforloeb.periode.gyldigFra\": {\n                                        \"gte\": \"1950-01-01\"\n                                        ,\n                                        \"lte\": \"1950-01-31\"\n                                    }\n                                }\n                            }]\n                        }\n                    }\n                }}\n            ]\n        }\n    }\n    ,\n    \"size\":10\n}",
+						"additionalHeaders": {
+							"Content-Type": "application/json"
+						},
+						"paginationRules": {
+							"MaxRequestNumber": "10"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBatchSize": 10,
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['_scroll_id']"
+								},
+								"sink": {
+									"name": "_scroll_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['total']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
+								},
+								"sink": {
+									"name": "gyldigFra",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+								},
+								"sink": {
+									"name": "gyldigTil",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
+								},
+								"sink": {
+									"name": "cvrNummer",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['sidstIndlaest']"
+								},
+								"sink": {
+									"name": "sidstIndlaest",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['reklamebeskyttet']"
+								},
+								"sink": {
+									"name": "reklamebeskyttet",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['navn']"
+								},
+								"sink": {
+									"name": "navne",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "$['hits']['hits']",
+						"mapComplexValuesToString": true
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "input_CVR",
+						"type": "DatasetReference",
+						"parameters": {
+							"dynamicURL": {
+								"value": "@concat('cvr-permanent/virksomhed/_search?scroll=4m')",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "output_CVR",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Lookup_scroll_id",
+				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select _scroll_id from TESTCVR",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "output_CVR",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "Lookup_total_hits",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT total_hits FROM testcvr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "output_CVR",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "Set total hits",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Lookup_total_hits",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "total_hits",
+					"value": {
+						"value": "@activity('Lookup_total_hits').output.firstRow.total_hits",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Lookup2",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "last_scroll_id",
+					"value": {
+						"value": "@activity('Lookup2').output.value[0]['_scroll_id']",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Lookup2",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "CVR_API_TO_SQL",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT _scroll_id FROM testcvr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "output_CVR",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "Copy data2",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Set total hits",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "POST",
+						"requestBody": {
+							"value": "@concat('{\n        \"scroll\":\"4m\",\n        \"scroll_id\":\"',variables('last_scroll_id'),'\"}'\n        )",
+							"type": "Expression"
+						},
+						"additionalHeaders": {
+							"Content-Type": "application/json"
+						},
+						"paginationRules": {
+							"MaxRequestNumber": {
+								"value": "@string(sub(int(variables('total_hits')),1))",
+								"type": "Expression"
+							}
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "upsert",
+						"upsertSettings": {
+							"useTempDB": true,
+							"keys": [
+								"cvrNummer"
+							]
+						},
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['_scroll_id']"
+								},
+								"sink": {
+									"name": "_scroll_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['total']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
+								},
+								"sink": {
+									"name": "cvrNummer",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['reklamebeskyttet']"
+								},
+								"sink": {
+									"name": "reklamebeskyttet",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
+								},
+								"sink": {
+									"name": "gyldigFra",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+								},
+								"sink": {
+									"name": "gyldigTil",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['sidstIndlaest']"
+								},
+								"sink": {
+									"name": "sidstIndlaest",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['navn']"
+								},
+								"sink": {
+									"name": "navne",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "$['hits']['hits']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "input_CVR",
+						"type": "DatasetReference",
+						"parameters": {
+							"dynamicURL": "_search/scroll"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "output_CVR",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"variables": {
+			"last_scroll_id": {
+				"type": "String"
+			},
+			"total_hits": {
+				"type": "String"
+			},
+			"test": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-09-05T09:01:09Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
