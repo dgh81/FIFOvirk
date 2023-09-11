@@ -41,20 +41,68 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['hits']['total']"
-								},
-								"sink": {
-									"name": "total_hits",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
 									"path": "$['_scroll_id']"
 								},
 								"sink": {
 									"name": "_scroll_id",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['total']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_index']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['sidstOpdateret']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['navn']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['periode']['gyldigFra']"
+								},
+								"sink": {
+									"name": "gyldigFra",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]['periode']['gyldigTil']"
+								},
+								"sink": {
+									"name": "gyldigTil",
+									"type": "DateTime"
 								}
 							},
 							{
@@ -99,7 +147,7 @@
 								},
 								"sink": {
 									"name": "reklamebeskyttet",
-									"type": "String"
+									"type": "Boolean"
 								}
 							}
 						],
