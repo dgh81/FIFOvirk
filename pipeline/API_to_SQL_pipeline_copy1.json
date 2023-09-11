@@ -311,10 +311,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"MaxRequestNumber": {
-								"value": "@string(sub(int(variables('total_hits')),10))",
-								"type": "Expression"
-							}
+							"EndCondition": "Exist"
 						}
 					},
 					"sink": {
