@@ -1133,31 +1133,54 @@
 										{
 											"source": {
 												"path": "$['bygning']['SuppTagDaekMat']"
+											},
+											"sink": {
+												"name": "bygning_SuppTagDaekMat",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['AsbestMateriale']"
+											},
+											"sink": {
+												"name": "bygning_AsbestMateriale",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['KILDE_MATR_KODE']"
+											},
+											"sink": {
+												"name": "bygning_KILDE_MATR_KODE",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BYG_ARL_SAML']"
+											},
+											"sink": {
+												"name": "bygning_BYG_ARL_SAML",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BYG_BOLIG_ARL_SAML']"
+											},
+											"sink": {
+												"name": "bygning_BYG_BOLIG_ARL_SAML",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['ERHV_ARL_SAML']"
+											},
+											"sink": {
+												"name": "bygning_ERHV_ARL"
 											}
 										},
 										{
