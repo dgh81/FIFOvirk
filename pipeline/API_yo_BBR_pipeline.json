@@ -1361,7 +1361,7 @@
 												"path": "$['bygning']['FREDNING_KODE']"
 											},
 											"sink": {
-												"name": "bygning_FREDNINGS_KODE",
+												"name": "bygning_FREDNING_KODE",
 												"type": "String"
 											}
 										},
@@ -1371,6 +1371,15 @@
 											},
 											"sink": {
 												"name": "bygning_BevarVaerdig",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['UdlejForhold1']"
+											},
+											"sink": {
+												"name": "bygning_UdlejForhold1",
 												"type": "String"
 											}
 										}
