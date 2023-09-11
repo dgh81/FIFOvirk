@@ -95,24 +95,6 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['navne'][0]['periode']['gyldigFra']"
-								},
-								"sink": {
-									"name": "gyldigFra",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['navne'][0]['periode']['gyldigTil']"
-								},
-								"sink": {
-									"name": "gyldigTil",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
 									"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
 								},
 								"sink": {
