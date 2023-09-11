@@ -1598,6 +1598,105 @@
 												"name": "bygning_Kommune_id",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['KomKode']"
+											},
+											"sink": {
+												"name": "bygning_KomKode",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['eRef']"
+											},
+											"sink": {
+												"name": "bygning_eRef",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Landsejerlavkode']"
+											},
+											"sink": {
+												"name": "bygning_Landsejerlavkode",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['KomEjerlavKode']"
+											},
+											"sink": {
+												"name": "bygning_KomEjerlavKode",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['MatrNr']"
+											},
+											"sink": {
+												"name": "bygning_MatrNr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['ESREjdNr']"
+											},
+											"sink": {
+												"name": "bygning_ESREjdNr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Matr_art_kode']"
+											},
+											"sink": {
+												"name": "bygning_Matr_art_kode",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Delnr']"
+											},
+											"sink": {
+												"name": "bygning_Delnr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Opdelingsnr']"
+											},
+											"sink": {
+												"name": "bygning_Opdelingsnr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['BygSkadeOmfatFors']"
+											},
+											"sink": {
+												"name": "bygning_BygSkadeOmfatFors",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Gyldighedsdato']"
+											},
+											"sink": {
+												"name": "bygning_Gyldighedsdato",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": ""
