@@ -359,16 +359,6 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['sidstOpdateret']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['navn']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['hits']['total']"
 								},
 								"sink": {
