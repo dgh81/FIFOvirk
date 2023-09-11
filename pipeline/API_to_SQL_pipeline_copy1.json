@@ -80,6 +80,15 @@
 							},
 							{
 								"source": {
+									"path": "$['hits']['total']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"path": "$['_scroll_id']"
 								},
 								"sink": {
