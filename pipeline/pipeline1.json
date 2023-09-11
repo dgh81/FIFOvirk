@@ -248,58 +248,6 @@
 							},
 							{
 								"source": {
-									"path": "$['bygning']['ois_id']"
-								},
-								"sink": {
-									"name": "ois_id",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['bygning']['ois_ts']"
-								},
-								"sink": {
-									"name": "ois_ts",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['bygning']['Bygning_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['bygning']['Bygningsnr']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['bygning']['ObjStatus']"
-								},
-								"sink": {
-									"name": "ObjStatus",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['bygning']['NyByg']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['bygning']['Crud_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['bygning']['Grund_id']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['bygning']['Byggesag_id']"
 								}
 							},
