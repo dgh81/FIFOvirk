@@ -142,7 +142,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"byggekode": {
-											"value": "@item().value",
+											"value": "@item().kode",
 											"type": "Expression"
 										}
 									}
