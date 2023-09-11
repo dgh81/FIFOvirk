@@ -106,44 +106,6 @@
 									"name": "reklamebeskyttet",
 									"type": "Boolean"
 								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['kortBeskrivelse']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['sidstOpdateret']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['ansvarligDataleverandoer']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['periode']['gyldigFra']"
-								},
-								"sink": {
-									"name": "gyldigFra",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['periode']['gyldigTil']"
-								},
-								"sink": {
-									"name": "gyldigTil",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['virkningsDato']"
-								}
 							}
 						],
 						"collectionReference": "$['hits']['hits']",
