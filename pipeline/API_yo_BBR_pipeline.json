@@ -1562,6 +1562,42 @@
 												"name": "bygning_OPRET_TS",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['AENDR_TS']"
+											},
+											"sink": {
+												"name": "bygning_AENDR_TS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Aendr_Funk']"
+											},
+											"sink": {
+												"name": "bygning_Aendr_Funk",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Ophoert_ts']"
+											},
+											"sink": {
+												"name": "bygning_Ophoert_ts",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Kommune_id']"
+											},
+											"sink": {
+												"name": "bygning_Kommune_id",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": ""
