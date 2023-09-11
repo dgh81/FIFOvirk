@@ -1382,6 +1382,33 @@
 												"name": "bygning_UdlejForhold1",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['HusLeje']"
+											},
+											"sink": {
+												"name": "bygning_HusLeje",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['HuslejeOplysDato']"
+											},
+											"sink": {
+												"name": "bygning_HuslejeOplysDato",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['SagsType']"
+											},
+											"sink": {
+												"name": "bygning_SagsType",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": ""
