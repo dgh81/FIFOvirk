@@ -1208,7 +1208,7 @@
 												"path": "$['bygning']['CARPORT_INDB_ARL']"
 											},
 											"sink": {
-												"name": "bygning_CARPORT_INDBARL",
+												"name": "bygning_CARPORT_INDB_ARL",
 												"type": "String"
 											}
 										},
