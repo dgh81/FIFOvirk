@@ -907,7 +907,7 @@
 						},
 						"paginationRules": {
 							"MaxRequestNumber": {
-								"value": "@string(sub(int(activity('CVR_API_TO_SQL').output.total),1))\n",
+								"value": "@string(sub(int(variables('total_hits')),1))",
 								"type": "Expression"
 							}
 						}
