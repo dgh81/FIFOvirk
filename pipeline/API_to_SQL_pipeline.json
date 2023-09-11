@@ -41,29 +41,11 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['cvrNummer']"
+									"path": "$['_scroll_id']"
 								},
 								"sink": {
-									"name": "cvrNummer",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['sidstIndlaest']"
-								},
-								"sink": {
-									"name": "sidstIndlaest",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['reklamebeskyttet']"
-								},
-								"sink": {
-									"name": "reklamebeskyttet",
-									"type": "Boolean"
+									"name": "_scroll_id",
+									"type": "String"
 								}
 							},
 							{
@@ -77,16 +59,12 @@
 							},
 							{
 								"source": {
-									"path": "$['_scroll_id']"
-								},
-								"sink": {
-									"name": "_scroll_id",
-									"type": "String"
+									"path": "$['hits']['max_score']"
 								}
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
 								},
 								"sink": {
 									"name": "gyldigFra",
@@ -95,7 +73,7 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
 								},
 								"sink": {
 									"name": "gyldigTil",
@@ -104,15 +82,33 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne'][0]"
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
 								},
 								"sink": {
-									"name": "navne",
-									"type": "String"
+									"name": "cvrNummer",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['sidstIndlaest']"
+								},
+								"sink": {
+									"name": "sidstIndlaest",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['reklamebeskyttet']"
+								},
+								"sink": {
+									"name": "reklamebeskyttet",
+									"type": "Boolean"
 								}
 							}
 						],
-						"collectionReference": "$['hits']['hits']",
+						"collectionReference": "",
 						"mapComplexValuesToString": true
 					}
 				},
