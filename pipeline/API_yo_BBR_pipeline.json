@@ -1036,7 +1036,8 @@
 												"path": "$['bygning']['AntLejUKoekken']"
 											},
 											"sink": {
-												"name": "bygning__AntLejUKoekken"
+												"name": "bygning__AntLejUKoekken",
+												"type": "String"
 											}
 										},
 										{
@@ -1044,32 +1045,52 @@
 												"path": "$['bygning']['OPFOERELSE_AAR']"
 											},
 											"sink": {
-												"name": "bygning_OPFOERELS"
+												"name": "bygning_OPFOEREL_AAR",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['OMBYG_AAR']"
+											},
+											"sink": {
+												"name": "bygning_OMBYG_AAR",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['MIDL_OPRET_KODE']"
+											},
+											"sink": {
+												"name": "bygning_MIDL_OPRET_KODE",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['UdloebDatoMidl']"
+											},
+											"sink": {
+												"name": "bygning_UdloebDatoMidl",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BYG_VANDFORSY_KODE']"
+											},
+											"sink": {
+												"name": "bygning_BYG_VANDFORSY_KODE",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BYG_AFLOEB_KODE']"
+											},
+											"sink": {
+												"name": "bygning_"
 											}
 										},
 										{
