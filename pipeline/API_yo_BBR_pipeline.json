@@ -1439,23 +1439,33 @@
 												"path": "$['bygning']['StormRaadPaalaeg']"
 											},
 											"sink": {
-												"name": "bygning_StormRaadPaalaegDato",
+												"name": "bygning_StormRaadPaalaeg",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['StormRaadPaalaegDato']"
+											},
+											"sink": {
+												"name": "bygning_StormRaadPaalaegDato",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BygSkadeForsikSelskab']"
+											},
+											"sink": {
+												"name": "bygning_BygSkadeForsikring"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BygSkadeForsikSelskabDato']"
+											},
+											"sink": {
+												"name": "bygning_BygSkadeForsikSelvskabDato"
 											}
 										},
 										{
