@@ -22,7 +22,7 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Copy BBR",
+							"name": "Copy to BBR",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -159,7 +159,7 @@
 				}
 			},
 			{
-				"name": "Copy to BBR",
+				"name": "Copy_to_BBR_single",
 				"type": "Copy",
 				"state": "Inactive",
 				"onInactiveMarkAs": "Succeeded",
