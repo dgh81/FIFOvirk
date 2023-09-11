@@ -284,6 +284,357 @@
 												"name": "TOILET_KODE",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "$['BAD_KODE']"
+											},
+											"sink": {
+												"name": "BAD_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KOEKKEN_KODE']"
+											},
+											"sink": {
+												"name": "KOEKKEN_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ENERGI_KODE']"
+											},
+											"sink": {
+												"name": "ENERGI_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ENH_UDLEJ1_KODE']"
+											},
+											"sink": {
+												"name": "ENH_UDLEJ1_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['HusLeje']"
+											},
+											"sink": {
+												"name": "HusLeje",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['HuslejeOplysDato']"
+											},
+											"sink": {
+												"name": "HuslejeOplysDato",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AndetAreal']"
+											},
+											"sink": {
+												"name": "AndetAreal",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['GodkTomBoligGL']"
+											},
+											"sink": {
+												"name": "GodkTomBoligGL",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['LOVLIG_ANVEND_KODE']"
+											},
+											"sink": {
+												"name": "LOVLIG_ANVEND_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['DispTidsbegraensetDato']"
+											},
+											"sink": {
+												"name": "DispTidsbegraensetDato",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['SagsType']"
+											},
+											"sink": {
+												"name": "SagsType",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ENH_DEL_IBRUG_DATO']"
+											},
+											"sink": {
+												"name": "ENH_DEL_IBRUG_DATO",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ENH_UDLEJ2_KODE']"
+											},
+											"sink": {
+												"name": "ENH_UDLEJ2_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['OFF_STOETTE_KODE']"
+											},
+											"sink": {
+												"name": "OFF_STOETTE_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['IndflytDato']"
+											},
+											"sink": {
+												"name": "IndflytDato",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['GodkTomBolig']"
+											},
+											"sink": {
+												"name": "GodkTomBolig",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['VARMEINSTAL_KODE']"
+											},
+											"sink": {
+												"name": "VARMEINSTAL_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['OPVARMNING_KODE']"
+											},
+											"sink": {
+												"name": "OPVARMNING_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['VARME_SUPPL_KODE']"
+											},
+											"sink": {
+												"name": "VARME_SUPPL_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['FaellesAdgArealAndel']"
+											},
+											"sink": {
+												"name": "FaellesAdgArealAndel",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AabenOverdaekAreal']"
+											},
+											"sink": {
+												"name": "AabenOverdaekAreal",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['LukOverdaekAreal']"
+											},
+											"sink": {
+												"name": "LukOverdaekAreal",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['VAER_ERHV_ANT']"
+											},
+											"sink": {
+												"name": "VAER_ERHV_ANT",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AntVandskylToilleter']"
+											},
+											"sink": {
+												"name": "AntVandskylToilleter",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AntBadevaerelser']"
+											},
+											"sink": {
+												"name": "AntBadevaerelser",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomFelt1']"
+											},
+											"sink": {
+												"name": "KomFelt1",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomFelt2']"
+											},
+											"sink": {
+												"name": "KomFelt2",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomFelt3']"
+											},
+											"sink": {
+												"name": "KomFelt3",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomFelt4']"
+											},
+											"sink": {
+												"name": "KomFelt4",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomFelt5']"
+											},
+											"sink": {
+												"name": "KomFelt5",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomFelt6']"
+											},
+											"sink": {
+												"name": "KomFelt6",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['JourNr']"
+											},
+											"sink": {
+												"name": "JourNr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ESDH_Ref']"
+											},
+											"sink": {
+												"name": "ESDH_Ref",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['SikKlas']"
+											},
+											"sink": {
+												"name": "SikKlas",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['OPRET_TS']"
+											},
+											"sink": {
+												"name": "OPRET_TS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AENDR_TS']"
+											},
+											"sink": {
+												"name": "AENDR_TS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Aendr_Funk']"
+											},
+											"sink": {
+												"name": "Aendr_Funk",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Ophoert_ts']"
+											},
+											"sink": {
+												"name": "Ophoert_ts",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Gyldighedsdato']"
+											},
+											"sink": {
+												"name": "Gyldighedsdato",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": ""
