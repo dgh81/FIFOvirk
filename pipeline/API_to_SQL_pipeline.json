@@ -894,6 +894,15 @@
 							"supportRFC5988": "true"
 						}
 					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "upsert",
+						"upsertSettings": {
+							"useTempDB": true
+						},
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
 					"enableStaging": false
 				},
 				"inputs": [
@@ -903,6 +912,12 @@
 						"parameters": {
 							"dynamicURL": "cvr-permanent/virksomhed/_search?scroll=2m"
 						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "output_CVR",
+						"type": "DatasetReference"
 					}
 				]
 			}
