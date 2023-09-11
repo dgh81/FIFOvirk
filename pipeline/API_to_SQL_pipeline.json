@@ -25,6 +25,9 @@
 						"requestBody": "{\n    \"_source\":[\n        \"Vrvirksomhed.cvrNummer\",\n        \"Vrvirksomhed.livsforloeb.periode.gyldigTil\", \n        \"Vrvirksomhed.livsforloeb.periode.gyldigFra\",\n        \"Vrvirksomhed.reklamebeskyttet\",\n        \"Vrvirksomhed.sidstIndlaest\"\n    ],\n    \"track_total_hits\": true,\n    \"query\":{\n        \"bool\":{\n            \"must\":[\n                {\"nested\":{\n                    \"path\":\"Vrvirksomhed.livsforloeb\",\n                    \"query\":{\n                        \"bool\": {\n                            \"must_not\":[{\"exists\":{\"field\":\"Vrvirksomhed.livsforloeb.periode.gyldigTil\"}}],\n                            \"filter\": [{\n                                \"range\": {\n                                    \"Vrvirksomhed.livsforloeb.periode.gyldigFra\": {\n                                        \"gte\": \"1950-01-01\"\n                                        ,\n                                        \"lte\": \"1950-01-31\"\n                                    }\n                                }\n                            }]\n                        }\n                    }\n                }}\n            ]\n        }\n    }\n    ,\n    \"size\":1\n}",
 						"additionalHeaders": {
 							"Content-Type": "application/json"
+						},
+						"paginationRules": {
+							"MaxRequestNumber": "1"
 						}
 					},
 					"sink": {
@@ -433,56 +436,47 @@
 										},
 										{
 											"source": {
+												"path": "$['took']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['timed_out']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['total']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['successful']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['skipped']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['failed']"
+											}
+										},
+										{
+											"source": {
 												"path": "$['hits']['total']"
-											},
-											"sink": {
-												"name": "total_hits",
-												"type": "String"
 											}
 										},
 										{
 											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
-											},
-											"sink": {
-												"name": "gyldigFra",
-												"type": "DateTime"
+												"path": "$['hits']['max_score']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
-											},
-											"sink": {
-												"name": "gyldigTil",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
-											},
-											"sink": {
-												"name": "cvrNummer",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['sidstIndlaest']"
-											},
-											"sink": {
-												"name": "sidstIndlaest",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['reklamebeskyttet']"
-											},
-											"sink": {
-												"name": "reklamebeskyttet",
-												"type": "Boolean"
+												"path": "$['hits']['hits'][0]"
 											}
 										}
 									],
