@@ -19,6 +19,8 @@
 						{
 							"name": "Copy data1",
 							"type": "Copy",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
@@ -138,6 +140,134 @@
 							"outputs": [
 								{
 									"referenceName": "output_CVR",
+									"type": "DatasetReference"
+								}
+							]
+						},
+						{
+							"name": "Copy BBR",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "RestSource",
+									"httpRequestTimeout": "00:01:40",
+									"requestInterval": "00.00:00:00.010",
+									"requestMethod": "GET",
+									"additionalHeaders": {
+										"Content-Type": "application/json"
+									}
+								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"writeBehavior": "upsert",
+									"upsertSettings": {
+										"useTempDB": true,
+										"keys": [
+											"ois_id"
+										]
+									},
+									"sqlWriterUseTableLock": false,
+									"tableOption": "autoCreate",
+									"disableMetricsCollection": false
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"path": "$['ois_id']"
+											},
+											"sink": {
+												"name": "ois_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ois_ts']"
+											},
+											"sink": {
+												"name": "ois_ts",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Enhed_id']"
+											},
+											"sink": {
+												"name": "Enhed_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ObjStatus']"
+											},
+											"sink": {
+												"name": "ObjStatus",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Nybyg']"
+											},
+											"sink": {
+												"name": "Nybyg",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['CRUD_ID']"
+											},
+											"sink": {
+												"name": "CRUD_ID",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ByggeSag_id']"
+											},
+											"sink": {
+												"name": "ByggeSag_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['ois_id']"
+											},
+											"sink": {
+												"name": "Bygning.ois_id",
+												"type": "String"
+											}
+										}
+									],
+									"collectionReference": ""
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "input_BBR",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "output_BBR",
 									"type": "DatasetReference"
 								}
 							]
