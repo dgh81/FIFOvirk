@@ -1207,7 +1207,8 @@
 												"path": "$['bygning']['CARPORT_INDB_ARL']"
 											},
 											"sink": {
-												"name": "bygning_CARPORT_INDBARL"
+												"name": "bygning_CARPORT_INDBARL",
+												"type": "String"
 											}
 										},
 										{
@@ -1359,7 +1360,8 @@
 												"path": "$['bygning']['FREDNING_KODE']"
 											},
 											"sink": {
-												"name": "bygning_FREDNINGS_KODE"
+												"name": "bygning_FREDNINGS_KODE",
+												"type": "String"
 											}
 										},
 										{
@@ -1591,7 +1593,8 @@
 												"path": "$['bygning']['Kommune_id']"
 											},
 											"sink": {
-												"name": "Kommune_id"
+												"name": "bygning_Kommune_id",
+												"type": "String"
 											}
 										},
 										{
@@ -1599,7 +1602,8 @@
 												"path": "$['bygning']['KomKode']"
 											},
 											"sink": {
-												"name": "KomKode"
+												"name": "bygning_KomKode",
+												"type": "String"
 											}
 										},
 										{
@@ -1607,7 +1611,8 @@
 												"path": "$['bygning']['eRef']"
 											},
 											"sink": {
-												"name": "eRef"
+												"name": "bygning_eRef",
+												"type": "String"
 											}
 										},
 										{
@@ -1615,42 +1620,71 @@
 												"path": "$['bygning']['Landsejerlavkode']"
 											},
 											"sink": {
-												"name": "Landsejerlavkode"
+												"name": "bygning_Landsejerlavkode",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['KomEjerlavKode']"
+											},
+											"sink": {
+												"name": "bygning_KomEjerlavKode",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['MatrNr']"
+											},
+											"sink": {
+												"name": "bygning_MatrNr",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['ESREjdNr']"
+											},
+											"sink": {
+												"name": "bygning_ESREjdNr",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['Matr_art_kode']"
+											},
+											"sink": {
+												"name": "bygning_Matr_art_kode",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['Delnr']"
+											},
+											"sink": {
+												"name": "bygning_Delnr",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['Opdelingsnr']"
+											},
+											"sink": {
+												"name": "bygning_Opdelingsnr",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BygSkadeOmfatFors']"
+											},
+											"sink": {
+												"name": "bygning_BygSkadeOmfatFors",
+												"type": "String"
 											}
 										},
 										{
@@ -1658,13 +1692,8 @@
 												"path": "$['bygning']['Gyldighedsdato']"
 											},
 											"sink": {
-												"name": "Gyldighedsdato",
+												"name": "bygning_Gyldighedsdato",
 												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['href']"
 											}
 										}
 									],
