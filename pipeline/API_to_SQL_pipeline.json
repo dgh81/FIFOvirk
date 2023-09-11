@@ -978,6 +978,15 @@
 									"name": "sidstIndlaest",
 									"type": "DateTime"
 								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne']"
+								},
+								"sink": {
+									"name": "navne",
+									"type": "String"
+								}
 							}
 						],
 						"collectionReference": "$['hits']['hits']"
