@@ -30,7 +30,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"writeBatchSize": 10,
+						"preCopyScript": "truncate table [dbo].[TESTCVR];",
 						"writeBehavior": "upsert",
 						"upsertSettings": {
 							"useTempDB": true,
