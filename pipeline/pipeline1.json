@@ -174,13 +174,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"writeBehavior": "upsert",
-						"upsertSettings": {
-							"useTempDB": true,
-							"keys": [
-								"cvrNummer"
-							]
-						},
+						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
@@ -192,101 +186,64 @@
 							{
 								"source": {
 									"path": "$['ois_id']"
+								},
+								"sink": {
+									"name": "ois_id",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "$['ois_ts']"
+								},
+								"sink": {
+									"name": "ois_ts",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "$['Enhed_id']"
+								},
+								"sink": {
+									"name": "Enhed_id",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "$['ObjStatus']"
+								},
+								"sink": {
+									"name": "ObjStatus",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "$['Nybyg']"
+								},
+								"sink": {
+									"name": "Nybyg",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "$['CRUD_ID']"
+								},
+								"sink": {
+									"name": "CRUD_ID",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "$['ByggeSag_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['EnhedStam_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['EnhAdr_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['Etage_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['Opgang_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['HenvEnh_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['REF_Enhed_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['ENH_ANVEND_KODE']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['Klassifikation']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['AnvKonvKilde']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['BOLIGTYPE_KODE']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['BOLIG_KONDEM']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['IdentOpretDato']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['ENH_ARL_SAML']"
+								},
+								"sink": {
+									"name": "ByggeSag_id",
+									"type": "String"
 								}
 							},
 							{
@@ -522,11 +479,19 @@
 							{
 								"source": {
 									"path": "$['opgang']['ois_id']"
+								},
+								"sink": {
+									"name": "ois_id",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "$['opgang']['ois_ts']"
+								},
+								"sink": {
+									"name": "ois_ts",
+									"type": "String"
 								}
 							},
 							{
@@ -542,6 +507,10 @@
 							{
 								"source": {
 									"path": "$['opgang']['ObjStatus']"
+								},
+								"sink": {
+									"name": "ObjStatus",
+									"type": "String"
 								}
 							},
 							{
@@ -557,6 +526,10 @@
 							{
 								"source": {
 									"path": "$['opgang']['ByggeSag_id']"
+								},
+								"sink": {
+									"name": "ByggeSag_id",
+									"type": "String"
 								}
 							},
 							{
@@ -672,11 +645,19 @@
 							{
 								"source": {
 									"path": "$['bygning']['ois_id']"
+								},
+								"sink": {
+									"name": "ois_id",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "$['bygning']['ois_ts']"
+								},
+								"sink": {
+									"name": "ois_ts",
+									"type": "String"
 								}
 							},
 							{
@@ -692,6 +673,10 @@
 							{
 								"source": {
 									"path": "$['bygning']['ObjStatus']"
+								},
+								"sink": {
+									"name": "ObjStatus",
+									"type": "String"
 								}
 							},
 							{
@@ -1120,7 +1105,7 @@
 								}
 							}
 						],
-						"collectionReference": "$['ejerskaber']"
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
