@@ -1632,7 +1632,7 @@
 											},
 											"sink": {
 												"name": "bygning_KomEjerlavKode",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1659,7 +1659,7 @@
 											},
 											"sink": {
 												"name": "bygning_Matr_art_kode",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
