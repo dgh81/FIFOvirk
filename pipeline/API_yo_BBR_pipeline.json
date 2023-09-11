@@ -1227,7 +1227,7 @@
 											},
 											"sink": {
 												"name": "bygning_UDESTUE_ARL",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1236,7 +1236,7 @@
 											},
 											"sink": {
 												"name": "bygning_LukOverdaekAreal",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1245,7 +1245,7 @@
 											},
 											"sink": {
 												"name": "bygning_AFFALDSRUM_ARL",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1254,7 +1254,7 @@
 											},
 											"sink": {
 												"name": "bygning_ANDET_ARL",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1263,7 +1263,7 @@
 											},
 											"sink": {
 												"name": "bygning_OverdaekAreal",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1272,7 +1272,7 @@
 											},
 											"sink": {
 												"name": "bygning_AabenOverdaekAreal",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1281,7 +1281,7 @@
 											},
 											"sink": {
 												"name": "bygning_AdgangsAreal",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1299,7 +1299,7 @@
 											},
 											"sink": {
 												"name": "bygning_KILDE_ARL_KODE",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1308,7 +1308,7 @@
 											},
 											"sink": {
 												"name": "bygning_ETAGER_ANT",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1317,7 +1317,7 @@
 											},
 											"sink": {
 												"name": "bygning_ETAGER_AFVIG_KODE",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1353,7 +1353,7 @@
 											},
 											"sink": {
 												"name": "bygning_SIKRINGSRUM_ANT",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1389,7 +1389,7 @@
 											},
 											"sink": {
 												"name": "bygning_HusLeje",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1434,7 +1434,7 @@
 											},
 											"sink": {
 												"name": "bygning_FOT_id",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1443,7 +1443,7 @@
 											},
 											"sink": {
 												"name": "bygning_StormRaadPaalaeg",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1506,7 +1506,7 @@
 											},
 											"sink": {
 												"name": "bygning_KomFelt4",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1515,7 +1515,7 @@
 											},
 											"sink": {
 												"name": "bygning_KomFelt5",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1551,7 +1551,7 @@
 											},
 											"sink": {
 												"name": "bygning_SikKlas",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1623,7 +1623,7 @@
 											},
 											"sink": {
 												"name": "bygning_Landsejerlavkode",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
