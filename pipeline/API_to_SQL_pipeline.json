@@ -900,7 +900,7 @@
 							"type": "Expression"
 						},
 						"additionalHeaders": {
-							"Content_Type": "application/json"
+							"Content-Type": "application/json"
 						},
 						"paginationRules": {
 							"supportRFC5988": "true"
