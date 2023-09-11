@@ -362,9 +362,9 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "total_hits",
+					"variableName": "",
 					"value": {
-						"value": "@activity('Lookup_total_hits').output.firstRow.total_hits",
+						"value": "@activity('CVR_API_TO_SQL').output.pipelineReturnValue",
 						"type": "Expression"
 					}
 				}
