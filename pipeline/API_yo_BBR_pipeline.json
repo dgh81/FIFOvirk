@@ -1305,12 +1305,17 @@
 												"path": "$['bygning']['ETAGER_ANT']"
 											},
 											"sink": {
-												"name": "bygning_"
+												"name": "bygning_ETAGER_ANT",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['ETAGER_AFVIG_KODE']"
+											},
+											"sink": {
+												"name": "bygning_ETAGER_AFVIG_KODE",
+												"type": "String"
 											}
 										},
 										{
@@ -1318,7 +1323,7 @@
 												"path": "$['bygning']['VARMEINSTAL_KODE']"
 											},
 											"sink": {
-												"name": "VARMEINSTAL_KODE",
+												"name": "bygning_VARMEINSTAL_KODE",
 												"type": "String"
 											}
 										},
@@ -1327,7 +1332,7 @@
 												"path": "$['bygning']['OPVARMNING_KODE']"
 											},
 											"sink": {
-												"name": "OPVARMNING_KODE",
+												"name": "bygning_OPVARMNING_KODE",
 												"type": "String"
 											}
 										},
@@ -1336,28 +1341,43 @@
 												"path": "$['bygning']['VARME_SUPPL_KODE']"
 											},
 											"sink": {
-												"name": "VARME_SUPPL_KODE",
+												"name": "bygning_VARME_SUPPL_KODE",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['SIKRINGSRUM_ANT']"
+											},
+											"sink": {
+												"name": "bygning_SIKRINGSRUM_ANT",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['FREDNING_KODE']"
+											},
+											"sink": {
+												"name": "bygning_FREDNINGS_KODE"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BevarVaerdig']"
+											},
+											"sink": {
+												"name": "bygning_BevarVaerdig",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['UdlejForhold1']"
+											},
+											"sink": {
+												"name": "bygning_UdlejForhold1",
+												"type": "String"
 											}
 										},
 										{
@@ -1365,7 +1385,7 @@
 												"path": "$['bygning']['HusLeje']"
 											},
 											"sink": {
-												"name": "HusLeje",
+												"name": "bygning_HusLeje",
 												"type": "String"
 											}
 										},
