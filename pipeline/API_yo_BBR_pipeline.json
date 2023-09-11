@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach byggekode",
+				"name": "ForEach_byggekode",
 				"type": "ForEach",
 				"dependsOn": [
 					{
