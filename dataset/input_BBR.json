@@ -5,10 +5,18 @@
 			"referenceName": "RestService2",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"byggekode": {
+				"type": "int"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "bbrlight/enheder?anvendelseskode=132"
+			"relativeUrl": {
+				"value": "@concat('bbrlight/enheder?anvendelseskode=',string(dataset().byggekode))",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	}
