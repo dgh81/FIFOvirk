@@ -849,7 +849,7 @@
 											},
 											"sink": {
 												"name": "opgang_SikKlas",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -903,7 +903,7 @@
 											},
 											"sink": {
 												"name": "bygning_ois_id",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -939,7 +939,7 @@
 											},
 											"sink": {
 												"name": "bygning_ObjStatus",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -948,7 +948,7 @@
 											},
 											"sink": {
 												"name": "bygning_NyByg",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1002,7 +1002,7 @@
 											},
 											"sink": {
 												"name": "bygning_BYG_ANVEND_KODE",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1011,7 +1011,7 @@
 											},
 											"sink": {
 												"name": "bygning_Klassifikation",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1020,7 +1020,7 @@
 											},
 											"sink": {
 												"name": "bygning_AnvKonvKilde",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1029,7 +1029,7 @@
 											},
 											"sink": {
 												"name": "bygning_AntLejMKoekken",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1038,7 +1038,7 @@
 											},
 											"sink": {
 												"name": "bygning_AntLejUKoekken",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1047,7 +1047,7 @@
 											},
 											"sink": {
 												"name": "bygning_OPFOERELSE_AAR",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1056,7 +1056,7 @@
 											},
 											"sink": {
 												"name": "bygning_OMBYG_AAR",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1065,7 +1065,7 @@
 											},
 											"sink": {
 												"name": "bygning_MIDL_OPRET_KODE",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1083,7 +1083,7 @@
 											},
 											"sink": {
 												"name": "bygning_BYG_VANDFORSY_KODE",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1164,7 +1164,7 @@
 											},
 											"sink": {
 												"name": "bygning_BYG_ARL_SAML",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1173,7 +1173,7 @@
 											},
 											"sink": {
 												"name": "bygning_BYG_BOLIG_ARL_SAML",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1182,7 +1182,7 @@
 											},
 											"sink": {
 												"name": "bygning_ERHV_ARL_SAML",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1191,7 +1191,7 @@
 											},
 											"sink": {
 												"name": "bygning_BYG_BEBYG_ARL",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1200,7 +1200,7 @@
 											},
 											"sink": {
 												"name": "bygning_GARAGE_INDB_ARL",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1209,7 +1209,7 @@
 											},
 											"sink": {
 												"name": "bygning_CARPORT_INDB_ARL",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -1218,7 +1218,7 @@
 											},
 											"sink": {
 												"name": "bygning_UDHUS_INDB_ARL",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
