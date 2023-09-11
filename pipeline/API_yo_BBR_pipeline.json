@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "API_yo_BBR_pipeline",
 	"properties": {
 		"activities": [
 			{
@@ -7,7 +7,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Set variable1",
+						"activity": "Set byggekode",
 						"dependencyConditions": [
 							"Completed"
 						]
@@ -286,11 +286,11 @@
 				]
 			},
 			{
-				"name": "Set variable1",
+				"name": "Set byggekode",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
-						"activity": "Lookup1",
+						"activity": "Lookup byggekoder",
 						"dependencyConditions": [
 							"Completed"
 						]
@@ -310,7 +310,7 @@
 				}
 			},
 			{
-				"name": "Lookup1",
+				"name": "Lookup byggekoder",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
