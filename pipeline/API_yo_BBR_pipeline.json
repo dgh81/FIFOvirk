@@ -641,7 +641,7 @@
 												"path": "$['opgang']['ois_id']"
 											},
 											"sink": {
-												"name": "ois_id",
+												"name": "opgang_ois_id",
 												"type": "String"
 											}
 										},
@@ -650,7 +650,7 @@
 												"path": "$['opgang']['ois_ts']"
 											},
 											"sink": {
-												"name": "ois_ts",
+												"name": "opgang_ois_ts",
 												"type": "String"
 											}
 										},
@@ -659,13 +659,17 @@
 												"path": "$['opgang']['Opgang_id']"
 											},
 											"sink": {
-												"name": "Opgang_id",
+												"name": "opgang_Opgang_id",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['opgang']['AdgAdr_id']"
+											},
+											"sink": {
+												"name": "opgang_AdgAdr_id",
+												"type": "String"
 											}
 										},
 										{
@@ -673,7 +677,7 @@
 												"path": "$['opgang']['ObjStatus']"
 											},
 											"sink": {
-												"name": "ObjStatus",
+												"name": "opgang_ObjStatus",
 												"type": "String"
 											}
 										},
