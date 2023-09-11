@@ -1180,32 +1180,52 @@
 												"path": "$['bygning']['ERHV_ARL_SAML']"
 											},
 											"sink": {
-												"name": "bygning_ERHV_ARL"
+												"name": "bygning_ERHV_ARL_SAML",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BYG_BEBYG_ARL']"
+											},
+											"sink": {
+												"name": "bygning_BYG_BEBYG_ARL",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['GARAGE_INDB_ARL']"
+											},
+											"sink": {
+												"name": "bygning_GARAGE_INDB_ARL",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['CARPORT_INDB_ARL']"
+											},
+											"sink": {
+												"name": "bygning_CARPORT_INDBARL"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['UDHUS_INDB_ARL']"
+											},
+											"sink": {
+												"name": "bygning_UDHUS_INDB_ARL",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['UDESTUE_ARL']"
+											},
+											"sink": {
+												"name": "bygning_UDESTUE_ARL",
+												"type": "String"
 											}
 										},
 										{
@@ -1213,7 +1233,7 @@
 												"path": "$['bygning']['LukOverdaekAreal']"
 											},
 											"sink": {
-												"name": "LukOverdaekAreal",
+												"name": "bygning_LukOverdaekAreal",
 												"type": "String"
 											}
 										},
