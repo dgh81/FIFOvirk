@@ -729,21 +729,37 @@
 										{
 											"source": {
 												"path": "$['opgang']['Elevator']"
+											},
+											"sink": {
+												"name": "opgang_Elevator",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['opgang']['DataFelt1']"
+											},
+											"sink": {
+												"name": "opgang_DataFelt1",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['opgang']['DataFelt2']"
+											},
+											"sink": {
+												"name": "opgang_DataFelt2",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['opgang']['DataFelt3']"
+											},
+											"sink": {
+												"name": "opgang_DataFelt3",
+												"type": "String"
 											}
 										},
 										{
@@ -751,7 +767,7 @@
 												"path": "$['opgang']['SagsType']"
 											},
 											"sink": {
-												"name": "SagsType",
+												"name": "opgang_SagsType",
 												"type": "String"
 											}
 										},
@@ -760,7 +776,7 @@
 												"path": "$['opgang']['KomFelt1']"
 											},
 											"sink": {
-												"name": "KomFelt1",
+												"name": "opgang_KomFelt1",
 												"type": "String"
 											}
 										},
@@ -769,7 +785,7 @@
 												"path": "$['opgang']['KomFelt2']"
 											},
 											"sink": {
-												"name": "KomFelt2",
+												"name": "opgang_KomFelt2",
 												"type": "String"
 											}
 										},
