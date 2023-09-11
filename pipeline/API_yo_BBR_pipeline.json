@@ -638,16 +638,6 @@
 										},
 										{
 											"source": {
-												"path": "$['href']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['ejerskaber'][0]"
-											}
-										},
-										{
-											"source": {
 												"path": "$['opgang']['ois_id']"
 											},
 											"sink": {
@@ -690,6 +680,10 @@
 										{
 											"source": {
 												"path": "$['opgang']['NyByg']"
+											},
+											"sink": {
+												"name": "opgang_NyByg",
+												"type": "String"
 											}
 										},
 										{
