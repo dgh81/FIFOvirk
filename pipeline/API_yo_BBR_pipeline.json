@@ -1457,7 +1457,8 @@
 												"path": "$['bygning']['BygSkadeForsikSelskab']"
 											},
 											"sink": {
-												"name": "bygning_BygSkadeForsikring"
+												"name": "bygning_BygSkadeForsikSelskab",
+												"type": "String"
 											}
 										},
 										{
@@ -1473,7 +1474,7 @@
 												"path": "$['bygning']['KomFelt1']"
 											},
 											"sink": {
-												"name": "KomFelt1",
+												"name": "bygning_KomFelt1",
 												"type": "String"
 											}
 										},
@@ -1482,7 +1483,7 @@
 												"path": "$['bygning']['KomFelt2']"
 											},
 											"sink": {
-												"name": "KomFelt2",
+												"name": "bygning_KomFelt2",
 												"type": "String"
 											}
 										},
@@ -1491,7 +1492,7 @@
 												"path": "$['bygning']['KomFelt3']"
 											},
 											"sink": {
-												"name": "KomFelt3",
+												"name": "bygning_KomFelt3",
 												"type": "String"
 											}
 										},
@@ -1500,7 +1501,7 @@
 												"path": "$['bygning']['KomFelt4']"
 											},
 											"sink": {
-												"name": "KomFelt4",
+												"name": "bygning_KomFelt4",
 												"type": "String"
 											}
 										},
@@ -1509,7 +1510,7 @@
 												"path": "$['bygning']['KomFelt5']"
 											},
 											"sink": {
-												"name": "KomFelt5",
+												"name": "bygning_KomFelt5",
 												"type": "String"
 											}
 										},
@@ -1518,7 +1519,7 @@
 												"path": "$['bygning']['KomFelt6']"
 											},
 											"sink": {
-												"name": "KomFelt6",
+												"name": "bygning_KomFelt6",
 												"type": "String"
 											}
 										},
@@ -1527,7 +1528,7 @@
 												"path": "$['bygning']['JourNr']"
 											},
 											"sink": {
-												"name": "JourNr",
+												"name": "bygning_JourNr",
 												"type": "String"
 											}
 										},
@@ -1536,7 +1537,7 @@
 												"path": "$['bygning']['ESDH_Ref']"
 											},
 											"sink": {
-												"name": "ESDH_Ref",
+												"name": "bygning_ESDH_Ref",
 												"type": "String"
 											}
 										},
@@ -1545,7 +1546,7 @@
 												"path": "$['bygning']['SikKlas']"
 											},
 											"sink": {
-												"name": "SikKlas",
+												"name": "bygning_SikKlas",
 												"type": "String"
 											}
 										},
@@ -1554,7 +1555,7 @@
 												"path": "$['bygning']['OPRET_TS']"
 											},
 											"sink": {
-												"name": "OPRET_TS",
+												"name": "bygning_OPRET_TS",
 												"type": "String"
 											}
 										},
@@ -1563,7 +1564,7 @@
 												"path": "$['bygning']['AENDR_TS']"
 											},
 											"sink": {
-												"name": "AENDR_TS",
+												"name": "bygning_AENDR_TS",
 												"type": "String"
 											}
 										},
@@ -1572,7 +1573,7 @@
 												"path": "$['bygning']['Aendr_Funk']"
 											},
 											"sink": {
-												"name": "Aendr_Funk",
+												"name": "bygning_Aendr_Funk",
 												"type": "String"
 											}
 										},
@@ -1581,28 +1582,40 @@
 												"path": "$['bygning']['Ophoert_ts']"
 											},
 											"sink": {
-												"name": "Ophoert_ts",
+												"name": "bygning_Ophoert_ts",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['Kommune_id']"
+											},
+											"sink": {
+												"name": "Kommune_id"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['KomKode']"
+											},
+											"sink": {
+												"name": "KomKode"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['eRef']"
+											},
+											"sink": {
+												"name": "eRef"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['Landsejerlavkode']"
+											},
+											"sink": {
+												"name": "Landsejerlavkode"
 											}
 										},
 										{
