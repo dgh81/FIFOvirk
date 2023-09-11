@@ -989,11 +989,19 @@
 										{
 											"source": {
 												"path": "$['bygning']['AdgAdr_id']"
+											},
+											"sink": {
+												"name": "bygning_AdgAdr_id",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BYG_ANVEND_KODE']"
+											},
+											"sink": {
+												"name": "bygning_BYG_ANVEND_KODE",
+												"type": "String"
 											}
 										},
 										{
@@ -1001,7 +1009,7 @@
 												"path": "$['bygning']['Klassifikation']"
 											},
 											"sink": {
-												"name": "Klassifikation",
+												"name": "bygning_Klassifikation",
 												"type": "String"
 											}
 										},
@@ -1010,23 +1018,33 @@
 												"path": "$['bygning']['AnvKonvKilde']"
 											},
 											"sink": {
-												"name": "AnvKonvKilde",
+												"name": "bygning_AnvKonvKilde",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['AntLejMKoekken']"
+											},
+											"sink": {
+												"name": "bygning_AntLejMKoekken",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['AntLejUKoekken']"
+											},
+											"sink": {
+												"name": "bygning__AntLejUKoekken"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['OPFOERELSE_AAR']"
+											},
+											"sink": {
+												"name": "bygning_OPFOERELS"
 											}
 										},
 										{
