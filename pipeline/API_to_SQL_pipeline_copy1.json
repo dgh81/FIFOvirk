@@ -309,6 +309,12 @@
 						},
 						"additionalHeaders": {
 							"Content-Type": "application/json"
+						},
+						"paginationRules": {
+							"MaxRequestNumber": {
+								"value": "@sub(int(variables('total_hits')),10)",
+								"type": "Expression"
+							}
 						}
 					},
 					"sink": {
