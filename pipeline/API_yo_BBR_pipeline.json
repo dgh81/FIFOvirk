@@ -426,7 +426,7 @@
 											},
 											"sink": {
 												"name": "GodkTomBolig",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -462,7 +462,7 @@
 											},
 											"sink": {
 												"name": "FaellesAdgArealAndel",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -471,7 +471,7 @@
 											},
 											"sink": {
 												"name": "AabenOverdaekAreal",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -480,7 +480,7 @@
 											},
 											"sink": {
 												"name": "LukOverdaekAreal",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -489,7 +489,7 @@
 											},
 											"sink": {
 												"name": "VAER_ERHV_ANT",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -498,7 +498,7 @@
 											},
 											"sink": {
 												"name": "AntVandskylToilleter",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -507,7 +507,7 @@
 											},
 											"sink": {
 												"name": "AntBadevaerelser",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -543,7 +543,7 @@
 											},
 											"sink": {
 												"name": "KomFelt4",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -552,7 +552,7 @@
 											},
 											"sink": {
 												"name": "KomFelt5",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -561,7 +561,7 @@
 											},
 											"sink": {
 												"name": "KomFelt6",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -588,7 +588,7 @@
 											},
 											"sink": {
 												"name": "SikKlas",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -642,7 +642,7 @@
 											},
 											"sink": {
 												"name": "opgang_ois_id",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -678,7 +678,7 @@
 											},
 											"sink": {
 												"name": "opgang_ObjStatus",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -687,7 +687,7 @@
 											},
 											"sink": {
 												"name": "opgang_NyByg",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -732,7 +732,7 @@
 											},
 											"sink": {
 												"name": "opgang_Elevator",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -741,7 +741,7 @@
 											},
 											"sink": {
 												"name": "opgang_DataFelt1",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -804,7 +804,7 @@
 											},
 											"sink": {
 												"name": "opgang_KomFelt4",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -813,7 +813,7 @@
 											},
 											"sink": {
 												"name": "opgang_KomFelt5",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -822,7 +822,7 @@
 											},
 											"sink": {
 												"name": "opgang_KomFelt6",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
