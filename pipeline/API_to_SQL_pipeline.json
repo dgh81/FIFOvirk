@@ -86,7 +86,7 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['navne']['navn'"
+									"path": "['_source']['Vrvirksomhed']['navne']['navn']"
 								},
 								"sink": {
 									"name": "navne",
@@ -872,8 +872,6 @@
 			{
 				"name": "Copy data1_copy1",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set variable1",
