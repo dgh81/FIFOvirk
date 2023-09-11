@@ -888,7 +888,11 @@
 						"type": "RestSource",
 						"httpRequestTimeout": "00:01:40",
 						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "GET",
+						"requestMethod": "POST",
+						"requestBody": {
+							"value": "@concat('{\n        \"scroll\":\"4m\",\n        \"scroll_id\":\"',variables('last_scroll_id'),'\"}'\n        )",
+							"type": "Expression"
+						},
 						"additionalHeaders": {
 							"Content_Type": "application/json"
 						},
