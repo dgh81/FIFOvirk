@@ -1256,6 +1256,96 @@
 												"name": "bygning_ANDET_ARL",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['OverdaekAreal']"
+											},
+											"sink": {
+												"name": "bygning_OverdaekAreal",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['AabenOverdaekAreal']"
+											},
+											"sink": {
+												"name": "bygning_AabenOverdaekAreal",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['AdgangsAreal']"
+											},
+											"sink": {
+												"name": "bygning_AdgangsAreal",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Carport_Princip']"
+											},
+											"sink": {
+												"name": "bygning_Carport_Princip",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['KILDE_ARL_KODE']"
+											},
+											"sink": {
+												"name": "bygning_KILDE_ARL_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['ETAGER_ANT']"
+											},
+											"sink": {
+												"name": "bygning_ETAGER_ANT",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['ETAGER_AFVIG_KODE']"
+											},
+											"sink": {
+												"name": "bygning_ETAGER_AFVIG_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['VARMEINSTAL_KODE']"
+											},
+											"sink": {
+												"name": "bygning_VARMEINSTAL_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['OPVARMNING_KODE']"
+											},
+											"sink": {
+												"name": "bygning_OPVARMNING_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['VARME_SUPPL_KODE']"
+											},
+											"sink": {
+												"name": "bygning_VARME_SUPPL_KODE",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": ""
