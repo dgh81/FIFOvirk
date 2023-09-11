@@ -1090,27 +1090,44 @@
 												"path": "$['bygning']['BYG_AFLOEB_KODE']"
 											},
 											"sink": {
-												"name": "bygning_"
+												"name": "bygning_BYG_AFLOEB_KODE",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BYG_AFLOEB_TILL']"
+											},
+											"sink": {
+												"name": "bygning_BYG_AFLOEB_TILL",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['YDERVAEG_KODE']"
+											},
+											"sink": {
+												"name": "bygning_YDERVAEG_KODE",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['TAG_KODE']"
+											},
+											"sink": {
+												"name": "bygning_TAG_KODE",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['SuppYderVaegMat']"
+											},
+											"sink": {
+												"name": "bygning_SuppYderVaegMat",
+												"type": "String"
 											}
 										},
 										{
