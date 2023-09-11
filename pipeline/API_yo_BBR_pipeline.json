@@ -1544,6 +1544,24 @@
 												"name": "bygning_ESDH_Ref",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['SikKlas']"
+											},
+											"sink": {
+												"name": "bygning_SikKlas",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['OPRET_TS']"
+											},
+											"sink": {
+												"name": "bygning_OPRET_TS",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": ""
