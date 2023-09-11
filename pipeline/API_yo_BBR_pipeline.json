@@ -896,6 +896,96 @@
 												"name": "opgang_Gyldighedsdato",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['ois_id']"
+											},
+											"sink": {
+												"name": "bygning_ois_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['ois_ts']"
+											},
+											"sink": {
+												"name": "bygning_ois_ts",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Bygning_id']"
+											},
+											"sink": {
+												"name": "bygning_Bygning_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Bygningsnr']"
+											},
+											"sink": {
+												"name": "bygning_Bygningsnr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['ObjStatus']"
+											},
+											"sink": {
+												"name": "bygning_ObjStatus",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['NyByg']"
+											},
+											"sink": {
+												"name": "bygning_Nybyg",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Crud_id']"
+											},
+											"sink": {
+												"name": "bygning_Crud_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Grund_id']"
+											},
+											"sink": {
+												"name": "bygning_Grund_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['Byggesag_id']"
+											},
+											"sink": {
+												"name": "bygning_Byggesag_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['BygStam_id']"
+											},
+											"sink": {
+												"name": "bygning_BygStam_id",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": ""
