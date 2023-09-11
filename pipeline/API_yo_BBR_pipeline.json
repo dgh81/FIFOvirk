@@ -1240,16 +1240,28 @@
 										{
 											"source": {
 												"path": "$['bygning']['AFFALDSRUM_ARL']"
+											},
+											"sink": {
+												"name": "bygning_AFFALDSRUM_ARL",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['ANDET_ARL']"
+											},
+											"sink": {
+												"name": "bygning_ANDET_ARL",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['OverdaekAreal']"
+											},
+											"sink": {
+												"name": "bygning_OverdaekAreal",
+												"type": "String"
 											}
 										},
 										{
@@ -1257,18 +1269,26 @@
 												"path": "$['bygning']['AabenOverdaekAreal']"
 											},
 											"sink": {
-												"name": "AabenOverdaekAreal",
+												"name": "bygning_AabenOverdaekAreal",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['AdgangsAreal']"
+											},
+											"sink": {
+												"name": "bygning_AdgangsAreal",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['Carport_Princip']"
+											},
+											"sink": {
+												"name": "bygning_Carport_Princip",
+												"type": "String"
 											}
 										},
 										{
@@ -1276,13 +1296,16 @@
 												"path": "$['bygning']['KILDE_ARL_KODE']"
 											},
 											"sink": {
-												"name": "KILDE_ARL_KODE",
+												"name": "bygning_KILDE_ARL_KODE",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['ETAGER_ANT']"
+											},
+											"sink": {
+												"name": "bygning_"
 											}
 										},
 										{
