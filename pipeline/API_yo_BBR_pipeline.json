@@ -1157,6 +1157,105 @@
 												"name": "bygning_KILDE_MATR_KODE",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['BYG_ARL_SAML']"
+											},
+											"sink": {
+												"name": "bygning_BYG_ARL_SAML",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['BYG_BOLIG_ARL_SAML']"
+											},
+											"sink": {
+												"name": "bygning_BYG_BOLIG_ARL_SAML",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['ERHV_ARL_SAML']"
+											},
+											"sink": {
+												"name": "bygning_ERHV_ARL_SAML",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['BYG_BEBYG_ARL']"
+											},
+											"sink": {
+												"name": "bygning_BYG_BEBYG_ARL",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['GARAGE_INDB_ARL']"
+											},
+											"sink": {
+												"name": "bygning_GARAGE_INDB_ARL",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['CARPORT_INDB_ARL']"
+											},
+											"sink": {
+												"name": "bygning_CARPORT_INDBARL",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['UDHUS_INDB_ARL']"
+											},
+											"sink": {
+												"name": "bygning_UDHUS_INDB_ARL",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['UDESTUE_ARL']"
+											},
+											"sink": {
+												"name": "bygning_UDESTUE_ARL",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['LukOverdaekAreal']"
+											},
+											"sink": {
+												"name": "bygning_LukOverdaekAreal",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['AFFALDSRUM_ARL']"
+											},
+											"sink": {
+												"name": "bygning_AFFALDSRUM_ARL",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['ANDET_ARL']"
+											},
+											"sink": {
+												"name": "bygning_ANDET_ARL",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": ""
