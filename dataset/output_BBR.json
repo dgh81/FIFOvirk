@@ -35,6 +35,10 @@
 			{
 				"name": "ByggeSag_id",
 				"type": "nvarchar"
+			},
+			{
+				"name": "Bygning.ois_id",
+				"type": "nvarchar"
 			}
 		],
 		"typeProperties": {

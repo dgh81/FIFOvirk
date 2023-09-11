@@ -248,6 +248,519 @@
 							},
 							{
 								"source": {
+									"path": "$['EnhedStam_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['EnhAdr_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Etage_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Opgang_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['HenvEnh_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['REF_Enhed_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ENH_ANVEND_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Klassifikation']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['AnvKonvKilde']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['BOLIGTYPE_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['BOLIG_KONDEM']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['IdentOpretDato']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ENH_ARL_SAML']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['BEBO_ARL']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ENH_ERHV_ARL']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['KILDE_ARL_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['VAERELSE_ANT']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['TOILET_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['BAD_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['KOEKKEN_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ENERGI_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ENH_UDLEJ1_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['HusLeje']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['HuslejeOplysDato']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['AndetAreal']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['GodkTomBoligGL']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['LOVLIG_ANVEND_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['DispTidsbegraensetDato']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['SagsType']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ENH_DEL_IBRUG_DATO']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ENH_UDLEJ2_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['OFF_STOETTE_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['IndflytDato']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['GodkTomBolig']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['VARMEINSTAL_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['OPVARMNING_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['VARME_SUPPL_KODE']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['FaellesAdgArealAndel']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['AabenOverdaekAreal']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['LukOverdaekAreal']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['VAER_ERHV_ANT']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['AntVandskylToilleter']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['AntBadevaerelser']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['KomFelt1']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['KomFelt2']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['KomFelt3']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['KomFelt4']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['KomFelt5']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['KomFelt6']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['JourNr']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ESDH_Ref']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['SikKlas']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['OPRET_TS']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['AENDR_TS']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Aendr_Funk']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Ophoert_ts']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Gyldighedsdato']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['href']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ejerskaber'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['ois_id']"
+								},
+								"sink": {
+									"name": "ois_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['ois_ts']"
+								},
+								"sink": {
+									"name": "ois_ts",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['Opgang_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['AdgAdr_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['ObjStatus']"
+								},
+								"sink": {
+									"name": "ObjStatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['NyByg']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['Crud_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['ByggeSag_id']"
+								},
+								"sink": {
+									"name": "ByggeSag_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['OpgStam_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['Bygning_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['Elevator']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['DataFelt1']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['DataFelt2']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['DataFelt3']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['SagsType']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['KomFelt1']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['KomFelt2']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['KomFelt3']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['KomFelt4']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['KomFelt5']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['KomFelt6']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['JourNr']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['ESDH_Ref']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['SikKlas']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['OPRET_TS']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['AENDR_TS']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['Aendr_Funk']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['Ophoert_ts']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['Gyldighedsdato']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['opgang']['href']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['bygning']['ois_id']"
+								},
+								"sink": {
+									"name": "ois_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['bygning']['ois_ts']"
+								},
+								"sink": {
+									"name": "ois_ts",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['bygning']['Bygning_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['bygning']['Bygningsnr']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['bygning']['ObjStatus']"
+								},
+								"sink": {
+									"name": "ObjStatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['bygning']['NyByg']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['bygning']['Crud_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['bygning']['Grund_id']"
+								}
+							},
+							{
+								"source": {
 									"path": "$['bygning']['Byggesag_id']"
 								}
 							},
