@@ -707,6 +707,195 @@
 												"name": "opgang_ByggeSag_id",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['OpgStam_id']"
+											},
+											"sink": {
+												"name": "opgang_OpgStam_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['Bygning_id']"
+											},
+											"sink": {
+												"name": "opgang_Bygning_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['Elevator']"
+											},
+											"sink": {
+												"name": "opgang_Elevator",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['DataFelt1']"
+											},
+											"sink": {
+												"name": "opgang_DataFelt1",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['DataFelt2']"
+											},
+											"sink": {
+												"name": "opgang_DataFelt2",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['DataFelt3']"
+											},
+											"sink": {
+												"name": "opgang_DataFelt3",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['SagsType']"
+											},
+											"sink": {
+												"name": "opgang_SagsType",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['KomFelt1']"
+											},
+											"sink": {
+												"name": "opgang_KomFelt1",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['KomFelt2']"
+											},
+											"sink": {
+												"name": "opgang_KomFelt2",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['KomFelt3']"
+											},
+											"sink": {
+												"name": "opgang_KomFelt3",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['KomFelt4']"
+											},
+											"sink": {
+												"name": "opgang_KomFelt4",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['KomFelt5']"
+											},
+											"sink": {
+												"name": "opgang_KomFelt5",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['KomFelt6']"
+											},
+											"sink": {
+												"name": "opgang_KomFelt6",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['JourNr']"
+											},
+											"sink": {
+												"name": "opgang_JourNr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['ESDH_Ref']"
+											},
+											"sink": {
+												"name": "opgang_ESDH_Ref",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['SikKlas']"
+											},
+											"sink": {
+												"name": "opgang_SikKlas",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['OPRET_TS']"
+											},
+											"sink": {
+												"name": "opgang_OPRET_TS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['AENDR_TS']"
+											},
+											"sink": {
+												"name": "opgang_AENDR_TS",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['Aendr_Funk']"
+											},
+											"sink": {
+												"name": "opgang_Aendr_Funk",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['Ophoert_ts']"
+											},
+											"sink": {
+												"name": "opgang_Ophoert_ts",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['opgang']['Gyldighedsdato']"
+											},
+											"sink": {
+												"name": "opgang_Gyldighedsdato",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": ""
