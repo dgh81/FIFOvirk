@@ -794,7 +794,7 @@
 												"path": "$['opgang']['KomFelt3']"
 											},
 											"sink": {
-												"name": "KomFelt3",
+												"name": "opgang_KomFelt3",
 												"type": "String"
 											}
 										},
@@ -803,7 +803,7 @@
 												"path": "$['opgang']['KomFelt4']"
 											},
 											"sink": {
-												"name": "KomFelt4",
+												"name": "opgang_KomFelt4",
 												"type": "String"
 											}
 										},
@@ -812,7 +812,7 @@
 												"path": "$['opgang']['KomFelt5']"
 											},
 											"sink": {
-												"name": "KomFelt5",
+												"name": "opgang_KomFelt5",
 												"type": "String"
 											}
 										},
@@ -821,7 +821,7 @@
 												"path": "$['opgang']['KomFelt6']"
 											},
 											"sink": {
-												"name": "KomFelt6",
+												"name": "opgang_KomFelt6",
 												"type": "String"
 											}
 										},
@@ -830,7 +830,7 @@
 												"path": "$['opgang']['JourNr']"
 											},
 											"sink": {
-												"name": "JourNr",
+												"name": "opgang_JourNr",
 												"type": "String"
 											}
 										},
@@ -839,7 +839,7 @@
 												"path": "$['opgang']['ESDH_Ref']"
 											},
 											"sink": {
-												"name": "ESDH_Ref",
+												"name": "opgang_ESDH_Ref",
 												"type": "String"
 											}
 										},
@@ -848,7 +848,7 @@
 												"path": "$['opgang']['SikKlas']"
 											},
 											"sink": {
-												"name": "SikKlas",
+												"name": "opgang_SikKlas",
 												"type": "String"
 											}
 										},
@@ -857,7 +857,7 @@
 												"path": "$['opgang']['OPRET_TS']"
 											},
 											"sink": {
-												"name": "OPRET_TS",
+												"name": "opgang_OPRET_TS",
 												"type": "String"
 											}
 										},
@@ -866,7 +866,7 @@
 												"path": "$['opgang']['AENDR_TS']"
 											},
 											"sink": {
-												"name": "AENDR_TS",
+												"name": "opgang_AENDR_TS",
 												"type": "String"
 											}
 										},
@@ -875,7 +875,7 @@
 												"path": "$['opgang']['Aendr_Funk']"
 											},
 											"sink": {
-												"name": "Aendr_Funk",
+												"name": "opgang_Aendr_Funk",
 												"type": "String"
 											}
 										},
@@ -884,7 +884,7 @@
 												"path": "$['opgang']['Ophoert_ts']"
 											},
 											"sink": {
-												"name": "Ophoert_ts",
+												"name": "opgang_Ophoert_ts",
 												"type": "String"
 											}
 										},
@@ -893,13 +893,8 @@
 												"path": "$['opgang']['Gyldighedsdato']"
 											},
 											"sink": {
-												"name": "Gyldighedsdato",
+												"name": "opgang_Gyldighedsdato",
 												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['href']"
 											}
 										},
 										{
@@ -907,7 +902,7 @@
 												"path": "$['bygning']['ois_id']"
 											},
 											"sink": {
-												"name": "ois_id",
+												"name": "bygning_ois_id",
 												"type": "String"
 											}
 										},
@@ -916,7 +911,7 @@
 												"path": "$['bygning']['ois_ts']"
 											},
 											"sink": {
-												"name": "ois_ts",
+												"name": "bygning_ois_ts",
 												"type": "String"
 											}
 										},
