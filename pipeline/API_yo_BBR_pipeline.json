@@ -947,7 +947,7 @@
 												"path": "$['bygning']['NyByg']"
 											},
 											"sink": {
-												"name": "bygning_Nybyg",
+												"name": "bygning_NyByg",
 												"type": "String"
 											}
 										},
