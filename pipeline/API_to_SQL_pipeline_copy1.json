@@ -56,11 +56,10 @@
 							{
 								"source": {
 									"path": "$['hits']['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['max_score']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "String"
 								}
 							},
 							{
