@@ -269,7 +269,10 @@
 				"inputs": [
 					{
 						"referenceName": "input_BBR",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"byggekode": 210
+						}
 					}
 				],
 				"outputs": [
