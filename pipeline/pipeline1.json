@@ -141,10 +141,7 @@
 									"referenceName": "input_BBR",
 									"type": "DatasetReference",
 									"parameters": {
-										"byggekode": {
-											"value": "@variables('byggekoder')",
-											"type": "Expression"
-										}
+										"byggekode": 110
 									}
 								}
 							],
