@@ -106,6 +106,15 @@
 									"name": "reklamebeskyttet",
 									"type": "Boolean"
 								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['navn']"
+								},
+								"sink": {
+									"name": "navne",
+									"type": "String"
+								}
 							}
 						],
 						"collectionReference": "$['hits']['hits']",
