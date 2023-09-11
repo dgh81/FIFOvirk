@@ -1037,7 +1037,7 @@
 												"path": "$['bygning']['AntLejUKoekken']"
 											},
 											"sink": {
-												"name": "bygning__AntLejUKoekken",
+												"name": "bygning_AntLejUKoekken",
 												"type": "String"
 											}
 										},
@@ -1046,7 +1046,7 @@
 												"path": "$['bygning']['OPFOERELSE_AAR']"
 											},
 											"sink": {
-												"name": "bygning_OPFOEREL_AAR",
+												"name": "bygning_OPFOERELSE_AAR",
 												"type": "String"
 											}
 										},
