@@ -30,6 +30,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"writeBatchSize": 10,
 						"writeBehavior": "upsert",
 						"upsertSettings": {
 							"useTempDB": true,
