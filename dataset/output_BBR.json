@@ -1,0 +1,45 @@
+{
+	"name": "output_BBR",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ois_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ois_ts",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Enhed_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ObjStatus",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Nybyg",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CRUD_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ByggeSag_id",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "TESTBBR"
+		}
+	}
+}
