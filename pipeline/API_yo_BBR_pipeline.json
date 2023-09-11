@@ -918,11 +918,19 @@
 										{
 											"source": {
 												"path": "$['bygning']['Bygning_id']"
+											},
+											"sink": {
+												"name": "bygning_Bygning_id",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['Bygningsnr']"
+											},
+											"sink": {
+												"name": "bygning_Bygningsnr",
+												"type": "String"
 											}
 										},
 										{
@@ -930,33 +938,52 @@
 												"path": "$['bygning']['ObjStatus']"
 											},
 											"sink": {
-												"name": "ObjStatus",
+												"name": "bygning_ObjStatus",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['NyByg']"
+											},
+											"sink": {
+												"name": "bygning_Nybyg"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['Crud_id']"
+											},
+											"sink": {
+												"name": "bygning_Crud_id",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['Grund_id']"
+											},
+											"sink": {
+												"name": "bygning_Grund_id",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['Byggesag_id']"
+											},
+											"sink": {
+												"name": "bygning_Byggesag_id",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BygStam_id']"
+											},
+											"sink": {
+												"name": "bygning_BygStam_id",
+												"type": "String"
 											}
 										},
 										{
