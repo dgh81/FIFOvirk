@@ -1394,7 +1394,7 @@
 												"path": "$['bygning']['HuslejeOplysDato']"
 											},
 											"sink": {
-												"name": "HuslejeOplysDato",
+												"name": "bygning_HuslejeOplysDato",
 												"type": "String"
 											}
 										},
@@ -1403,28 +1403,44 @@
 												"path": "$['bygning']['SagsType']"
 											},
 											"sink": {
-												"name": "SagsType",
+												"name": "bygning_SagsType",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BygPktNoejagtigKls']"
+											},
+											"sink": {
+												"name": "bygning_BygPktNoejagtigKls",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['BygPkt_id']"
+											},
+											"sink": {
+												"name": "bygning_BygPkt_id",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['FOT_id']"
+											},
+											"sink": {
+												"name": "bygning_FOT_id",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygning']['StormRaadPaalaeg']"
+											},
+											"sink": {
+												"name": "bygning_StormRaadPaalaegDato",
+												"type": "String"
 											}
 										},
 										{
