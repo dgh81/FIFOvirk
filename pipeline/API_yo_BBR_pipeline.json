@@ -66,7 +66,7 @@
 											},
 											"sink": {
 												"name": "ois_id",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -93,7 +93,7 @@
 											},
 											"sink": {
 												"name": "ObjStatus",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -183,7 +183,7 @@
 											},
 											"sink": {
 												"name": "ENH_ANVEND_KODE",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -192,7 +192,7 @@
 											},
 											"sink": {
 												"name": "Klassifikation",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -201,7 +201,7 @@
 											},
 											"sink": {
 												"name": "AnvKonvKilde",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -219,7 +219,7 @@
 											},
 											"sink": {
 												"name": "BOLIG_KONDEM",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -237,7 +237,7 @@
 											},
 											"sink": {
 												"name": "ENH_ARL_SAML",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -246,7 +246,7 @@
 											},
 											"sink": {
 												"name": "BEBO_ARL",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -255,7 +255,7 @@
 											},
 											"sink": {
 												"name": "ENH_ERHV_ARL",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -264,7 +264,7 @@
 											},
 											"sink": {
 												"name": "KILDE_ARL_KODE",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -273,7 +273,7 @@
 											},
 											"sink": {
 												"name": "VAERELSE_ANT",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -327,7 +327,7 @@
 											},
 											"sink": {
 												"name": "HusLeje",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -345,7 +345,7 @@
 											},
 											"sink": {
 												"name": "AndetAreal",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
@@ -354,7 +354,7 @@
 											},
 											"sink": {
 												"name": "GodkTomBoligGL",
-												"type": "String"
+												"type": "Int64"
 											}
 										},
 										{
