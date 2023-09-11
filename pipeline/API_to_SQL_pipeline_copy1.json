@@ -25,7 +25,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"EndCondition:$[1]['hits']['hits']": "Empty"
+							"MaxRequestNumber": "10"
 						}
 					},
 					"sink": {
