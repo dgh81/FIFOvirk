@@ -41,81 +41,47 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['_scroll_id']"
+									"path": "['_source']['Vrvirksomhed']['cvrNummer']"
 								},
 								"sink": {
-									"name": "_scroll_id",
-									"type": "String"
+									"name": "cvrNummer",
+									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"path": "$['took']"
+									"path": "['_source']['Vrvirksomhed']['sidstIndlaest']"
+								},
+								"sink": {
+									"name": "sidstIndlaest",
+									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"path": "$['timed_out']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['successful']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['skipped']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['failed']"
+									"path": "['_source']['Vrvirksomhed']['reklamebeskyttet']"
+								},
+								"sink": {
+									"name": "reklamebeskyttet",
+									"type": "Boolean"
 								}
 							},
 							{
 								"source": {
 									"path": "$['hits']['total']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['hits']['max_score']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_index']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_type']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_id']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_score']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['navne'][0]['sidstOpdateret']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['navne'][0]['navn']"
+									"path": "$['_scroll_id']"
+								},
+								"sink": {
+									"name": "_scroll_id",
+									"type": "String"
 								}
 							},
 							{
@@ -152,33 +118,6 @@
 								"sink": {
 									"name": "gyldigTil",
 									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['cvrNummer']"
-								},
-								"sink": {
-									"name": "cvrNummer",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['sidstIndlaest']"
-								},
-								"sink": {
-									"name": "sidstIndlaest",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['reklamebeskyttet']"
-								},
-								"sink": {
-									"name": "reklamebeskyttet",
-									"type": "Boolean"
 								}
 							}
 						],
