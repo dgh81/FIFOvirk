@@ -1003,7 +1003,7 @@
 						"referenceName": "input_CVR",
 						"type": "DatasetReference",
 						"parameters": {
-							"dynamicURL": "cvr-permanent/virksomhed/_search?scroll=2m"
+							"dynamicURL": "_search/scroll"
 						}
 					}
 				],
