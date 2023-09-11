@@ -1346,6 +1346,123 @@
 												"name": "bygning_VARME_SUPPL_KODE",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['SIKRINGSRUM_ANT']"
+											},
+											"sink": {
+												"name": "bygning_SIKRINGSRUM_ANT",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['FREDNING_KODE']"
+											},
+											"sink": {
+												"name": "bygning_FREDNINGS_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['BevarVaerdig']"
+											},
+											"sink": {
+												"name": "bygning_BevarVaerdig",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['UdlejForhold1']"
+											},
+											"sink": {
+												"name": "bygning_UdlejForhold1",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['HusLeje']"
+											},
+											"sink": {
+												"name": "bygning_HusLeje",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['HuslejeOplysDato']"
+											},
+											"sink": {
+												"name": "bygning_HuslejeOplysDato",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['SagsType']"
+											},
+											"sink": {
+												"name": "bygning_SagsType",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['BygPktNoejagtigKls']"
+											},
+											"sink": {
+												"name": "bygning_BygPktNoejagtigKls",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['BygPkt_id']"
+											},
+											"sink": {
+												"name": "bygning_BygPkt_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['FOT_id']"
+											},
+											"sink": {
+												"name": "bygning_FOT_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['StormRaadPaalaeg']"
+											},
+											"sink": {
+												"name": "bygning_StormRaadPaalaeg",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['StormRaadPaalaegDato']"
+											},
+											"sink": {
+												"name": "bygning_StormRaadPaalaegDato",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['BygSkadeForsikSelskab']"
+											},
+											"sink": {
+												"name": "bygning_BygSkadeForsikSelskab",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": ""
