@@ -30,7 +30,6 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"writeBatchSize": 10,
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
