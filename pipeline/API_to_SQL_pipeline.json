@@ -59,11 +59,6 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['max_score']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
 								},
 								"sink": {
@@ -105,6 +100,11 @@
 								"sink": {
 									"name": "reklamebeskyttet",
 									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Column_1']"
 								}
 							}
 						],
