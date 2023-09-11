@@ -86,15 +86,6 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['navne']['navn']"
-								},
-								"sink": {
-									"name": "navne",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
 								},
 								"sink": {
@@ -109,6 +100,11 @@
 								"sink": {
 									"name": "gyldigTil",
 									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne']"
 								}
 							}
 						],
