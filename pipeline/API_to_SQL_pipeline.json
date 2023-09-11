@@ -920,7 +920,103 @@
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['cvrNummer']"
+								},
+								"sink": {
+									"name": "cvrNummer",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['sidstIndlaest']"
+								},
+								"sink": {
+									"name": "sidstIndlaest",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['reklamebeskyttet']"
+								},
+								"sink": {
+									"name": "reklamebeskyttet",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['total']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['_scroll_id']"
+								},
+								"sink": {
+									"name": "_scroll_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['navne'][0]['navn']"
+								},
+								"sink": {
+									"name": "navne",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['navne'][0]['periode']['gyldigFra']"
+								},
+								"sink": {
+									"name": "gyldigFra",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['navne'][0]['periode']['gyldigTil']"
+								},
+								"sink": {
+									"name": "gyldigTil",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
+								},
+								"sink": {
+									"name": "gyldigFra",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+								},
+								"sink": {
+									"name": "gyldigTil",
+									"type": "DateTime"
+								}
+							}
+						],
+						"collectionReference": "$['hits']['hits']"
+					}
 				},
 				"inputs": [
 					{
