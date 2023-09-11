@@ -926,42 +926,11 @@
 							},
 							{
 								"source": {
-									"path": "$['_shards']['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['successful']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['skipped']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['failed']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['hits']['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['max_score']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_index']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_type']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "String"
 								}
 							},
 							{
