@@ -693,6 +693,10 @@
 										{
 											"source": {
 												"path": "$['opgang']['Crud_id']"
+											},
+											"sink": {
+												"name": "opgang_Crud_id",
+												"type": "String"
 											}
 										},
 										{
@@ -700,18 +704,26 @@
 												"path": "$['opgang']['ByggeSag_id']"
 											},
 											"sink": {
-												"name": "ByggeSag_id",
+												"name": "opgang_ByggeSag_id",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['opgang']['OpgStam_id']"
+											},
+											"sink": {
+												"name": "opgang_OpgStam_id",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['opgang']['Bygning_id']"
+											},
+											"sink": {
+												"name": "opgang_Bygning_id",
+												"type": "String"
 											}
 										},
 										{
