@@ -28,7 +28,13 @@
 					"sink": {
 						"type": "AzureSqlSink",
 						"preCopyScript": "truncate table [dbo].[TESTCVR];",
-						"writeBehavior": "insert",
+						"writeBehavior": "upsert",
+						"upsertSettings": {
+							"useTempDB": true,
+							"keys": [
+								"cvrNummer"
+							]
+						},
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
 					},
