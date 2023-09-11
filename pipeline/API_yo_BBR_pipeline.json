@@ -1067,6 +1067,96 @@
 												"name": "bygning_MIDL_OPRET_KODE",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['UdloebDatoMidl']"
+											},
+											"sink": {
+												"name": "bygning_UdloebDatoMidl",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['BYG_VANDFORSY_KODE']"
+											},
+											"sink": {
+												"name": "bygning_BYG_VANDFORSY_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['BYG_AFLOEB_KODE']"
+											},
+											"sink": {
+												"name": "bygning_BYG_AFLOEB_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['BYG_AFLOEB_TILL']"
+											},
+											"sink": {
+												"name": "bygning_BYG_AFLOEB_TILL",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['YDERVAEG_KODE']"
+											},
+											"sink": {
+												"name": "bygning_YDERVAEG_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['TAG_KODE']"
+											},
+											"sink": {
+												"name": "bygning_TAG_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['SuppYderVaegMat']"
+											},
+											"sink": {
+												"name": "bygning_SuppYderVaegMat",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['SuppTagDaekMat']"
+											},
+											"sink": {
+												"name": "bygning_SuppTagDaekMat",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['AsbestMateriale']"
+											},
+											"sink": {
+												"name": "bygning_AsbestMateriale",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygning']['KILDE_MATR_KODE']"
+											},
+											"sink": {
+												"name": "bygning_KILDE_MATR_KODE",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": ""
