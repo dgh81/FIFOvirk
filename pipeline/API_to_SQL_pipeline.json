@@ -989,7 +989,7 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['navne']"
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['navn']"
 								},
 								"sink": {
 									"name": "navne",
