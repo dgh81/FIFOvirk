@@ -903,7 +903,10 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"supportRFC5988": "true"
+							"MaxRequestNumber": {
+								"value": "@string(sub(int(variables('total_hits')),1))",
+								"type": "Expression"
+							}
 						}
 					},
 					"sink": {
