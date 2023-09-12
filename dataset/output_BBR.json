@@ -739,7 +739,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "TESTBBR"
+			"table": "BBR"
 		}
 	}
 }
