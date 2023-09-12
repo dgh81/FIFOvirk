@@ -479,7 +479,7 @@
 									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['navn']"
 								},
 								"sink": {
-									"name": "navne",
+									"name": "navn",
 									"type": "String"
 								}
 							},
@@ -494,11 +494,7 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKvartalsbeskaeftigelse']['antalAarsvaerk']"
-								},
-								"sink": {
-									"name": "antalAarsvaerk",
-									"type": "Int32"
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['antalPenheder']"
 								}
 							},
 							{
@@ -526,25 +522,49 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche3']"
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['periode']['gyldigFra']"
 								},
 								"sink": {
-									"name": "bi_branche2_tekst",
-									"type": "String"
+									"name": "gyldigFra",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['periode']['gyldigTil']"
+								},
+								"sink": {
+									"name": "gyldigTil",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche3']"
 								}
 							},
 							{
 								"source": {
 									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche2']"
-								},
-								"sink": {
-									"name": "bi_branche3_tekst",
-									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['vejkode']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['fritekst']"
 								}
 							},
 							{
 								"source": {
 									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['adresseId']"
+								},
+								"sink": {
+									"name": "adresseId",
+									"type": "String"
 								}
 							},
 							{
@@ -715,41 +735,7 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['intervalKodeAntalAnsatte']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['aar']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['sidstOpdateret']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['maaned']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['intervalKodeAntalAarsvaerk']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['antalAarsvaerk']"
-								},
-								"sink": {
-									"name": "antalAarsvaerk",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['antalAnsatte']"
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteErstMaanedsbeskaeftigelse']"
 								}
 							},
 							{
@@ -798,41 +784,7 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteMaanedsbeskaeftigelse']['intervalKodeAntalAnsatte']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteMaanedsbeskaeftigelse']['aar']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteMaanedsbeskaeftigelse']['sidstOpdateret']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteMaanedsbeskaeftigelse']['maaned']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteMaanedsbeskaeftigelse']['intervalKodeAntalAarsvaerk']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteMaanedsbeskaeftigelse']['antalAarsvaerk']"
-								},
-								"sink": {
-									"name": "antalAarsvaerk",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteMaanedsbeskaeftigelse']['antalAnsatte']"
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteMaanedsbeskaeftigelse']"
 								}
 							},
 							{
