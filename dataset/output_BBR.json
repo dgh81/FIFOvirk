@@ -10,7 +10,8 @@
 		"schema": [
 			{
 				"name": "ois_id",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "ois_ts",
@@ -22,7 +23,8 @@
 			},
 			{
 				"name": "ObjStatus",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "Nybyg",
@@ -62,15 +64,18 @@
 			},
 			{
 				"name": "ENH_ANVEND_KODE",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "Klassifikation",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "AnvKonvKilde",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "BOLIGTYPE_KODE",
@@ -78,31 +83,37 @@
 			},
 			{
 				"name": "BOLIG_KONDEM",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "IdentOpretDato",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "ENH_ARL_SAML",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "BEBO_ARL",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "ENH_ERHV_ARL",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "KILDE_ARL_KODE",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "VAERELSE_ANT",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "TOILET_KODE",
@@ -126,19 +137,22 @@
 			},
 			{
 				"name": "HusLeje",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "HuslejeOplysDato",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "AndetAreal",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "GodkTomBoligGL",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "LOVLIG_ANVEND_KODE",
@@ -146,7 +160,7 @@
 			},
 			{
 				"name": "DispTidsbegraensetDato",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "SagsType",
@@ -154,7 +168,7 @@
 			},
 			{
 				"name": "ENH_DEL_IBRUG_DATO",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "ENH_UDLEJ2_KODE",
@@ -166,11 +180,12 @@
 			},
 			{
 				"name": "IndflytDato",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "GodkTomBolig",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "VARMEINSTAL_KODE",
@@ -186,27 +201,33 @@
 			},
 			{
 				"name": "FaellesAdgArealAndel",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "AabenOverdaekAreal",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "LukOverdaekAreal",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "VAER_ERHV_ANT",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "AntVandskylToilleter",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "AntBadevaerelser",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "KomFelt1",
@@ -222,15 +243,18 @@
 			},
 			{
 				"name": "KomFelt4",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "KomFelt5",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "KomFelt6",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "JourNr",
@@ -242,7 +266,8 @@
 			},
 			{
 				"name": "SikKlas",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "OPRET_TS",
@@ -262,11 +287,12 @@
 			},
 			{
 				"name": "Gyldighedsdato",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "opgang_ois_id",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "opgang_ois_ts",
@@ -282,11 +308,13 @@
 			},
 			{
 				"name": "opgang_ObjStatus",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "opgang_NyByg",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "opgang_Crud_id",
@@ -306,11 +334,13 @@
 			},
 			{
 				"name": "opgang_Elevator",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "opgang_DataFelt1",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "opgang_DataFelt2",
@@ -338,15 +368,18 @@
 			},
 			{
 				"name": "opgang_KomFelt4",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "opgang_KomFelt5",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "opgang_KomFelt6",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "opgang_JourNr",
@@ -358,7 +391,8 @@
 			},
 			{
 				"name": "opgang_SikKlas",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "opgang_OPRET_TS",
@@ -378,11 +412,12 @@
 			},
 			{
 				"name": "opgang_Gyldighedsdato",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "bygning_ois_id",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_ois_ts",
@@ -398,11 +433,13 @@
 			},
 			{
 				"name": "bygning_ObjStatus",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_NyByg",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_Crud_id",
@@ -426,43 +463,52 @@
 			},
 			{
 				"name": "bygning_BYG_ANVEND_KODE",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_Klassifikation",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_AnvKonvKilde",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_AntLejMKoekken",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_AntLejUKoekken",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_OPFOERELSE_AAR",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_OMBYG_AAR",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_MIDL_OPRET_KODE",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_UdloebDatoMidl",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "bygning_BYG_VANDFORSY_KODE",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_BYG_AFLOEB_KODE",
@@ -498,59 +544,73 @@
 			},
 			{
 				"name": "bygning_BYG_ARL_SAML",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_BYG_BOLIG_ARL_SAML",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_ERHV_ARL_SAML",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_BYG_BEBYG_ARL",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_GARAGE_INDB_ARL",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_CARPORT_INDB_ARL",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_UDHUS_INDB_ARL",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_UDESTUE_ARL",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_LukOverdaekAreal",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_AFFALDSRUM_ARL",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_ANDET_ARL",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_OverdaekAreal",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_AabenOverdaekAreal",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_AdgangsAreal",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_Carport_Princip",
@@ -558,15 +618,18 @@
 			},
 			{
 				"name": "bygning_KILDE_ARL_KODE",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_ETAGER_ANT",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_ETAGER_AFVIG_KODE",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_VARMEINSTAL_KODE",
@@ -582,7 +645,8 @@
 			},
 			{
 				"name": "bygning_SIKRINGSRUM_ANT",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_FREDNING_KODE",
@@ -598,11 +662,12 @@
 			},
 			{
 				"name": "bygning_HusLeje",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_HuslejeOplysDato",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "bygning_SagsType",
@@ -618,15 +683,17 @@
 			},
 			{
 				"name": "bygning_FOT_id",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_StormRaadPaalaeg",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_StormRaadPaalaegDato",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "bygning_BygSkadeForsikSelskab",
@@ -634,7 +701,7 @@
 			},
 			{
 				"name": "bygning_BygSkadeForsikSelskabDato",
-				"type": "nvarchar"
+				"type": "date"
 			},
 			{
 				"name": "bygning_KomFelt1",
@@ -650,15 +717,18 @@
 			},
 			{
 				"name": "bygning_KomFelt4",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_KomFelt5",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_KomFelt6",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_JourNr",
@@ -670,7 +740,8 @@
 			},
 			{
 				"name": "bygning_SikKlas",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_OPRET_TS",
@@ -702,11 +773,13 @@
 			},
 			{
 				"name": "bygning_Landsejerlavkode",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_KomEjerlavKode",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_MatrNr",
@@ -718,7 +791,8 @@
 			},
 			{
 				"name": "bygning_Matr_art_kode",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "bygning_Delnr",
@@ -734,7 +808,7 @@
 			},
 			{
 				"name": "bygning_Gyldighedsdato",
-				"type": "nvarchar"
+				"type": "date"
 			}
 		],
 		"typeProperties": {
