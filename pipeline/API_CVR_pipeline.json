@@ -486,6 +486,10 @@
 							{
 								"source": {
 									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche1']"
+								},
+								"sink": {
+									"name": "bi_branche1_tekst",
+									"type": "String"
 								}
 							},
 							{
