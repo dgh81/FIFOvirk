@@ -417,7 +417,6 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "truncate table [dbo].[CVR];",
 						"writeBehavior": "upsert",
 						"upsertSettings": {
 							"useTempDB": true,
