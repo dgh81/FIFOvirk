@@ -983,6 +983,36 @@
 									"name": "gyldigTil",
 									"type": "DateTime"
 								}
+							},
+							{
+								"source": {
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchekode\\']']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchetekst\\']']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche2\\'][\\'branchekode\\']']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche2\\'][\\'branchetekst\\']']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche3\\'][\\'branchekode\\']']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchetekst\\']']"
+								}
 							}
 						],
 						"collectionReference": "$['hits']['hits']"
