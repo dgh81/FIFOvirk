@@ -790,7 +790,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greater(variables('total_hits'), 1000)",
+						"value": "@greater(int(variables('total_hits')), 1000)",
 						"type": "Expression"
 					},
 					"ifTrueActivities": [
