@@ -683,17 +683,29 @@
 							},
 							{
 								"source": {
-									"path": "$['Column_1']"
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchetekst\\']']"
+								},
+								"sink": {
+									"name": "bi_branche1_tekst",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Column_2']"
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche2\\'][\\'branchekode\\']']"
+								},
+								"sink": {
+									"name": "bi_branche2_kode",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Column_3']"
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchetekst\\']']"
+								},
+								"sink": {
+									"name": "bi_branche2_tekst",
+									"type": "String"
 								}
 							},
 							{
