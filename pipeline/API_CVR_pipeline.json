@@ -1116,22 +1116,12 @@
 							},
 							{
 								"source": {
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchekode\\']']"
+								}
+							},
+							{
+								"source": {
 									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchetekst\\']']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['Column_2']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche2\\'][\\'branchekode\\']']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['Column_4']"
 								}
 							},
 							{
@@ -1141,7 +1131,17 @@
 							},
 							{
 								"source": {
-									"path": "$['Column_6']"
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche2\\'][\\'branchetekst\\']']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche3\\'][\\'branchekode\\']']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche2\\'][\\'branchetekst\\']']"
 								}
 							}
 						],
