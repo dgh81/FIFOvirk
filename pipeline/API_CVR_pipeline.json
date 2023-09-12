@@ -1116,7 +1116,7 @@
 							},
 							{
 								"source": {
-									"path": "$['Column_1']"
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchetekst\\']']"
 								}
 							},
 							{
@@ -1126,7 +1126,22 @@
 							},
 							{
 								"source": {
-									"path": "$['Column_3']"
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche2\\'][\\'branchekode\\']']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Column_4']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche3\\'][\\'branchekode\\']']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Column_6']"
 								}
 							}
 						],
