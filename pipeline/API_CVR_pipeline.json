@@ -691,6 +691,15 @@
 									"name": "bi_branche3_tekst",
 									"type": "String"
 								}
+							},
+							{
+								"source": {
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'enhedstype\\']']"
+								},
+								"sink": {
+									"name": "enhedstype",
+									"type": "String"
+								}
 							}
 						],
 						"collectionReference": "$['hits']['hits']",
