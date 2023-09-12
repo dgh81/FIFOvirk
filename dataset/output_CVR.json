@@ -30,6 +30,90 @@
 				"type": "bit"
 			},
 			{
+				"name": "nyesteVirksomhedsform",
+				"type": "nvarchar"
+			},
+			{
+				"name": "vejnavn",
+				"type": "nvarchar"
+			},
+			{
+				"name": "kommuneNavn",
+				"type": "nvarchar"
+			},
+			{
+				"name": "husnummerFra",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "husnummerTil",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "bogstavFra",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bogstavTil",
+				"type": "nvarchar"
+			},
+			{
+				"name": "etage",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "bynavn",
+				"type": "nvarchar"
+			},
+			{
+				"name": "postnummer",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "postdistrikt",
+				"type": "nvarchar"
+			},
+			{
+				"name": "branchekode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "branchetekst",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bi_branche1_kode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bi_branche1_tekst",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bi_branche2_kode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bi_branche2_tekst",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bi_branche3_kode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bi_branche3_tekst",
+				"type": "nvarchar"
+			},
+			{
+				"name": "enhedstype",
+				"type": "nvarchar"
+			},
+			{
 				"name": "sidstIndlaest",
 				"type": "date"
 			},
@@ -50,7 +134,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "TESTCVR"
+			"table": "CVR"
 		}
 	}
 }
