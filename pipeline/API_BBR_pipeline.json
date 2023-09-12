@@ -1911,7 +1911,7 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "byggekoder",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
