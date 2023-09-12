@@ -173,7 +173,7 @@
 				}
 			},
 			{
-				"name": "Set total hits",
+				"name": "Set_total_hits",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
@@ -722,7 +722,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Set total hits",
+						"activity": "Set_total_hits",
 						"dependencyConditions": [
 							"Completed"
 						]
