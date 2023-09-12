@@ -485,37 +485,11 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteStatus']"
-								}
-							},
-							{
-								"source": {
 									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche1']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKvartalsbeskaeftigelse']['kvartal']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKvartalsbeskaeftigelse']['intervalKodeAntalAnsatte']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKvartalsbeskaeftigelse']['aar']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKvartalsbeskaeftigelse']['sidstOpdateret']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKvartalsbeskaeftigelse']['intervalKodeAntalAarsvaerk']"
+								},
+								"sink": {
+									"name": "bi_branche1_tekst",
+									"type": "String"
 								}
 							},
 							{
@@ -525,16 +499,6 @@
 								"sink": {
 									"name": "antalAarsvaerk",
 									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKvartalsbeskaeftigelse']['antalAnsatte']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['antalPenheder']"
 								}
 							},
 							{
@@ -558,15 +522,6 @@
 								"sink": {
 									"name": "branchekode",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['periode']['gyldigFra']"
-								},
-								"sink": {
-									"name": "gyldigFra",
-									"type": "DateTime"
 								}
 							},
 							{
