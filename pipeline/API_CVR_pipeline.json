@@ -526,31 +526,20 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['periode']['gyldigTil']"
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche3']"
 								},
 								"sink": {
-									"name": "gyldigTil",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche3']"
+									"name": "bi_branche2_tekst",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche2']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['vejkode']"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['fritekst']"
+								},
+								"sink": {
+									"name": "bi_branche3_tekst",
+									"type": "String"
 								}
 							},
 							{
