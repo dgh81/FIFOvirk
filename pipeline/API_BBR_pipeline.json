@@ -22,7 +22,7 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Copy to BBR",
+							"name": "Copy_to_BBR",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -53,7 +53,6 @@
 										]
 									},
 									"sqlWriterUseTableLock": false,
-									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
 								"enableStaging": false,
@@ -1726,7 +1725,7 @@
 							"type": "Wait",
 							"dependsOn": [
 								{
-									"activity": "Copy to BBR",
+									"activity": "Copy_to_BBR",
 									"dependencyConditions": [
 										"Completed"
 									]
