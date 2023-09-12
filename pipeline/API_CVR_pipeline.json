@@ -503,24 +503,6 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche3']"
-								},
-								"sink": {
-									"name": "bi_branche3_tekst",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche2']"
-								},
-								"sink": {
-									"name": "bi_branche2_tekst",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['adresseId']"
 								},
 								"sink": {
