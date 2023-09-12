@@ -613,15 +613,6 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteMaanedsbeskaeftigelse']['antalAarsvaerk']"
-								},
-								"sink": {
-									"name": "antalAarsvaerk",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
 									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['langBeskrivelse']"
 								},
 								"sink": {
