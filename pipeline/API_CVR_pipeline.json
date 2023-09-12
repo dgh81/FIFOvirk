@@ -834,7 +834,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT _scroll_id FROM testcvr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
+						"sqlReaderQuery": "SELECT _scroll_id FROM tcvr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
