@@ -478,15 +478,6 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKvartalsbeskaeftigelse']['antalAarsvaerk']"
-								},
-								"sink": {
-									"name": "antalAarsvaerk",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
 									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['branchetekst']"
 								},
 								"sink": {
