@@ -451,14 +451,9 @@
 			{
 				"name": "Copy data2_copy1",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Set_total_hits",
-						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -782,9 +777,16 @@
 				]
 			},
 			{
-				"name": "If_total_hits_less_than_thousand",
+				"name": "If_total_hits_greater_than_thousand",
 				"type": "IfCondition",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Set_total_hits",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
