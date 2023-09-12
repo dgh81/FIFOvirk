@@ -648,11 +648,10 @@
 							{
 								"source": {
 									"path": "$['hits']['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['max_score']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "String"
 								}
 							},
 							{
@@ -662,36 +661,6 @@
 								"sink": {
 									"name": "_scroll_id",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['took']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['timed_out']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['successful']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['skipped']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_shards']['failed']"
 								}
 							},
 							{
@@ -710,16 +679,6 @@
 								"sink": {
 									"name": "gyldigTil",
 									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBinavne'][0]"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKontaktoplysninger'][0]"
 								}
 							}
 						],
