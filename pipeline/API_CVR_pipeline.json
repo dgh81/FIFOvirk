@@ -708,6 +708,8 @@
 			{
 				"name": "Lookup_total_hits_copy1",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set scroll_id_copy1",
@@ -740,6 +742,8 @@
 			{
 				"name": "Set total hits_copy1",
 				"type": "SetVariable",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup_total_hits_copy1",
@@ -764,6 +768,8 @@
 			{
 				"name": "Set scroll_id_copy1",
 				"type": "SetVariable",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup_scroll_id_copy1",
@@ -788,6 +794,8 @@
 			{
 				"name": "Lookup_scroll_id_copy1",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CVR_API_TO_SQL_copy1",
@@ -821,6 +829,8 @@
 			{
 				"name": "Copy data2_copy1",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set total hits_copy1",
