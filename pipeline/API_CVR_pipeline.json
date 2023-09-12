@@ -170,7 +170,7 @@
 				"type": "Lookup",
 				"dependsOn": [
 					{
-						"activity": "Set variable1",
+						"activity": "Set scroll_id",
 						"dependencyConditions": [
 							"Completed"
 						]
@@ -222,7 +222,7 @@
 				}
 			},
 			{
-				"name": "Set variable1",
+				"name": "Set scroll_id",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
