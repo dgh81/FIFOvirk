@@ -782,10 +782,16 @@
 				]
 			},
 			{
-				"name": "If Condition1",
+				"name": "If_total_hits_less_than_thousand",
 				"type": "IfCondition",
 				"dependsOn": [],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@variables('total_hits')",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
