@@ -65,8 +65,7 @@
 			},
 			{
 				"name": "etage",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "bynavn",
