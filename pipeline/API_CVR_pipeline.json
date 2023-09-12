@@ -674,7 +674,7 @@
 							},
 							{
 								"source": {
-									"path": "$['virksomhedMetadata.nyesteBibranche1.branchekode']"
+									"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchekode\\']']"
 								}
 							}
 						],
