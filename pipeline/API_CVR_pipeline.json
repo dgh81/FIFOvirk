@@ -162,7 +162,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT total_hits FROM testcvr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
+						"sqlReaderQuery": "SELECT total_hits FROM cvr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -215,7 +215,7 @@
 				"typeProperties": {
 					"variableName": "last_scroll_id",
 					"value": {
-						"value": "@activity('Lookup2').output.value[0]['_scroll_id']",
+						"value": "@activity('Lookup_scroll_id').output.value[0]['_scroll_id']",
 						"type": "Expression"
 					}
 				}
