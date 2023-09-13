@@ -863,11 +863,10 @@
 										{
 											"source": {
 												"path": "$['href']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['ejerskaber'][0]"
+											},
+											"sink": {
+												"name": "eRef",
+												"type": "String"
 											}
 										},
 										{
@@ -909,11 +908,19 @@
 										{
 											"source": {
 												"path": "$['bygningspunkt']['PktRevDato']"
+											},
+											"sink": {
+												"name": "bygningspunkt_PktRevDato",
+												"type": "DateTime"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['KoorOest']"
+											},
+											"sink": {
+												"name": "bygningspunkt_KoorOest",
+												"type": "String"
 											}
 										},
 										{
@@ -994,12 +1001,12 @@
 										},
 										{
 											"source": {
-												"path": "$['bygningspunkt']['koordinater'][0]"
+												"path": "$['bygningspunkt']['href']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['bygningspunkt']['href']"
+												"path": "$['bygningspunkt']['koordinater'][0]"
 											}
 										}
 									],
