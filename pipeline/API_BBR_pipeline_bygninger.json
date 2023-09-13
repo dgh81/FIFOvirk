@@ -52,7 +52,7 @@
 											"ois_id"
 										]
 									},
-									"sqlWriterUseTableLock": false,
+									"sqlWriterUseTableLock": true,
 									"disableMetricsCollection": false
 								},
 								"enableStaging": false,
@@ -1715,7 +1715,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "output_BBR",
+									"referenceName": "output_BBR_bygninger",
 									"type": "DatasetReference"
 								}
 							]
