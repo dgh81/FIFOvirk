@@ -668,7 +668,7 @@
 											},
 											"sink": {
 												"name": "KomFelt4",
-												"type": "String"
+												"type": "Int32"
 											}
 										},
 										{
@@ -677,7 +677,7 @@
 											},
 											"sink": {
 												"name": "KomFelt5",
-												"type": "String"
+												"type": "Int32"
 											}
 										},
 										{
@@ -686,7 +686,7 @@
 											},
 											"sink": {
 												"name": "KomFelt6",
-												"type": "String"
+												"type": "Int32"
 											}
 										},
 										{
