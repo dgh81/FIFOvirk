@@ -23,8 +23,7 @@
 			},
 			{
 				"name": "Bygningsnr",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "ObjStatus",
