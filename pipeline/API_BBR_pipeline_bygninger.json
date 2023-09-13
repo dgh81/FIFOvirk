@@ -1016,16 +1016,10 @@
 										{
 											"source": {
 												"path": "$['bygningspunkt']['BygPktKilde']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygningspunkt']['href']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygningspunkt']['koordinater'][0]"
+											},
+											"sink": {
+												"name": "bygningspunkt_BygPktKilde",
+												"type": "Int32"
 											}
 										}
 									],
