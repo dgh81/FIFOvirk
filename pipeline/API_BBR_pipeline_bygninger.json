@@ -862,20 +862,10 @@
 										},
 										{
 											"source": {
-												"path": "$['href']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['ejerskaber'][0]"
-											}
-										},
-										{
-											"source": {
 												"path": "$['bygningspunkt']['ois_id']"
 											},
 											"sink": {
-												"name": "ois_id",
+												"name": "bygningspunkt_ois_id",
 												"type": "Int32"
 											}
 										},
@@ -884,7 +874,7 @@
 												"path": "$['bygningspunkt']['ois_ts']"
 											},
 											"sink": {
-												"name": "ois_ts",
+												"name": "bygningspunkt_ois_ts",
 												"type": "DateTime"
 											}
 										},
@@ -893,7 +883,7 @@
 												"path": "$['bygningspunkt']['BygPkt_id']"
 											},
 											"sink": {
-												"name": "BygPkt_id",
+												"name": "bygningspunkt_BygPkt_id",
 												"type": "String"
 											}
 										},
@@ -902,28 +892,44 @@
 												"path": "$['bygningspunkt']['Kommune_id']"
 											},
 											"sink": {
-												"name": "Kommune_id",
+												"name": "bygningspunkt_Kommune_id",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['PktRevDato']"
+											},
+											"sink": {
+												"name": "bygningspunkt_PktRevDato",
+												"type": "DateTime"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['KoorOest']"
+											},
+											"sink": {
+												"name": "bygningspunkt_KoorOest",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['KoorNord']"
+											},
+											"sink": {
+												"name": "bygningspunkt_KoorNord",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['KoorSystem']"
+											},
+											"sink": {
+												"name": "bygningspunkt_KoorSystem",
+												"type": "Int32"
 											}
 										},
 										{
@@ -994,12 +1000,12 @@
 										},
 										{
 											"source": {
-												"path": "$['bygningspunkt']['koordinater'][0]"
+												"path": "$['bygningspunkt']['href']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['bygningspunkt']['href']"
+												"path": "$['bygningspunkt']['koordinater'][0]"
 											}
 										}
 									],
