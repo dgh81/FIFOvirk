@@ -5,8 +5,19 @@
 			"referenceName": "RestService2",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"byggekode": {
+				"type": "array"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat('bbrlight/bygninger?anvendelseskode=',string(dataset().byggekode))",
+				"type": "Expression"
+			}
+		},
 		"schema": []
 	}
 }
