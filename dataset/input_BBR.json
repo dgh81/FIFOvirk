@@ -14,7 +14,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat('bbrlight/bygninger?anvendelseskode=',string(dataset().byggekode))",
+				"value": "@concat('bbrlight/enheder?anvendelseskode=',string(dataset().byggekode))",
 				"type": "Expression"
 			}
 		},
