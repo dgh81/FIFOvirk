@@ -1021,6 +1021,10 @@
 										{
 											"source": {
 												"path": "$['bygningspunkt']['BygPktKilde']"
+											},
+											"sink": {
+												"name": "bygningspunkt_BygPktKilde",
+												"type": "Int32"
 											}
 										},
 										{
