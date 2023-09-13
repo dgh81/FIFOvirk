@@ -935,6 +935,10 @@
 										{
 											"source": {
 												"path": "$['bygningspunkt']['KoorSystem']"
+											},
+											"sink": {
+												"name": "bygningspunkt_KoorSystem",
+												"type": "Int32"
 											}
 										},
 										{
@@ -1025,16 +1029,6 @@
 											"sink": {
 												"name": "bygningspunkt_BygPktKilde",
 												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygningspunkt']['href']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygningspunkt']['koordinater'][0]"
 											}
 										}
 									],
