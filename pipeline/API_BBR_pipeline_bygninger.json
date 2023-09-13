@@ -935,26 +935,46 @@
 										{
 											"source": {
 												"path": "$['bygningspunkt']['TxtRetn']"
+											},
+											"sink": {
+												"name": "bygningspunkt_TxtRetn",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['TxtPlacer']"
+											},
+											"sink": {
+												"name": "bygningspunkt_TxtPlacer",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['DDKNcelle100m']"
+											},
+											"sink": {
+												"name": "bygningspunkt_DDKNcelle100m",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['DDKNcelle1km']"
+											},
+											"sink": {
+												"name": "bygningspunkt_DDKNcelle1km",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['DDKNcelle10km']"
+											},
+											"sink": {
+												"name": "bygningspunkt_DDKNcelle10km",
+												"type": "String"
 											}
 										},
 										{
@@ -996,16 +1016,10 @@
 										{
 											"source": {
 												"path": "$['bygningspunkt']['BygPktKilde']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygningspunkt']['href']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygningspunkt']['koordinater'][0]"
+											},
+											"sink": {
+												"name": "bygningspunkt_BygPktKilde",
+												"type": "Int32"
 											}
 										}
 									],
