@@ -331,15 +331,18 @@
 			},
 			{
 				"name": "KomFelt4",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "KomFelt5",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "KomFelt6",
-				"type": "nvarchar"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "JourNr",
