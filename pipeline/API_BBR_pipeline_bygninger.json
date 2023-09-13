@@ -982,7 +982,7 @@
 												"path": "$['bygningspunkt']['OPRET_TS']"
 											},
 											"sink": {
-												"name": "OPRET_TS",
+												"name": "bygningspunkt_OPRET_TS",
 												"type": "DateTime"
 											}
 										},
@@ -991,7 +991,7 @@
 												"path": "$['bygningspunkt']['AENDR_TS']"
 											},
 											"sink": {
-												"name": "AENDR_TS",
+												"name": "bygningspunkt_AENDR_TS",
 												"type": "DateTime"
 											}
 										},
@@ -1000,7 +1000,7 @@
 												"path": "$['bygningspunkt']['Aendr_Funk']"
 											},
 											"sink": {
-												"name": "Aendr_Funk",
+												"name": "bygningspunkt_Aendr_Funk",
 												"type": "Int32"
 											}
 										},
@@ -1009,7 +1009,7 @@
 												"path": "$['bygningspunkt']['Ophoert_ts']"
 											},
 											"sink": {
-												"name": "Ophoert_ts",
+												"name": "bygningspunkt_Ophoert_ts",
 												"type": "DateTime"
 											}
 										},
