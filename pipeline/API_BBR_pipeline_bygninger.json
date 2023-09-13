@@ -772,15 +772,6 @@
 										},
 										{
 											"source": {
-												"path": "$['eRef']"
-											},
-											"sink": {
-												"name": "eRef",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
 												"path": "$['Landsejerlavkode']"
 											},
 											"sink": {
