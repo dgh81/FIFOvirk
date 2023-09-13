@@ -79,7 +79,20 @@
 										},
 										{
 											"source": {
-												"path": "$['Enhed_id']"
+												"path": "$['Bygning_id']"
+											},
+											"sink": {
+												"name": "Bygning_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Bygningsnr']"
+											},
+											"sink": {
+												"name": "Bygningsnr",
+												"type": "Int32"
 											}
 										},
 										{
@@ -93,52 +106,65 @@
 										},
 										{
 											"source": {
-												"path": "$['Nybyg']"
+												"path": "$['NyByg']"
+											},
+											"sink": {
+												"name": "NyByg",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['CRUD_ID']"
+												"path": "$['Crud_id']"
+											},
+											"sink": {
+												"name": "Crud_id",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['ByggeSag_id']"
+												"path": "$['Grund_id']"
+											},
+											"sink": {
+												"name": "Grund_id",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
-												"path": "$['EnhedStam_id']"
+												"path": "$['Byggesag_id']"
+											},
+											"sink": {
+												"name": "Byggesag_id",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
-												"path": "$['EnhAdr_id']"
+												"path": "$['BygStam_id']"
+											},
+											"sink": {
+												"name": "BygStam_id",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
-												"path": "$['Etage_id']"
+												"path": "$['AdgAdr_id']"
+											},
+											"sink": {
+												"name": "AdgAdr_id",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
-												"path": "$['Opgang_id']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['HenvEnh_id']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['REF_Enhed_id']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['ENH_ANVEND_KODE']"
+												"path": "$['BYG_ANVEND_KODE']"
+											},
+											"sink": {
+												"name": "BYG_ANVEND_KODE",
+												"type": "Int32"
 											}
 										},
 										{
@@ -161,32 +187,272 @@
 										},
 										{
 											"source": {
-												"path": "$['BOLIGTYPE_KODE']"
+												"path": "$['AntLejMKoekken']"
+											},
+											"sink": {
+												"name": "AntLejMKoekken",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['BOLIG_KONDEM']"
+												"path": "$['AntLejUKoekken']"
+											},
+											"sink": {
+												"name": "AntLejUKoekken",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['IdentOpretDato']"
+												"path": "$['OPFOERELSE_AAR']"
+											},
+											"sink": {
+												"name": "OPFOERELSE_AAR",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['ENH_ARL_SAML']"
+												"path": "$['OMBYG_AAR']"
+											},
+											"sink": {
+												"name": "OMBYG_AAR",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['BEBO_ARL']"
+												"path": "$['MIDL_OPRET_KODE']"
+											},
+											"sink": {
+												"name": "MIDL_OPRET_KODE",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['ENH_ERHV_ARL']"
+												"path": "$['UdloebDatoMidl']"
+											},
+											"sink": {
+												"name": "UdloebDatoMidl",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_VANDFORSY_KODE']"
+											},
+											"sink": {
+												"name": "BYG_VANDFORSY_KODE",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_AFLOEB_KODE']"
+											},
+											"sink": {
+												"name": "BYG_AFLOEB_KODE",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_AFLOEB_TILL']"
+											},
+											"sink": {
+												"name": "BYG_AFLOEB_TILL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['YDERVAEG_KODE']"
+											},
+											"sink": {
+												"name": "YDERVAEG_KODE",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['TAG_KODE']"
+											},
+											"sink": {
+												"name": "TAG_KODE",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['SuppYderVaegMat']"
+											},
+											"sink": {
+												"name": "SuppYderVaegMat",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['SuppTagDaekMat']"
+											},
+											"sink": {
+												"name": "SuppTagDaekMat",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AsbestMateriale']"
+											},
+											"sink": {
+												"name": "AsbestMateriale",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KILDE_MATR_KODE']"
+											},
+											"sink": {
+												"name": "KILDE_MATR_KODE",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_ARL_SAML']"
+											},
+											"sink": {
+												"name": "BYG_ARL_SAML",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_BOLIG_ARL_SAML']"
+											},
+											"sink": {
+												"name": "BYG_BOLIG_ARL_SAML",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ERHV_ARL_SAML']"
+											},
+											"sink": {
+												"name": "ERHV_ARL_SAML",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_BEBYG_ARL']"
+											},
+											"sink": {
+												"name": "BYG_BEBYG_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['GARAGE_INDB_ARL']"
+											},
+											"sink": {
+												"name": "GARAGE_INDB_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['CARPORT_INDB_ARL']"
+											},
+											"sink": {
+												"name": "CARPORT_INDB_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['UDHUS_INDB_ARL']"
+											},
+											"sink": {
+												"name": "UDHUS_INDB_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['UDESTUE_ARL']"
+											},
+											"sink": {
+												"name": "UDESTUE_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['LukOverdaekAreal']"
+											},
+											"sink": {
+												"name": "LukOverdaekAreal",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AFFALDSRUM_ARL']"
+											},
+											"sink": {
+												"name": "AFFALDSRUM_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ANDET_ARL']"
+											},
+											"sink": {
+												"name": "ANDET_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['OverdaekAreal']"
+											},
+											"sink": {
+												"name": "OverdaekAreal",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AabenOverdaekAreal']"
+											},
+											"sink": {
+												"name": "AabenOverdaekAreal",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AdgangsAreal']"
+											},
+											"sink": {
+												"name": "AdgangsAreal",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Carport_Princip']"
+											},
+											"sink": {
+												"name": "Carport_Princip",
+												"type": "Int32"
 											}
 										},
 										{
@@ -200,104 +466,20 @@
 										},
 										{
 											"source": {
-												"path": "$['VAERELSE_ANT']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['TOILET_KODE']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['BAD_KODE']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['KOEKKEN_KODE']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['ENERGI_KODE']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['ENH_UDLEJ1_KODE']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['HusLeje']"
+												"path": "$['ETAGER_ANT']"
 											},
 											"sink": {
-												"name": "HusLeje",
+												"name": "ETAGER_ANT",
 												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['HuslejeOplysDato']"
+												"path": "$['ETAGER_AFVIG_KODE']"
 											},
 											"sink": {
-												"name": "HuslejeOplysDato",
+												"name": "ETAGER_AFVIG_KODE",
 												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['AndetAreal']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['GodkTomBoligGL']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['LOVLIG_ANVEND_KODE']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['DispTidsbegraensetDato']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['SagsType']"
-											},
-											"sink": {
-												"name": "SagsType",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['ENH_DEL_IBRUG_DATO']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['ENH_UDLEJ2_KODE']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['OFF_STOETTE_KODE']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['IndflytDato']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['GodkTomBolig']"
 											}
 										},
 										{
@@ -329,40 +511,128 @@
 										},
 										{
 											"source": {
-												"path": "$['FaellesAdgArealAndel']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['AabenOverdaekAreal']"
+												"path": "$['SIKRINGSRUM_ANT']"
 											},
 											"sink": {
-												"name": "AabenOverdaekAreal",
+												"name": "SIKRINGSRUM_ANT",
 												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['LukOverdaekAreal']"
+												"path": "$['FREDNING_KODE']"
 											},
 											"sink": {
-												"name": "LukOverdaekAreal",
+												"name": "FREDNING_KODE",
 												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['VAER_ERHV_ANT']"
+												"path": "$['BevarVaerdig']"
+											},
+											"sink": {
+												"name": "BevarVaerdig",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['AntVandskylToilleter']"
+												"path": "$['UdlejForhold1']"
+											},
+											"sink": {
+												"name": "UdlejForhold1",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['AntBadevaerelser']"
+												"path": "$['HusLeje']"
+											},
+											"sink": {
+												"name": "HusLeje",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['HuslejeOplysDato']"
+											},
+											"sink": {
+												"name": "HuslejeOplysDato",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['SagsType']"
+											},
+											"sink": {
+												"name": "SagsType",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BygPktNoejagtigKls']"
+											},
+											"sink": {
+												"name": "BygPktNoejagtigKls",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BygPkt_id']"
+											},
+											"sink": {
+												"name": "BygPkt_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['FOT_id']"
+											},
+											"sink": {
+												"name": "FOT_id",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['StormRaadPaalaeg']"
+											},
+											"sink": {
+												"name": "StormRaadPaalaeg",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['StormRaadPaalaegDato']"
+											},
+											"sink": {
+												"name": "StormRaadPaalaegDato",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BygSkadeForsikSelskab']"
+											},
+											"sink": {
+												"name": "BygSkadeForsikSelskab",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BygSkadeForsikSelskabDato']"
+											},
+											"sink": {
+												"name": "BygSkadeForsikSelskabDato",
+												"type": "DateTime"
 											}
 										},
 										{
@@ -484,6 +754,105 @@
 										},
 										{
 											"source": {
+												"path": "$['Kommune_id']"
+											},
+											"sink": {
+												"name": "Kommune_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomKode']"
+											},
+											"sink": {
+												"name": "KomKode",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['eRef']"
+											},
+											"sink": {
+												"name": "eRef",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Landsejerlavkode']"
+											},
+											"sink": {
+												"name": "Landsejerlavkode",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomEjerlavKode']"
+											},
+											"sink": {
+												"name": "KomEjerlavKode",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['MatrNr']"
+											},
+											"sink": {
+												"name": "MatrNr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ESREjdNr']"
+											},
+											"sink": {
+												"name": "ESREjdNr",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Matr_art_kode']"
+											},
+											"sink": {
+												"name": "Matr_art_kode",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Delnr']"
+											},
+											"sink": {
+												"name": "Delnr",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Opdelingsnr']"
+											},
+											"sink": {
+												"name": "Opdelingsnr",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BygSkadeOmfatFors']"
+											},
+											"sink": {
+												"name": "BygSkadeOmfatFors",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
 												"path": "$['Gyldighedsdato']"
 											},
 											"sink": {
@@ -503,7 +872,7 @@
 										},
 										{
 											"source": {
-												"path": "$['opgang']['ois_id']"
+												"path": "$['bygningspunkt']['ois_id']"
 											},
 											"sink": {
 												"name": "ois_id",
@@ -512,7 +881,7 @@
 										},
 										{
 											"source": {
-												"path": "$['opgang']['ois_ts']"
+												"path": "$['bygningspunkt']['ois_ts']"
 											},
 											"sink": {
 												"name": "ois_ts",
@@ -521,749 +890,7 @@
 										},
 										{
 											"source": {
-												"path": "$['opgang']['Opgang_id']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['AdgAdr_id']"
-											},
-											"sink": {
-												"name": "AdgAdr_id",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['ObjStatus']"
-											},
-											"sink": {
-												"name": "ObjStatus",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['NyByg']"
-											},
-											"sink": {
-												"name": "NyByg",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['Crud_id']"
-											},
-											"sink": {
-												"name": "Crud_id",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['ByggeSag_id']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['OpgStam_id']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['Bygning_id']"
-											},
-											"sink": {
-												"name": "Bygning_id",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['Elevator']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['DataFelt1']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['DataFelt2']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['DataFelt3']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['SagsType']"
-											},
-											"sink": {
-												"name": "SagsType",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['KomFelt1']"
-											},
-											"sink": {
-												"name": "KomFelt1",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['KomFelt2']"
-											},
-											"sink": {
-												"name": "KomFelt2",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['KomFelt3']"
-											},
-											"sink": {
-												"name": "KomFelt3",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['KomFelt4']"
-											},
-											"sink": {
-												"name": "KomFelt4",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['KomFelt5']"
-											},
-											"sink": {
-												"name": "KomFelt5",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['KomFelt6']"
-											},
-											"sink": {
-												"name": "KomFelt6",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['JourNr']"
-											},
-											"sink": {
-												"name": "JourNr",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['ESDH_Ref']"
-											},
-											"sink": {
-												"name": "ESDH_Ref",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['SikKlas']"
-											},
-											"sink": {
-												"name": "SikKlas",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['OPRET_TS']"
-											},
-											"sink": {
-												"name": "OPRET_TS",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['AENDR_TS']"
-											},
-											"sink": {
-												"name": "AENDR_TS",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['Aendr_Funk']"
-											},
-											"sink": {
-												"name": "Aendr_Funk",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['Ophoert_ts']"
-											},
-											"sink": {
-												"name": "Ophoert_ts",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['Gyldighedsdato']"
-											},
-											"sink": {
-												"name": "Gyldighedsdato",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "$['opgang']['href']"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['ois_id']"
-											},
-											"sink": {
-												"name": "ois_id",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['ois_ts']"
-											},
-											"sink": {
-												"name": "ois_ts",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['Bygning_id']"
-											},
-											"sink": {
-												"name": "Bygning_id",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['Bygningsnr']"
-											},
-											"sink": {
-												"name": "Bygningsnr",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['ObjStatus']"
-											},
-											"sink": {
-												"name": "ObjStatus",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['NyByg']"
-											},
-											"sink": {
-												"name": "NyByg",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['Crud_id']"
-											},
-											"sink": {
-												"name": "Crud_id",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['Grund_id']"
-											},
-											"sink": {
-												"name": "Grund_id",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['Byggesag_id']"
-											},
-											"sink": {
-												"name": "Byggesag_id",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BygStam_id']"
-											},
-											"sink": {
-												"name": "BygStam_id",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['AdgAdr_id']"
-											},
-											"sink": {
-												"name": "AdgAdr_id",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BYG_ANVEND_KODE']"
-											},
-											"sink": {
-												"name": "BYG_ANVEND_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['Klassifikation']"
-											},
-											"sink": {
-												"name": "Klassifikation",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['AnvKonvKilde']"
-											},
-											"sink": {
-												"name": "AnvKonvKilde",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['AntLejMKoekken']"
-											},
-											"sink": {
-												"name": "AntLejMKoekken",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['AntLejUKoekken']"
-											},
-											"sink": {
-												"name": "AntLejUKoekken",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['OPFOERELSE_AAR']"
-											},
-											"sink": {
-												"name": "OPFOERELSE_AAR",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['OMBYG_AAR']"
-											},
-											"sink": {
-												"name": "OMBYG_AAR",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['MIDL_OPRET_KODE']"
-											},
-											"sink": {
-												"name": "MIDL_OPRET_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['UdloebDatoMidl']"
-											},
-											"sink": {
-												"name": "UdloebDatoMidl",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BYG_VANDFORSY_KODE']"
-											},
-											"sink": {
-												"name": "BYG_VANDFORSY_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BYG_AFLOEB_KODE']"
-											},
-											"sink": {
-												"name": "BYG_AFLOEB_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BYG_AFLOEB_TILL']"
-											},
-											"sink": {
-												"name": "BYG_AFLOEB_TILL",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['YDERVAEG_KODE']"
-											},
-											"sink": {
-												"name": "YDERVAEG_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['TAG_KODE']"
-											},
-											"sink": {
-												"name": "TAG_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['SuppYderVaegMat']"
-											},
-											"sink": {
-												"name": "SuppYderVaegMat",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['SuppTagDaekMat']"
-											},
-											"sink": {
-												"name": "SuppTagDaekMat",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['AsbestMateriale']"
-											},
-											"sink": {
-												"name": "AsbestMateriale",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['KILDE_MATR_KODE']"
-											},
-											"sink": {
-												"name": "KILDE_MATR_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BYG_ARL_SAML']"
-											},
-											"sink": {
-												"name": "BYG_ARL_SAML",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BYG_BOLIG_ARL_SAML']"
-											},
-											"sink": {
-												"name": "BYG_BOLIG_ARL_SAML",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['ERHV_ARL_SAML']"
-											},
-											"sink": {
-												"name": "ERHV_ARL_SAML",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BYG_BEBYG_ARL']"
-											},
-											"sink": {
-												"name": "BYG_BEBYG_ARL",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['GARAGE_INDB_ARL']"
-											},
-											"sink": {
-												"name": "GARAGE_INDB_ARL",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['CARPORT_INDB_ARL']"
-											},
-											"sink": {
-												"name": "CARPORT_INDB_ARL",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['UDHUS_INDB_ARL']"
-											},
-											"sink": {
-												"name": "UDHUS_INDB_ARL",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['UDESTUE_ARL']"
-											},
-											"sink": {
-												"name": "UDESTUE_ARL",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['LukOverdaekAreal']"
-											},
-											"sink": {
-												"name": "LukOverdaekAreal",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['AFFALDSRUM_ARL']"
-											},
-											"sink": {
-												"name": "AFFALDSRUM_ARL",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['ANDET_ARL']"
-											},
-											"sink": {
-												"name": "ANDET_ARL",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['OverdaekAreal']"
-											},
-											"sink": {
-												"name": "OverdaekAreal",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['AabenOverdaekAreal']"
-											},
-											"sink": {
-												"name": "AabenOverdaekAreal",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['AdgangsAreal']"
-											},
-											"sink": {
-												"name": "AdgangsAreal",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['Carport_Princip']"
-											},
-											"sink": {
-												"name": "Carport_Princip",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['KILDE_ARL_KODE']"
-											},
-											"sink": {
-												"name": "KILDE_ARL_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['ETAGER_ANT']"
-											},
-											"sink": {
-												"name": "ETAGER_ANT",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['ETAGER_AFVIG_KODE']"
-											},
-											"sink": {
-												"name": "ETAGER_AFVIG_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['VARMEINSTAL_KODE']"
-											},
-											"sink": {
-												"name": "VARMEINSTAL_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['OPVARMNING_KODE']"
-											},
-											"sink": {
-												"name": "OPVARMNING_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['VARME_SUPPL_KODE']"
-											},
-											"sink": {
-												"name": "VARME_SUPPL_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['SIKRINGSRUM_ANT']"
-											},
-											"sink": {
-												"name": "SIKRINGSRUM_ANT",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['FREDNING_KODE']"
-											},
-											"sink": {
-												"name": "FREDNING_KODE",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BevarVaerdig']"
-											},
-											"sink": {
-												"name": "BevarVaerdig",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['UdlejForhold1']"
-											},
-											"sink": {
-												"name": "UdlejForhold1",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['HusLeje']"
-											},
-											"sink": {
-												"name": "HusLeje",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['HuslejeOplysDato']"
-											},
-											"sink": {
-												"name": "HuslejeOplysDato",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['SagsType']"
-											},
-											"sink": {
-												"name": "SagsType",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BygPktNoejagtigKls']"
-											},
-											"sink": {
-												"name": "BygPktNoejagtigKls",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BygPkt_id']"
+												"path": "$['bygningspunkt']['BygPkt_id']"
 											},
 											"sink": {
 												"name": "BygPkt_id",
@@ -1272,169 +899,7 @@
 										},
 										{
 											"source": {
-												"path": "$['bygning']['FOT_id']"
-											},
-											"sink": {
-												"name": "FOT_id",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['StormRaadPaalaeg']"
-											},
-											"sink": {
-												"name": "StormRaadPaalaeg",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['StormRaadPaalaegDato']"
-											},
-											"sink": {
-												"name": "StormRaadPaalaegDato",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BygSkadeForsikSelskab']"
-											},
-											"sink": {
-												"name": "BygSkadeForsikSelskab",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BygSkadeForsikSelskabDato']"
-											},
-											"sink": {
-												"name": "BygSkadeForsikSelskabDato",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['KomFelt1']"
-											},
-											"sink": {
-												"name": "KomFelt1",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['KomFelt2']"
-											},
-											"sink": {
-												"name": "KomFelt2",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['KomFelt3']"
-											},
-											"sink": {
-												"name": "KomFelt3",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['KomFelt4']"
-											},
-											"sink": {
-												"name": "KomFelt4",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['KomFelt5']"
-											},
-											"sink": {
-												"name": "KomFelt5",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['KomFelt6']"
-											},
-											"sink": {
-												"name": "KomFelt6",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['JourNr']"
-											},
-											"sink": {
-												"name": "JourNr",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['ESDH_Ref']"
-											},
-											"sink": {
-												"name": "ESDH_Ref",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['SikKlas']"
-											},
-											"sink": {
-												"name": "SikKlas",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['OPRET_TS']"
-											},
-											"sink": {
-												"name": "OPRET_TS",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['AENDR_TS']"
-											},
-											"sink": {
-												"name": "AENDR_TS",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['Aendr_Funk']"
-											},
-											"sink": {
-												"name": "Aendr_Funk",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['Ophoert_ts']"
-											},
-											"sink": {
-												"name": "Ophoert_ts",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['Kommune_id']"
+												"path": "$['bygningspunkt']['Kommune_id']"
 											},
 											"sink": {
 												"name": "Kommune_id",
@@ -1443,106 +908,98 @@
 										},
 										{
 											"source": {
-												"path": "$['bygning']['KomKode']"
+												"path": "$['bygningspunkt']['PktRevDato']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['KoorOest']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['KoorNord']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['KoorSystem']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['TxtRetn']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['TxtPlacer']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['DDKNcelle100m']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['DDKNcelle1km']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['DDKNcelle10km']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['OPRET_TS']"
 											},
 											"sink": {
-												"name": "KomKode",
+												"name": "OPRET_TS",
 												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['bygning']['eRef']"
+												"path": "$['bygningspunkt']['AENDR_TS']"
 											},
 											"sink": {
-												"name": "eRef",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['Landsejerlavkode']"
-											},
-											"sink": {
-												"name": "Landsejerlavkode",
+												"name": "AENDR_TS",
 												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['bygning']['KomEjerlavKode']"
+												"path": "$['bygningspunkt']['Aendr_Funk']"
 											},
 											"sink": {
-												"name": "KomEjerlavKode",
+												"name": "Aendr_Funk",
 												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['bygning']['MatrNr']"
+												"path": "$['bygningspunkt']['Ophoert_ts']"
 											},
 											"sink": {
-												"name": "MatrNr",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['ESREjdNr']"
-											},
-											"sink": {
-												"name": "ESREjdNr",
+												"name": "Ophoert_ts",
 												"type": "Int32"
 											}
 										},
 										{
 											"source": {
-												"path": "$['bygning']['Matr_art_kode']"
-											},
-											"sink": {
-												"name": "Matr_art_kode",
-												"type": "Int32"
+												"path": "$['bygningspunkt']['BygPktKilde']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['bygning']['Delnr']"
-											},
-											"sink": {
-												"name": "Delnr",
-												"type": "Int32"
+												"path": "$['bygningspunkt']['koordinater'][0]"
 											}
 										},
 										{
 											"source": {
-												"path": "$['bygning']['Opdelingsnr']"
-											},
-											"sink": {
-												"name": "Opdelingsnr",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['BygSkadeOmfatFors']"
-											},
-											"sink": {
-												"name": "BygSkadeOmfatFors",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['Gyldighedsdato']"
-											},
-											"sink": {
-												"name": "Gyldighedsdato",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "$['bygning']['href']"
+												"path": "$['bygningspunkt']['href']"
 											}
 										}
 									],
@@ -1552,7 +1009,13 @@
 							"inputs": [
 								{
 									"referenceName": "input_BBR_bygninger",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"byggekode": {
+											"value": "@item().kode",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
