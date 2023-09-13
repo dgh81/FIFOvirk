@@ -236,7 +236,7 @@
 											},
 											"sink": {
 												"name": "UdloebDatoMidl",
-												"type": "Int32"
+												"type": "DateTime"
 											}
 										},
 										{
@@ -560,7 +560,7 @@
 											},
 											"sink": {
 												"name": "HuslejeOplysDato",
-												"type": "Int32"
+												"type": "DateTime"
 											}
 										},
 										{
@@ -722,7 +722,7 @@
 											},
 											"sink": {
 												"name": "OPRET_TS",
-												"type": "Int32"
+												"type": "DateTime"
 											}
 										},
 										{
@@ -731,7 +731,7 @@
 											},
 											"sink": {
 												"name": "AENDR_TS",
-												"type": "Int32"
+												"type": "DateTime"
 											}
 										},
 										{
@@ -749,7 +749,7 @@
 											},
 											"sink": {
 												"name": "Ophoert_ts",
-												"type": "Int32"
+												"type": "DateTime"
 											}
 										},
 										{
@@ -768,6 +768,15 @@
 											"sink": {
 												"name": "KomKode",
 												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['eRef']"
+											},
+											"sink": {
+												"name": "eRef",
+												"type": "String"
 											}
 										},
 										{
@@ -853,15 +862,6 @@
 										},
 										{
 											"source": {
-												"path": "$['href']"
-											},
-											"sink": {
-												"name": "eRef",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
 												"path": "$['bygningspunkt']['ois_id']"
 											},
 											"sink": {
@@ -874,7 +874,7 @@
 												"path": "$['bygningspunkt']['ois_ts']"
 											},
 											"sink": {
-												"name": "bygningspunkt_ois_ts",
+												"name": "ois_ts",
 												"type": "DateTime"
 											}
 										},
@@ -883,7 +883,7 @@
 												"path": "$['bygningspunkt']['BygPkt_id']"
 											},
 											"sink": {
-												"name": "bygningspunkt_BygPkt_id",
+												"name": "BygPkt_id",
 												"type": "String"
 											}
 										},
@@ -892,89 +892,53 @@
 												"path": "$['bygningspunkt']['Kommune_id']"
 											},
 											"sink": {
-												"name": "bygningspunkt_Kommune_id",
+												"name": "Kommune_id",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['PktRevDato']"
-											},
-											"sink": {
-												"name": "bygningspunkt_PktRevDato",
-												"type": "DateTime"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['KoorOest']"
-											},
-											"sink": {
-												"name": "bygningspunkt_KoorOest",
-												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['KoorNord']"
-											},
-											"sink": {
-												"name": "bygningspunkt_KoorNord",
-												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['KoorSystem']"
-											},
-											"sink": {
-												"name": "bygningspunkt_KoorSystem",
-												"type": "Int32"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['TxtRetn']"
-											},
-											"sink": {
-												"name": "bygningspunkt_TxtRetn",
-												"type": "Int32"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['TxtPlacer']"
-											},
-											"sink": {
-												"name": "bygningspunkt_TxtPlacer",
-												"type": "Int32"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['DDKNcelle100m']"
-											},
-											"sink": {
-												"name": "bygningspunkt_DDKNcelle100m",
-												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['DDKNcelle1km']"
-											},
-											"sink": {
-												"name": "bygningspunkt_DDKNcelle1km",
-												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['DDKNcelle10km']"
-											},
-											"sink": {
-												"name": "bygningspunkt_DDKNcelle10km",
-												"type": "String"
 											}
 										},
 										{
@@ -982,7 +946,7 @@
 												"path": "$['bygningspunkt']['OPRET_TS']"
 											},
 											"sink": {
-												"name": "bygningspunkt_OPRET_TS",
+												"name": "OPRET_TS",
 												"type": "DateTime"
 											}
 										},
@@ -991,7 +955,7 @@
 												"path": "$['bygningspunkt']['AENDR_TS']"
 											},
 											"sink": {
-												"name": "bygningspunkt_AENDR_TS",
+												"name": "AENDR_TS",
 												"type": "DateTime"
 											}
 										},
@@ -1000,7 +964,7 @@
 												"path": "$['bygningspunkt']['Aendr_Funk']"
 											},
 											"sink": {
-												"name": "bygningspunkt_Aendr_Funk",
+												"name": "Aendr_Funk",
 												"type": "Int32"
 											}
 										},
@@ -1009,17 +973,23 @@
 												"path": "$['bygningspunkt']['Ophoert_ts']"
 											},
 											"sink": {
-												"name": "bygningspunkt_Ophoert_ts",
-												"type": "Int32"
+												"name": "Ophoert_ts",
+												"type": "DateTime"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['BygPktKilde']"
-											},
-											"sink": {
-												"name": "bygningspunkt_BygPktKilde",
-												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['href']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['koordinater'][0]"
 											}
 										}
 									],
