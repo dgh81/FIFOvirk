@@ -892,53 +892,89 @@
 												"path": "$['bygningspunkt']['Kommune_id']"
 											},
 											"sink": {
-												"name": "Kommune_id",
+												"name": "bygningspunkt_Kommune_id",
 												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['PktRevDato']"
+											},
+											"sink": {
+												"name": "bygningspunkt_PktRevDato",
+												"type": "DateTime"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['KoorOest']"
+											},
+											"sink": {
+												"name": "bygningspunkt_KoorOest",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['KoorNord']"
+											},
+											"sink": {
+												"name": "bygningspunkt_KoorNord",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['KoorSystem']"
+											},
+											"sink": {
+												"name": "bygningspunkt_KoorSystem",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['TxtRetn']"
+											},
+											"sink": {
+												"name": "bygningspunkt_TxtRetn",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['TxtPlacer']"
+											},
+											"sink": {
+												"name": "bygningspunkt_TxtPlacer",
+												"type": "Int32"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['DDKNcelle100m']"
+											},
+											"sink": {
+												"name": "bygningspunkt_DDKNcelle100m",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['DDKNcelle1km']"
+											},
+											"sink": {
+												"name": "bygningspunkt_DDKNcelle1km",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
 												"path": "$['bygningspunkt']['DDKNcelle10km']"
+											},
+											"sink": {
+												"name": "bygningspunkt_DDKNcelle10km",
+												"type": "String"
 											}
 										},
 										{
@@ -946,7 +982,7 @@
 												"path": "$['bygningspunkt']['OPRET_TS']"
 											},
 											"sink": {
-												"name": "OPRET_TS",
+												"name": "bygningspunkt_OPRET_TS",
 												"type": "DateTime"
 											}
 										},
@@ -955,7 +991,7 @@
 												"path": "$['bygningspunkt']['AENDR_TS']"
 											},
 											"sink": {
-												"name": "AENDR_TS",
+												"name": "bygningspunkt_AENDR_TS",
 												"type": "DateTime"
 											}
 										},
@@ -964,7 +1000,7 @@
 												"path": "$['bygningspunkt']['Aendr_Funk']"
 											},
 											"sink": {
-												"name": "Aendr_Funk",
+												"name": "bygningspunkt_Aendr_Funk",
 												"type": "Int32"
 											}
 										},
@@ -973,7 +1009,7 @@
 												"path": "$['bygningspunkt']['Ophoert_ts']"
 											},
 											"sink": {
-												"name": "Ophoert_ts",
+												"name": "bygningspunkt_Ophoert_ts",
 												"type": "DateTime"
 											}
 										},
