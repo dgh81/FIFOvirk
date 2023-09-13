@@ -874,7 +874,7 @@
 												"path": "$['bygningspunkt']['ois_id']"
 											},
 											"sink": {
-												"name": "ois_id",
+												"name": "bygningspunkt_ois_id",
 												"type": "Int32"
 											}
 										},
@@ -883,7 +883,7 @@
 												"path": "$['bygningspunkt']['ois_ts']"
 											},
 											"sink": {
-												"name": "ois_ts",
+												"name": "bygningspunkt_ois_ts",
 												"type": "DateTime"
 											}
 										},
@@ -892,7 +892,7 @@
 												"path": "$['bygningspunkt']['BygPkt_id']"
 											},
 											"sink": {
-												"name": "BygPkt_id",
+												"name": "bygningspunkt_BygPkt_id",
 												"type": "String"
 											}
 										},
@@ -901,7 +901,7 @@
 												"path": "$['bygningspunkt']['Kommune_id']"
 											},
 											"sink": {
-												"name": "Kommune_id",
+												"name": "bygningspunkt_Kommune_id",
 												"type": "String"
 											}
 										},
