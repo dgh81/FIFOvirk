@@ -99,8 +99,7 @@
 			},
 			{
 				"name": "UdloebDatoMidl",
-				"type": "int",
-				"precision": 10
+				"type": "date"
 			},
 			{
 				"name": "BYG_VANDFORSY_KODE",
@@ -279,8 +278,7 @@
 			},
 			{
 				"name": "HuslejeOplysDato",
-				"type": "int",
-				"precision": 10
+				"type": "date"
 			},
 			{
 				"name": "SagsType",
@@ -364,13 +362,11 @@
 			},
 			{
 				"name": "OPRET_TS",
-				"type": "int",
-				"precision": 10
+				"type": "date"
 			},
 			{
 				"name": "AENDR_TS",
-				"type": "int",
-				"precision": 10
+				"type": "date"
 			},
 			{
 				"name": "Aendr_Funk",
@@ -379,8 +375,7 @@
 			},
 			{
 				"name": "Ophoert_ts",
-				"type": "int",
-				"precision": 10
+				"type": "date"
 			},
 			{
 				"name": "Kommune_id",
@@ -509,8 +504,7 @@
 			},
 			{
 				"name": "bygningspunkt_Ophoert_ts",
-				"type": "int",
-				"precision": 10
+				"type": "date"
 			},
 			{
 				"name": "bygningspunkt_BygPktKilde",
