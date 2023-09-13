@@ -1551,14 +1551,8 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "input_BBR",
-									"type": "DatasetReference",
-									"parameters": {
-										"byggekode": {
-											"value": "@item().kode",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "input_BBR_bygninger",
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
