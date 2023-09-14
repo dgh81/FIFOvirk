@@ -1045,7 +1045,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://api.dataforsyningen.dk/replikering/udtraek?entitet=adgangsadresse&txid=3980743&side=1&per_side=24",
+					"url": "https://api.dataforsyningen.dk/replikering/udtraek?entitet=adgangsadresse&txid=3980742&side=1&per_side=1",
 					"method": "GET",
 					"headers": {
 						"Content-Type": "application/json"
