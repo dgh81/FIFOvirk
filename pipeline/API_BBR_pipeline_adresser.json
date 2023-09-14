@@ -156,6 +156,11 @@
 				]
 			}
 		],
+		"parameters": {
+			"transaktions_id": {
+				"type": "string"
+			}
+		},
 		"variables": {
 			"last_scroll_id": {
 				"type": "String"
