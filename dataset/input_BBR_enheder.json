@@ -1,5 +1,5 @@
 {
-	"name": "input_BBR",
+	"name": "input_BBR_enheder",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "RestService2",

@@ -1703,7 +1703,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "input_BBR",
+									"referenceName": "input_BBR_enheder",
 									"type": "DatasetReference",
 									"parameters": {
 										"byggekode": {
