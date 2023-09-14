@@ -6,14 +6,17 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"trasns": {
+			"transaktion_id": {
 				"type": "string"
 			}
 		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "replikering/udtraek?entitet=adresse&txid=3980743"
+			"relativeUrl": {
+				"value": "@concat('replikering/udtraek?entitet=adresse&txid=',dataset().transaktion_id)",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	}
