@@ -1,0 +1,144 @@
+{
+	"name": "output_BBR_adgangsadresser",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "created_adresse_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "kilde",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "oprettet",
+				"type": "date"
+			},
+			{
+				"name": "ændret",
+				"type": "date"
+			},
+			{
+				"name": "ikrafttrædelsesdato",
+				"type": "date"
+			},
+			{
+				"name": "kommunekode",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "vejkode",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "husnr",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "postnr",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "etrs89koordinat_øst",
+				"type": "nvarchar"
+			},
+			{
+				"name": "etrs89koordinat_nord",
+				"type": "nvarchar"
+			},
+			{
+				"name": "esrejendomsnr",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "nøjagtighed",
+				"type": "nvarchar"
+			},
+			{
+				"name": "adressepunktændringsdato",
+				"type": "date"
+			},
+			{
+				"name": "højde",
+				"type": "nvarchar"
+			},
+			{
+				"name": "supplerendebynavn_dagi_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "supplerendebynavn",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ejerlavkode",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "matrikelnr",
+				"type": "nvarchar"
+			},
+			{
+				"name": "husnummerkilde",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "tekniskstandard",
+				"type": "nvarchar"
+			},
+			{
+				"name": "tekstretning",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "esdhreference",
+				"type": "nvarchar"
+			},
+			{
+				"name": "journalnummer",
+				"type": "nvarchar"
+			},
+			{
+				"name": "adgangspunktid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "vejpunkt_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "navngivenvej_id",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "BBR_adgangsadresser"
+		}
+	}
+}
