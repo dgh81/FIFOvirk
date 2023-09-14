@@ -1,0 +1,68 @@
+{
+	"name": "output_BBR_adresser",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "created_adresse_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "oprettet",
+				"type": "date"
+			},
+			{
+				"name": "Ændret",
+				"type": "date"
+			},
+			{
+				"name": "ikrafttrædelsesdato",
+				"type": "date"
+			},
+			{
+				"name": "adgangsadresseid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "etage",
+				"type": "nvarchar"
+			},
+			{
+				"name": "dør",
+				"type": "nvarchar"
+			},
+			{
+				"name": "kilde",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "esdhreference",
+				"type": "nvarchar"
+			},
+			{
+				"name": "journalnummer",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "BBR_adresser"
+		}
+	}
+}
