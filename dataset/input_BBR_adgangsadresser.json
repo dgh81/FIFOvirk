@@ -14,7 +14,10 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "replikering/udtraek?entitet=adgangsadresse&txid=3980743"
+			"relativeUrl": {
+				"value": "@concat('replikering/udtraek?entitet=adgangsadresse&txid=',dataset().transaktions_id)",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	}
