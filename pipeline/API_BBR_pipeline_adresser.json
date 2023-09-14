@@ -26,15 +26,8 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"writeBehavior": "upsert",
-						"upsertSettings": {
-							"useTempDB": true,
-							"keys": [
-								"id"
-							]
-						},
-						"sqlWriterUseTableLock": true,
-						"disableMetricsCollection": false
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -304,7 +297,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "output_BBR_adgangsadresser",
+						"referenceName": "output_BBR_adresser",
 						"type": "DatasetReference"
 					}
 				]
