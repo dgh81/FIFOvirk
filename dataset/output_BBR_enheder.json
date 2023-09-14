@@ -1,5 +1,5 @@
 {
-	"name": "output_BBR",
+	"name": "output_BBR_enheder",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase1",
