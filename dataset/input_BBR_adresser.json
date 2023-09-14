@@ -5,6 +5,11 @@
 			"referenceName": "RestService2",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"trasns": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
