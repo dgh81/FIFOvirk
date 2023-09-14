@@ -111,8 +111,7 @@
 			},
 			{
 				"name": "tekstretning",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "esdhreference",
