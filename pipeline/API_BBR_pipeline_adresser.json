@@ -138,52 +138,6 @@
 				]
 			},
 			{
-				"name": "Set ScrollID",
-				"type": "SetVariable",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "last_scroll_id",
-					"value": {
-						"value": "@activity('Lookup_scroll_id').output.firstRow._scroll_id",
-						"type": "Expression"
-					}
-				}
-			},
-			{
-				"name": "Lookup_scroll_id",
-				"type": "Lookup",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select _scroll_id from TESTCVR",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"dataset": {
-						"referenceName": "output_CVR",
-						"type": "DatasetReference"
-					}
-				}
-			},
-			{
 				"name": "CVR_API_TO_SQL_LOOP_PAGES",
 				"type": "Copy",
 				"state": "Inactive",
@@ -1031,25 +985,6 @@
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "Web2",
-				"type": "WebActivity",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"url": "https://api.dataforsyningen.dk/replikering/udtraek?entitet=adgangsadresse&txid=3980743",
-					"method": "GET"
-				}
 			},
 			{
 				"name": "Copy_to_BBR",
