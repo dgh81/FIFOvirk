@@ -7,6 +7,9 @@
 		},
 		"annotations": [],
 		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "replikering/udtraek?entitet=adgangsadresse&txid=3980743"
+		},
 		"schema": []
 	}
 }
