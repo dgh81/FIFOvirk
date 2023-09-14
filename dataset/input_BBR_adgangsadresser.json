@@ -5,6 +5,12 @@
 			"referenceName": "RestService2",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"transaktions_id": {
+				"type": "string",
+				"defaultValue": "3980834"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
