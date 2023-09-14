@@ -1158,7 +1158,7 @@
 								},
 								"sink": {
 									"name": "husnr",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
@@ -1341,7 +1341,8 @@
 									"type": "String"
 								}
 							}
-						]
+						],
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
