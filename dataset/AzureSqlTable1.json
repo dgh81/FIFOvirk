@@ -1,0 +1,27 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "enhedsNummer",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "cvrNummer",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CVR_deltagere"
+		}
+	}
+}
