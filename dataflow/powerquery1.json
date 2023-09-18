@@ -1,0 +1,20 @@
+{
+	"name": "powerquery1",
+	"properties": {
+		"type": "WranglingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"name": "output_CVR",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~>  output_CVR",
+					"dataset": {
+						"referenceName": "output_CVR",
+						"type": "DatasetReference"
+					}
+				}
+			],
+			"script": "section Section1;\r\nshared output_CVR = let AdfDoc = Sql.Database(\"fifocvrserver.database.windows.net\", \"cvrdb\", [CreateNavigationProperties = false]), InputTable = AdfDoc{[Schema=\"dbo\",Item=\"CVR\"]}[Data] in InputTable;\r\nshared UserQuery = let Source = #\"output_CVR\" in Source;\r\n",
+			"documentLocale": "en-us"
+		}
+	}
+}
