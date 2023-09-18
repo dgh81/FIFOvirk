@@ -1,6 +1,35 @@
 {
 	"name": "Legeplads",
 	"properties": {
+		"activities": [
+			{
+				"name": "Copy_view_to_csv",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "test_SQL_extract",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
 		"variables": {
 			"last_scroll_id": {
 				"type": "String"
