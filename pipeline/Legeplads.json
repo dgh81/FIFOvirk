@@ -78,10 +78,7 @@
 					"storedProcedureName": "[dbo].[createExtract]",
 					"storedProcedureParameters": {
 						"record_count": {
-							"value": {
-								"value": "@variables('number_of_records')",
-								"type": "Expression"
-							},
+							"value": "40",
 							"type": "Int32"
 						}
 					}
@@ -92,11 +89,6 @@
 				}
 			}
 		],
-		"variables": {
-			"number_of_records": {
-				"type": "Integer"
-			}
-		},
 		"annotations": [],
 		"lastPublishTime": "2023-09-05T09:01:09Z"
 	},
