@@ -76,6 +76,24 @@
 												"name": "AdgAdr_id",
 												"type": "String"
 											}
+										},
+										{
+											"source": {
+												"path": "$['VARMEINSTAL_KODE']"
+											},
+											"sink": {
+												"name": "VARMEINSTAL_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['OPVARMNING_KODE']"
+											},
+											"sink": {
+												"name": "OPVARMNING_KODE",
+												"type": "String"
+											}
 										}
 									],
 									"collectionReference": ""
