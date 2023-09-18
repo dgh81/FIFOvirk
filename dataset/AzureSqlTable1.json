@@ -1,0 +1,503 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ois_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ois_ts",
+				"type": "date"
+			},
+			{
+				"name": "Bygning_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Bygningsnr",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ObjStatus",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "NyByg",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Crud_id",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "Grund_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Byggesag_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BygStam_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AdgAdr_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BYG_ANVEND_KODE",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "Klassifikation",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "AnvKonvKilde",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "AntLejMKoekken",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AntLejUKoekken",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OPFOERELSE_AAR",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "OMBYG_AAR",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "MIDL_OPRET_KODE",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "UdloebDatoMidl",
+				"type": "date"
+			},
+			{
+				"name": "BYG_VANDFORSY_KODE",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "BYG_AFLOEB_KODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BYG_AFLOEB_TILL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "YDERVAEG_KODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAG_KODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SuppYderVaegMat",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SuppTagDaekMat",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AsbestMateriale",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KILDE_MATR_KODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BYG_ARL_SAML",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BYG_BOLIG_ARL_SAML",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ERHV_ARL_SAML",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BYG_BEBYG_ARL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "GARAGE_INDB_ARL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CARPORT_INDB_ARL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "UDHUS_INDB_ARL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "UDESTUE_ARL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LukOverdaekAreal",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AFFALDSRUM_ARL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ANDET_ARL",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OverdaekAreal",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AabenOverdaekAreal",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AdgangsAreal",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Carport_Princip",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "KILDE_ARL_KODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ETAGER_ANT",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "ETAGER_AFVIG_KODE",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "VARMEINSTAL_KODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OPVARMNING_KODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VARME_SUPPL_KODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SIKRINGSRUM_ANT",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "FREDNING_KODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BevarVaerdig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "UdlejForhold1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "HusLeje",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "HuslejeOplysDato",
+				"type": "date"
+			},
+			{
+				"name": "SagsType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BygPktNoejagtigKls",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BygPkt_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FOT_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "StormRaadPaalaeg",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "StormRaadPaalaegDato",
+				"type": "date"
+			},
+			{
+				"name": "BygSkadeForsikSelskab",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BygSkadeForsikSelskabDato",
+				"type": "date"
+			},
+			{
+				"name": "KomFelt1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KomFelt2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KomFelt3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KomFelt4",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "KomFelt5",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "KomFelt6",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "JourNr",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ESDH_Ref",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SikKlas",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "OPRET_TS",
+				"type": "date"
+			},
+			{
+				"name": "AENDR_TS",
+				"type": "date"
+			},
+			{
+				"name": "Aendr_Funk",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Ophoert_ts",
+				"type": "date"
+			},
+			{
+				"name": "Kommune_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KomKode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "eRef",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Landsejerlavkode",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "KomEjerlavKode",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "MatrNr",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ESREjdNr",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Matr_art_kode",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "Delnr",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Opdelingsnr",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BygSkadeOmfatFors",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Gyldighedsdato",
+				"type": "date"
+			},
+			{
+				"name": "bygningspunkt_ois_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "bygningspunkt_ois_ts",
+				"type": "date"
+			},
+			{
+				"name": "bygningspunkt_BygPkt_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bygningspunkt_Kommune_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bygningspunkt_PktRevDato",
+				"type": "date"
+			},
+			{
+				"name": "bygningspunkt_KoorOest",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 0
+			},
+			{
+				"name": "bygningspunkt_KoorNord",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 0
+			},
+			{
+				"name": "bygningspunkt_KoorSystem",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "bygningspunkt_TxtRetn",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 0
+			},
+			{
+				"name": "bygningspunkt_TxtPlacer",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bygningspunkt_DDKNcelle100m",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bygningspunkt_DDKNcelle1km",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bygningspunkt_DDKNcelle10km",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bygningspunkt_OPRET_TS",
+				"type": "date"
+			},
+			{
+				"name": "bygningspunkt_AENDR_TS",
+				"type": "date"
+			},
+			{
+				"name": "bygningspunkt_Aendr_Funk",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bygningspunkt_Ophoert_ts",
+				"type": "date"
+			},
+			{
+				"name": "bygningspunkt_BygPktKilde",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "bygningspunkt_koordinater_x",
+				"type": "nvarchar"
+			},
+			{
+				"name": "bygningspunkt_koordinater_y",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "BBR_bygninger2"
+		}
+	}
+}
