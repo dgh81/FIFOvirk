@@ -395,7 +395,27 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['deltagerRelation'][0]['deltager']['beliggenhedsadresse'][0]['kommune']"
+									"path": "['_source']['Vrvirksomhed']['deltagerRelation'][0]['deltager']['beliggenhedsadresse'][0]['kommune']['sidstOpdateret']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['deltagerRelation'][0]['deltager']['beliggenhedsadresse'][0]['kommune']['kommuneNavn']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['deltagerRelation'][0]['deltager']['beliggenhedsadresse'][0]['kommune']['kommuneKode']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['deltagerRelation'][0]['deltager']['beliggenhedsadresse'][0]['kommune']['periode']['gyldigFra']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['deltagerRelation'][0]['deltager']['beliggenhedsadresse'][0]['kommune']['periode']['gyldigTil']"
 								}
 							},
 							{
@@ -744,7 +764,42 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']"
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['intervalKodeAntalAnsatte']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['aar']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['sidstOpdateret']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['intervalKodeAntalAarsvaerk']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['antalAarsvaerk']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['antalInklusivEjere']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['antalAnsatte']"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']['intervalKodeAntalInklusivEjere']"
 								}
 							},
 							{
