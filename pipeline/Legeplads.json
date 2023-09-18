@@ -451,6 +451,18 @@
 							"supportRFC5988": "true"
 						}
 					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "upsert",
+						"upsertSettings": {
+							"useTempDB": true,
+							"keys": [
+								"enhedsNummer"
+							]
+						},
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
 					"enableStaging": false
 				},
 				"inputs": [
@@ -458,8 +470,17 @@
 						"referenceName": "input_CVR",
 						"type": "DatasetReference",
 						"parameters": {
-							"dynamicURL": "cvr-permanent/virksomhed/_search?scroll=2m"
+							"dynamicURL": {
+								"value": "@concat('cvr-permanent/virksomhed/_search?scroll=4m')",
+								"type": "Expression"
+							}
 						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "output_CVR_deltagere",
+						"type": "DatasetReference"
 					}
 				]
 			}
