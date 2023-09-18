@@ -55,7 +55,946 @@
 									"sqlWriterUseTableLock": true,
 									"disableMetricsCollection": false
 								},
-								"enableStaging": false
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"path": "$['ois_id']"
+											},
+											"sink": {
+												"name": "ois_id",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ois_ts']"
+											},
+											"sink": {
+												"name": "ois_ts",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Bygning_id']"
+											},
+											"sink": {
+												"name": "Bygning_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Bygningsnr']"
+											},
+											"sink": {
+												"name": "Bygningsnr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ObjStatus']"
+											},
+											"sink": {
+												"name": "ObjStatus",
+												"type": "Byte"
+											}
+										},
+										{
+											"source": {
+												"path": "$['NyByg']"
+											},
+											"sink": {
+												"name": "NyByg",
+												"type": "Byte"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Crud_id']"
+											},
+											"sink": {
+												"name": "Crud_id",
+												"type": "Int64"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Grund_id']"
+											},
+											"sink": {
+												"name": "Grund_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Byggesag_id']"
+											},
+											"sink": {
+												"name": "Byggesag_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BygStam_id']"
+											},
+											"sink": {
+												"name": "BygStam_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AdgAdr_id']"
+											},
+											"sink": {
+												"name": "AdgAdr_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_ANVEND_KODE']"
+											},
+											"sink": {
+												"name": "BYG_ANVEND_KODE",
+												"type": "Int16"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Klassifikation']"
+											},
+											"sink": {
+												"name": "Klassifikation",
+												"type": "Int16"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AnvKonvKilde']"
+											},
+											"sink": {
+												"name": "AnvKonvKilde",
+												"type": "Int16"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AntLejMKoekken']"
+											},
+											"sink": {
+												"name": "AntLejMKoekken",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AntLejUKoekken']"
+											},
+											"sink": {
+												"name": "AntLejUKoekken",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['OPFOERELSE_AAR']"
+											},
+											"sink": {
+												"name": "OPFOERELSE_AAR",
+												"type": "Int16"
+											}
+										},
+										{
+											"source": {
+												"path": "$['OMBYG_AAR']"
+											},
+											"sink": {
+												"name": "OMBYG_AAR",
+												"type": "Int16"
+											}
+										},
+										{
+											"source": {
+												"path": "$['MIDL_OPRET_KODE']"
+											},
+											"sink": {
+												"name": "MIDL_OPRET_KODE",
+												"type": "Byte"
+											}
+										},
+										{
+											"source": {
+												"path": "$['UdloebDatoMidl']"
+											},
+											"sink": {
+												"name": "UdloebDatoMidl",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_VANDFORSY_KODE']"
+											},
+											"sink": {
+												"name": "BYG_VANDFORSY_KODE",
+												"type": "Byte"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_AFLOEB_KODE']"
+											},
+											"sink": {
+												"name": "BYG_AFLOEB_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_AFLOEB_TILL']"
+											},
+											"sink": {
+												"name": "BYG_AFLOEB_TILL",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['YDERVAEG_KODE']"
+											},
+											"sink": {
+												"name": "YDERVAEG_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['TAG_KODE']"
+											},
+											"sink": {
+												"name": "TAG_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['SuppYderVaegMat']"
+											},
+											"sink": {
+												"name": "SuppYderVaegMat",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['SuppTagDaekMat']"
+											},
+											"sink": {
+												"name": "SuppTagDaekMat",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AsbestMateriale']"
+											},
+											"sink": {
+												"name": "AsbestMateriale",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KILDE_MATR_KODE']"
+											},
+											"sink": {
+												"name": "KILDE_MATR_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_ARL_SAML']"
+											},
+											"sink": {
+												"name": "BYG_ARL_SAML",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_BOLIG_ARL_SAML']"
+											},
+											"sink": {
+												"name": "BYG_BOLIG_ARL_SAML",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ERHV_ARL_SAML']"
+											},
+											"sink": {
+												"name": "ERHV_ARL_SAML",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BYG_BEBYG_ARL']"
+											},
+											"sink": {
+												"name": "BYG_BEBYG_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['GARAGE_INDB_ARL']"
+											},
+											"sink": {
+												"name": "GARAGE_INDB_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['CARPORT_INDB_ARL']"
+											},
+											"sink": {
+												"name": "CARPORT_INDB_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['UDHUS_INDB_ARL']"
+											},
+											"sink": {
+												"name": "UDHUS_INDB_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['UDESTUE_ARL']"
+											},
+											"sink": {
+												"name": "UDESTUE_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['LukOverdaekAreal']"
+											},
+											"sink": {
+												"name": "LukOverdaekAreal",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AFFALDSRUM_ARL']"
+											},
+											"sink": {
+												"name": "AFFALDSRUM_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ANDET_ARL']"
+											},
+											"sink": {
+												"name": "ANDET_ARL",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['OverdaekAreal']"
+											},
+											"sink": {
+												"name": "OverdaekAreal",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AabenOverdaekAreal']"
+											},
+											"sink": {
+												"name": "AabenOverdaekAreal",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AdgangsAreal']"
+											},
+											"sink": {
+												"name": "AdgangsAreal",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Carport_Princip']"
+											},
+											"sink": {
+												"name": "Carport_Princip",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KILDE_ARL_KODE']"
+											},
+											"sink": {
+												"name": "KILDE_ARL_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ETAGER_ANT']"
+											},
+											"sink": {
+												"name": "ETAGER_ANT",
+												"type": "Int16"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ETAGER_AFVIG_KODE']"
+											},
+											"sink": {
+												"name": "ETAGER_AFVIG_KODE",
+												"type": "Byte"
+											}
+										},
+										{
+											"source": {
+												"path": "$['VARMEINSTAL_KODE']"
+											},
+											"sink": {
+												"name": "VARMEINSTAL_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['OPVARMNING_KODE']"
+											},
+											"sink": {
+												"name": "OPVARMNING_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['VARME_SUPPL_KODE']"
+											},
+											"sink": {
+												"name": "VARME_SUPPL_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['SIKRINGSRUM_ANT']"
+											},
+											"sink": {
+												"name": "SIKRINGSRUM_ANT",
+												"type": "Int16"
+											}
+										},
+										{
+											"source": {
+												"path": "$['FREDNING_KODE']"
+											},
+											"sink": {
+												"name": "FREDNING_KODE",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BevarVaerdig']"
+											},
+											"sink": {
+												"name": "BevarVaerdig",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['UdlejForhold1']"
+											},
+											"sink": {
+												"name": "UdlejForhold1",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['HusLeje']"
+											},
+											"sink": {
+												"name": "HusLeje",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['HuslejeOplysDato']"
+											},
+											"sink": {
+												"name": "HuslejeOplysDato",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['SagsType']"
+											},
+											"sink": {
+												"name": "SagsType",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BygPktNoejagtigKls']"
+											},
+											"sink": {
+												"name": "BygPktNoejagtigKls",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BygPkt_id']"
+											},
+											"sink": {
+												"name": "BygPkt_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['FOT_id']"
+											},
+											"sink": {
+												"name": "FOT_id",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['StormRaadPaalaeg']"
+											},
+											"sink": {
+												"name": "StormRaadPaalaeg",
+												"type": "Byte"
+											}
+										},
+										{
+											"source": {
+												"path": "$['StormRaadPaalaegDato']"
+											},
+											"sink": {
+												"name": "StormRaadPaalaegDato",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BygSkadeForsikSelskab']"
+											},
+											"sink": {
+												"name": "BygSkadeForsikSelskab",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BygSkadeForsikSelskabDato']"
+											},
+											"sink": {
+												"name": "BygSkadeForsikSelskabDato",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomFelt1']"
+											},
+											"sink": {
+												"name": "KomFelt1",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomFelt2']"
+											},
+											"sink": {
+												"name": "KomFelt2",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomFelt3']"
+											},
+											"sink": {
+												"name": "KomFelt3",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomFelt4']"
+											},
+											"sink": {
+												"name": "KomFelt4",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomFelt5']"
+											},
+											"sink": {
+												"name": "KomFelt5",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomFelt6']"
+											},
+											"sink": {
+												"name": "KomFelt6",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['JourNr']"
+											},
+											"sink": {
+												"name": "JourNr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ESDH_Ref']"
+											},
+											"sink": {
+												"name": "ESDH_Ref",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['SikKlas']"
+											},
+											"sink": {
+												"name": "SikKlas",
+												"type": "Byte"
+											}
+										},
+										{
+											"source": {
+												"path": "$['OPRET_TS']"
+											},
+											"sink": {
+												"name": "OPRET_TS",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['AENDR_TS']"
+											},
+											"sink": {
+												"name": "AENDR_TS",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Aendr_Funk']"
+											},
+											"sink": {
+												"name": "Aendr_Funk",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Ophoert_ts']"
+											},
+											"sink": {
+												"name": "Ophoert_ts",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Kommune_id']"
+											},
+											"sink": {
+												"name": "Kommune_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomKode']"
+											},
+											"sink": {
+												"name": "KomKode",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['eRef']"
+											},
+											"sink": {
+												"name": "eRef",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Landsejerlavkode']"
+											},
+											"sink": {
+												"name": "Landsejerlavkode",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['KomEjerlavKode']"
+											},
+											"sink": {
+												"name": "KomEjerlavKode",
+												"type": "Int16"
+											}
+										},
+										{
+											"source": {
+												"path": "$['MatrNr']"
+											},
+											"sink": {
+												"name": "MatrNr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['ESREjdNr']"
+											},
+											"sink": {
+												"name": "ESREjdNr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Matr_art_kode']"
+											},
+											"sink": {
+												"name": "Matr_art_kode",
+												"type": "Int16"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Delnr']"
+											},
+											"sink": {
+												"name": "Delnr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Opdelingsnr']"
+											},
+											"sink": {
+												"name": "Opdelingsnr",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['BygSkadeOmfatFors']"
+											},
+											"sink": {
+												"name": "BygSkadeOmfatFors",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['Gyldighedsdato']"
+											},
+											"sink": {
+												"name": "Gyldighedsdato",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['ois_id']"
+											},
+											"sink": {
+												"name": "ois_id",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['ois_ts']"
+											},
+											"sink": {
+												"name": "ois_ts",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['BygPkt_id']"
+											},
+											"sink": {
+												"name": "BygPkt_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['Kommune_id']"
+											},
+											"sink": {
+												"name": "Kommune_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['PktRevDato']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['KoorOest']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['KoorNord']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['KoorSystem']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['TxtRetn']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['TxtPlacer']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['DDKNcelle100m']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['DDKNcelle1km']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['DDKNcelle10km']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['OPRET_TS']"
+											},
+											"sink": {
+												"name": "OPRET_TS",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['AENDR_TS']"
+											},
+											"sink": {
+												"name": "AENDR_TS",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['Aendr_Funk']"
+											},
+											"sink": {
+												"name": "Aendr_Funk",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['Ophoert_ts']"
+											},
+											"sink": {
+												"name": "Ophoert_ts",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['BygPktKilde']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['href']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['bygningspunkt']['koordinater'][0]"
+											}
+										}
+									],
+									"collectionReference": ""
+								}
 							},
 							"inputs": [
 								{
