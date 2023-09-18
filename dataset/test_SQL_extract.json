@@ -7,7 +7,29 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "cvrNummer",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "navn",
+				"type": "nvarchar"
+			},
+			{
+				"name": "beskrivelse",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VARMEINSTAL_KODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "kode",
+				"type": "nvarchar"
+			}
+		],
 		"typeProperties": {
 			"schema": "dbo",
 			"table": "View_1"
