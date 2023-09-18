@@ -1,5 +1,5 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "output_CVR_deltagere",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase1",
