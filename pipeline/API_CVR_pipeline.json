@@ -85,14 +85,7 @@
 			{
 				"name": "Lookup_scroll_id",
 				"type": "Lookup",
-				"dependsOn": [
-					{
-						"activity": "If_total_hits_greater_than_thousand",
-						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
