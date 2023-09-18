@@ -78,7 +78,10 @@
 					"storedProcedureName": "[dbo].[createExtract]",
 					"storedProcedureParameters": {
 						"record_count": {
-							"value": "50",
+							"value": {
+								"value": "@variables('number_of_records')",
+								"type": "Expression"
+							},
 							"type": "Int32"
 						}
 					}
