@@ -17,6 +17,7 @@
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     limit: 1,",
 				"     httpMethod: 'POST',",
 				"     body: '{",
 				"    \"_source\":[",
