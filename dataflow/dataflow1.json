@@ -17,9 +17,9 @@
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     httpMethod: 'GET',",
+				"     httpMethod: 'POST',",
 				"     timeout: 30,",
-				"     requestInterval: 0,",
+				"     headers: ['Content-Type' -> 'application/json'],",
 				"     paginationRules: ['supportRFC5988' -> 'true'],",
 				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine']) ~> source1"
 			]
