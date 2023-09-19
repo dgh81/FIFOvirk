@@ -17,6 +17,7 @@
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     inferDriftedColumnTypes: true,",
 				"     limit: 1,",
 				"     httpMethod: 'POST',",
 				"     body: '{",
@@ -73,7 +74,7 @@
 				"     timeout: 30,",
 				"     headers: ['Content-Type' -> 'application/json'],",
 				"     paginationRules: ['supportRFC5988' -> 'true'],",
-				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'arrayOfDocuments']) ~> source1"
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument']) ~> source1"
 			]
 		}
 	}
