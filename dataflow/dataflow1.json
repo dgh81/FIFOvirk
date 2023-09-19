@@ -72,7 +72,7 @@
 				"     timeout: 30,",
 				"     headers: ['Content-Type' -> 'application/json'],",
 				"     paginationRules: ['supportRFC5988' -> 'true'],",
-				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'arrayOfDocuments']) ~> source1"
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument']) ~> source1"
 			]
 		}
 	}
