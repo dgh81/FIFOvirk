@@ -67,7 +67,7 @@
 				"        }",
 				"    }",
 				"    ,",
-				"    \"size\":10",
+				"    \"size\":1",
 				"}',",
 				"     timeout: 30,",
 				"     headers: ['Content-Type' -> 'application/json'],",
