@@ -9,6 +9,10 @@
 			"transaktions_id": {
 				"type": "string",
 				"defaultValue": "3981711"
+			},
+			"temp": {
+				"type": "string",
+				"defaultValue": "https://api.dataforsyningen.dk/replikering/senestetransaktion"
 			}
 		},
 		"annotations": [],
