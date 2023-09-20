@@ -145,7 +145,11 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteErstMaanedsbeskaeftigelse']"
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
+								},
+								"sink": {
+									"name": "cvrNummer",
+									"type": "Int32"
 								}
 							},
 							{
@@ -155,6 +159,15 @@
 								"sink": {
 									"name": "nyesteAarsbeskaeftigelse",
 									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['total']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "String"
 								}
 							}
 						],
