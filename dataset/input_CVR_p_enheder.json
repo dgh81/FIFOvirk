@@ -1,0 +1,15 @@
+{
+	"name": "input_CVR_p_enheder",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestService1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "cvr-permanent/produktionsenhed/_search"
+		},
+		"schema": []
+	}
+}
