@@ -43,6 +43,15 @@
 						"mappings": [
 							{
 								"source": {
+									"path": "['pNummer']"
+								},
+								"sink": {
+									"name": "pNummer",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
 									"path": "$['hits']['total']"
 								},
 								"sink": {
@@ -65,15 +74,6 @@
 								},
 								"sink": {
 									"name": "cvrNummer",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['penheder'][0]['pNummer']"
-								},
-								"sink": {
-									"name": "pNummer",
 									"type": "Int32"
 								}
 							}
