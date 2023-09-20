@@ -700,7 +700,11 @@
 										},
 										{
 											"source": {
-												"path": "$['nyesteAarsbeskaeftigelse\\'][\\'antalAarsvaerk\\']']"
+												"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][nyesteAarsbeskaeftigelse\\'][\\'antalAarsvaerk\\']']"
+											},
+											"sink": {
+												"name": "antalAarsvaerk",
+												"type": "Int32"
 											}
 										}
 									],
