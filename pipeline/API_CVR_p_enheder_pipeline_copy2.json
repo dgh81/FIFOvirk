@@ -158,7 +158,7 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
-									"sqlReaderQuery": "SELECT _scroll_id FROM CVR_penheder\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
+									"sqlReaderQuery": "SELECT _scroll_id FROM CVR_penhed_to_cvrnr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
@@ -623,7 +623,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT total_hits FROM CVR_penhed_to\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
+						"sqlReaderQuery": "SELECT total_hits FROM CVR_penhed_to_cvrnr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
