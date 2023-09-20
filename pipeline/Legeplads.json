@@ -142,6 +142,24 @@
 									"name": "pNummer",
 									"type": "Int32"
 								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
+								},
+								"sink": {
+									"name": "cvrNummer",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['antalAarsvaerk']"
+								},
+								"sink": {
+									"name": "nyesteAarsbeskaeftigelse",
+									"type": "Int32"
+								}
 							}
 						],
 						"collectionReference": "$['hits']['hits']",
