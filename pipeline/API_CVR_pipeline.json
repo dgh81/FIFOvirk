@@ -660,32 +660,32 @@
 										},
 										{
 											"source": {
-												"path": "$['Column_1']"
+												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche1\\\\'][\\\\'branchekode\\\\']']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['Column_2']"
+												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche1\\\\'][\\\\'branchekode\\\\']']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['Column_3']"
+												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche1\\\\'][\\\\'branchekode\\\\']']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['Column_4']"
+												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche1\\\\'][\\\\'branchetekst\\\\']']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['Column_5']"
+												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche1\\\\'][\\\\'branchekode\\\\']']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['Column_6']"
+												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche1\\\\'][\\\\'branchetekst\\\\']']"
 											}
 										}
 									],
