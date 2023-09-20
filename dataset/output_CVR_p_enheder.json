@@ -25,6 +25,12 @@
 			{
 				"name": "total_hits",
 				"type": "nvarchar"
+			},
+			{
+				"name": "insert_timestamp",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
 			}
 		],
 		"typeProperties": {
