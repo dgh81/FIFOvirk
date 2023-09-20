@@ -10,13 +10,17 @@
 						"type": "DatasetReference"
 					},
 					"name": "source1"
+				},
+				{
+					"name": "source2"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false,",
+				"     validateSchema: true,",
+				"     inferDriftedColumnTypes: true,",
 				"     limit: 1,",
 				"     httpMethod: 'POST',",
 				"     body: '{",
@@ -79,7 +83,9 @@
 				"     preferredIntegralType: 'integer',",
 				"     preferredFractionalType: 'decimal',",
 				"     booleanFormat: ['1', '0'],",
-				"     partitionBy('hash', 1)) ~> source1"
+				"     partitionBy('hash', 1)) ~> source1",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> source2"
 			]
 		}
 	}
