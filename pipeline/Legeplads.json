@@ -146,10 +146,6 @@
 							{
 								"source": {
 									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
-								},
-								"sink": {
-									"name": "cvrNummer",
-									"type": "Int32"
 								}
 							}
 						],
