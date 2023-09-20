@@ -493,11 +493,6 @@
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['antalPenheder']"
-											}
-										},
-										{
-											"source": {
 												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['branchetekst']"
 											},
 											"sink": {
