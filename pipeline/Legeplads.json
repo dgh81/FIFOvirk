@@ -165,7 +165,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "output_CVR_deltagere",
+						"referenceName": "output_CVR_p_enheder",
 						"type": "DatasetReference"
 					}
 				]
