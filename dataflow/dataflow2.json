@@ -73,7 +73,13 @@
 				"     timeout: 30,",
 				"     headers: ['Content-Type' -> 'application/json'],",
 				"     paginationRules: ['supportRFC5988' -> 'true'],",
-				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine']) ~> source1"
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine'],",
+				"     dateFormats: ['yyyy/MM/dd'],",
+				"     timestampFormats: ['yyyy-MM-dd\\'T\\'HH:mm:ss.SSS\\'Z\\''],",
+				"     preferredIntegralType: 'integer',",
+				"     preferredFractionalType: 'decimal',",
+				"     booleanFormat: ['1', '0'],",
+				"     partitionBy('hash', 1)) ~> source1"
 			]
 		}
 	}
