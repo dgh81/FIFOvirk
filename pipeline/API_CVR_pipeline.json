@@ -610,15 +610,6 @@
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']"
-											},
-											"sink": {
-												"name": "antalAarsvaerk",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
 												"path": "$['hits']['total']"
 											},
 											"sink": {
@@ -705,6 +696,11 @@
 											"sink": {
 												"name": "bi_branche3_tekst",
 												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['nyesteAarsbeskaeftigelse\\'][\\'antalAarsvaerk\\']']"
 											}
 										}
 									],
