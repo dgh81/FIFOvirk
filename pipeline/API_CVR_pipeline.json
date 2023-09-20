@@ -516,26 +516,6 @@
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche3']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche2']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['vejkode']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['fritekst']"
-											}
-										},
-										{
-											"source": {
 												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['adresseId']"
 											},
 											"sink": {
@@ -563,39 +543,11 @@
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['conavn']"
-											}
-										},
-										{
-											"source": {
 												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['bogstavFra']"
 											},
 											"sink": {
 												"name": "bogstavFra",
 												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['periode']['gyldigFra']"
-											},
-											"sink": {
-												"name": "gyldigFra",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['periode']['gyldigTil']"
-											},
-											"sink": {
-												"name": "gyldigTil",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['sidstOpdateret']"
 											}
 										},
 										{
@@ -609,44 +561,11 @@
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['kommuneKode']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['periode']['gyldigFra']"
-											},
-											"sink": {
-												"name": "gyldigFra",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['periode']['gyldigTil']"
-											},
-											"sink": {
-												"name": "gyldigTil",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
 												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['husnummerFra']"
 											},
 											"sink": {
 												"name": "husnummerFra",
 												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['postboks']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['sidstOpdateret']"
 											}
 										},
 										{
@@ -687,21 +606,6 @@
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['sidedoer']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['landekode']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['sidstValideret']"
-											}
-										},
-										{
-											"source": {
 												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['postdistrikt']"
 											},
 											"sink": {
@@ -717,6 +621,10 @@
 										{
 											"source": {
 												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']"
+											},
+											"sink": {
+												"name": "antalAarsvaerk",
+												"type": "Int32"
 											}
 										},
 										{
