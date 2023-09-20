@@ -208,16 +208,12 @@
 									}
 								},
 								"sink": {
-									"type": "AzureSqlSink",
-									"writeBehavior": "upsert",
-									"upsertSettings": {
-										"useTempDB": true,
-										"keys": [
-											"cvrNummer"
-										]
-									},
-									"sqlWriterUseTableLock": false,
-									"disableMetricsCollection": false
+									"type": "RestSink",
+									"httpRequestTimeout": "00:05:00",
+									"requestInterval": 10,
+									"requestMethod": "POST",
+									"writeBatchSize": 10000,
+									"httpCompressionType": "none"
 								},
 								"enableStaging": false,
 								"translator": {
@@ -490,7 +486,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "output_CVR",
+									"referenceName": "input_CVR_p_enheder",
 									"type": "DatasetReference"
 								}
 							]
