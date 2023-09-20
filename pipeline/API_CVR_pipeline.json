@@ -459,6 +459,93 @@
 									"mappings": [
 										{
 											"source": {
+												"path": "$['_scroll_id']"
+											},
+											"sink": {
+												"name": "_scroll_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['took']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['timed_out']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['total']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['successful']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['skipped']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['failed']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['total']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['max_score']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_index']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_type']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_id']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_score']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
+											},
+											"sink": {
+												"name": "gyldigFra",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+											},
+											"sink": {
+												"name": "gyldigTil",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
 												"path": "['_source']['Vrvirksomhed']['cvrNummer']"
 											},
 											"sink": {
@@ -486,11 +573,88 @@
 										},
 										{
 											"source": {
+												"path": "['_source']['Vrvirksomhed']['enhedstype']"
+											},
+											"sink": {
+												"name": "enhedstype",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['stiftelsesDato']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['sammensatStatus']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
 												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['navn']"
 											},
 											"sink": {
 												"name": "navn",
 												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['periode']['gyldigFra']"
+											},
+											"sink": {
+												"name": "gyldigFra",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['periode']['gyldigTil']"
+											},
+											"sink": {
+												"name": "gyldigTil",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteStatus']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche1']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBinavne'][0]"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKvartalsbeskaeftigelse']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKontaktoplysninger'][0]"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['antalPenheder']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['sidstOpdateret']"
 											}
 										},
 										{
@@ -509,6 +673,44 @@
 											"sink": {
 												"name": "branchekode",
 												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['periode']['gyldigFra']"
+											},
+											"sink": {
+												"name": "gyldigFra",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['periode']['gyldigTil']"
+											},
+											"sink": {
+												"name": "gyldigTil",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche3']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche2']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['vejkode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['fritekst']"
 											}
 										},
 										{
@@ -540,11 +742,39 @@
 										},
 										{
 											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['conavn']"
+											}
+										},
+										{
+											"source": {
 												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['bogstavFra']"
 											},
 											"sink": {
 												"name": "bogstavFra",
 												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['periode']['gyldigFra']"
+											},
+											"sink": {
+												"name": "gyldigFra",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['periode']['gyldigTil']"
+											},
+											"sink": {
+												"name": "gyldigTil",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['sidstOpdateret']"
 											}
 										},
 										{
@@ -558,11 +788,44 @@
 										},
 										{
 											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['kommuneKode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['periode']['gyldigFra']"
+											},
+											"sink": {
+												"name": "gyldigFra",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['periode']['gyldigTil']"
+											},
+											"sink": {
+												"name": "gyldigTil",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
 												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['husnummerFra']"
 											},
 											"sink": {
 												"name": "husnummerFra",
 												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['postboks']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['sidstOpdateret']"
 											}
 										},
 										{
@@ -603,6 +866,21 @@
 										},
 										{
 											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['sidedoer']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['landekode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['sidstValideret']"
+											}
+										},
+										{
+											"source": {
 												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['postdistrikt']"
 											},
 											"sink": {
@@ -612,25 +890,47 @@
 										},
 										{
 											"source": {
-												"path": "$['hits']['total']"
-											},
-											"sink": {
-												"name": "total_hits",
-												"type": "String"
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteErstMaanedsbeskaeftigelse']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['_scroll_id']"
-											},
-											"sink": {
-												"name": "_scroll_id",
-												"type": "String"
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']"
 											}
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteMaanedsbeskaeftigelse']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['virksomhedsformkode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['langBeskrivelse']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['kortBeskrivelse']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['ansvarligDataleverandoer']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['periode']['gyldigFra']"
 											},
 											"sink": {
 												"name": "gyldigFra",
@@ -639,7 +939,7 @@
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['periode']['gyldigTil']"
 											},
 											"sink": {
 												"name": "gyldigTil",
@@ -648,65 +948,7 @@
 										},
 										{
 											"source": {
-												"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchekode\\']']"
-											},
-											"sink": {
-												"name": "bi_branche1_kode",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchetekst\\']']"
-											},
-											"sink": {
-												"name": "bi_branche1_tekst",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche2\\'][\\'branchekode\\']']"
-											},
-											"sink": {
-												"name": "bi_branche2_kode",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche2\\'][\\'branchetekst\\']']"
-											},
-											"sink": {
-												"name": "bi_branche2_tekst",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche3\\'][\\'branchekode\\']']"
-											},
-											"sink": {
-												"name": "bi_branche3_kode",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche3\\'][\\'branchetekst\\']']"
-											},
-											"sink": {
-												"name": "bi_branche3_tekst",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][nyesteAarsbeskaeftigelse\\'][\\'antalAarsvaerk\\']']"
-											},
-											"sink": {
-												"name": "antalAarsvaerk",
-												"type": "Int32"
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['virkningsDato']"
 											}
 										}
 									],
