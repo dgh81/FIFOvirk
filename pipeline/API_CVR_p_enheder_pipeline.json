@@ -25,7 +25,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"EndCondition:$['hits']['hits']['_source']['Vrvirksomhed']['penheder']": "Empty"
+							"EndCondition:$['hits']['hits']['_source'][0]['Vrvirksomhed']['penheder']": "Exist"
 						}
 					},
 					"sink": {
