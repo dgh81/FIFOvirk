@@ -2,7 +2,7 @@
 	"name": "test_data_flow",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "RestService1",
+			"referenceName": "RestService3",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
