@@ -86,6 +86,8 @@
 			{
 				"name": "If_total_hits_greater_than_thousand",
 				"type": "IfCondition",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set_total_hits",
@@ -481,6 +483,8 @@
 			{
 				"name": "Lookup_total_hits",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CVR_API_TO_SQL",
@@ -513,6 +517,8 @@
 			{
 				"name": "Set_total_hits",
 				"type": "SetVariable",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup_total_hits",
