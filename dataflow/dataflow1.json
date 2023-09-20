@@ -5,9 +5,9 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "test_data_flow",
-						"type": "DatasetReference"
+					"linkedService": {
+						"referenceName": "RestService1",
+						"type": "LinkedServiceReference"
 					},
 					"name": "source1"
 				}
@@ -19,62 +19,11 @@
 				"     validateSchema: false,",
 				"     inferDriftedColumnTypes: true,",
 				"     limit: 1,",
-				"     httpMethod: 'POST',",
-				"     body: '{",
-				"    \"_source\":[",
-				"        \"Vrvirksomhed.cvrNummer\",",
-				"        \"Vrvirksomhed.livsforloeb.periode.gyldigTil\", ",
-				"        \"Vrvirksomhed.livsforloeb.periode.gyldigFra\",",
-				"        \"Vrvirksomhed.reklamebeskyttet\",",
-				"        \"Vrvirksomhed.sidstIndlaest\",",
-				"        \"Vrvirksomhed.virksomhedMetadata\",",
-				"        \"Vrvirksomhed.enhedstype\"",
-				"    ],",
-				"    \"track_total_hits\": true,",
-				"    \"query\":{",
-				"        \"bool\":{",
-				"            \"must\":[",
-				"                {\"nested\":{",
-				"                    \"path\":\"Vrvirksomhed.livsforloeb\",",
-				"                    \"query\":{",
-				"                        \"bool\": {",
-				"                            \"must_not\":[{\"exists\":{\"field\":\"Vrvirksomhed.livsforloeb.periode.gyldigTil\"}}],",
-				"                            \"filter\": [{",
-				"                                \"range\": {",
-				"                                    \"Vrvirksomhed.livsforloeb.periode.gyldigFra\": {",
-				"                                        \"gte\": \"1900-01-01\"",
-				"                                        ,",
-				"                                        \"lte\": \"2025-12-31\"",
-				"                                    }",
-				"                                }",
-				"                            }]",
-				"                        }",
-				"                    }",
-				"                }}",
-				"                ,",
-				"                {",
-				"                    \"bool\": {",
-				"                        \"filter\": [",
-				"                            {",
-				"                                \"range\": {",
-				"                                    \"Vrvirksomhed.virksomhedMetadata.nyesteNavn.sidstOpdateret\": {",
-				"                                        \"gte\": \"2023-09-14T10:00:00.000\"",
-				"                                    }",
-				"                                }",
-				"                            }",
-				"                        ]",
-				"                    }",
-				"                }",
-				"            ]",
-				"        }",
-				"    }",
-				"    ,",
-				"    \"size\":10",
-				"}',",
+				"     format: 'rest',",
 				"     timeout: 30,",
-				"     headers: ['Content-Type' -> 'application/json'],",
+				"     httpMethod: 'POST',",
 				"     paginationRules: ['supportRFC5988' -> 'true'],",
-				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument']) ~> source1"
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine']) ~> source1"
 			]
 		}
 	}
