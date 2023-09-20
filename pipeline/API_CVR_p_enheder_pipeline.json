@@ -208,12 +208,10 @@
 									}
 								},
 								"sink": {
-									"type": "RestSink",
-									"httpRequestTimeout": "00:05:00",
-									"requestInterval": 10,
-									"requestMethod": "POST",
-									"writeBatchSize": 10000,
-									"httpCompressionType": "none"
+									"type": "AzureSqlSink",
+									"writeBehavior": "insert",
+									"sqlWriterUseTableLock": false,
+									"disableMetricsCollection": false
 								},
 								"enableStaging": false,
 								"translator": {
@@ -486,7 +484,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "input_CVR_p_enheder",
+									"referenceName": "output_CVR_p_enheder",
 									"type": "DatasetReference"
 								}
 							]
