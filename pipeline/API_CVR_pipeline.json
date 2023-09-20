@@ -259,7 +259,7 @@
 							},
 							{
 								"source": {
-									"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche1\\\\'][\\\\'branchekode\\\\']']"
+									"path": "$['['_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche1\\\\'][\\\\'branchekode\\\\']']"
 								},
 								"sink": {
 									"name": "bi_branche1_kode",
