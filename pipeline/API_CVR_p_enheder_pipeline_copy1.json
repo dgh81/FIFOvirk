@@ -20,7 +20,7 @@
 						"httpRequestTimeout": "00:01:40",
 						"requestInterval": "00.00:00:00.010",
 						"requestMethod": "POST",
-						"requestBody": "{\n    \"_source\":[\n        \"Vrvirksomhed\"\n    ],\n    \"track_total_hits\": true,\n    \"query\":{\n        \"bool\":{\n            \"must\":[\n                {\"nested\":{\n                    \"path\":\"Vrvirksomhed.livsforloeb\",\n                    \"query\":{\n                        \"bool\": {\n                            \"must_not\":[{\"exists\":{\"field\":\"Vrvirksomhed.livsforloeb.periode.gyldigTil\"}}],\n                            \"filter\": [{\n                                \"range\": {\n                                    \"Vrvirksomhed.livsforloeb.periode.gyldigFra\": {\n                                        \"gte\": \"2023-09-14\"\n                                        ,\n                                        \"lte\": \"2025-12-31\"\n                                    }\n                                }\n                            }]\n                        }\n                    }\n                }}\n                ,\n                {\n                    \"bool\": {\n                        \"filter\": [\n                            {\n                                \"range\": {\n                                    \"Vrvirksomhed.sidstOpdateret\": {\n                                        \"gte\": \"1900-01-01T00:00:00.000\"\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                }\n            ]\n        }\n    }\n    ,\n    \"size\":1\n}\n                                    ",
+						"requestBody": "{\"query\":{\"term\":{\"Vrvirksomhed.cvrNummer\":\"10000025\"}}}",
 						"additionalHeaders": {
 							"Content-Type": "application/json"
 						}
@@ -104,6 +104,8 @@
 			{
 				"name": "If_total_hits_greater_than_thousand",
 				"type": "IfCondition",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set_total_hits",
@@ -604,6 +606,8 @@
 			{
 				"name": "Lookup_total_hits",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "CVR_API_TO_SQL",
@@ -636,6 +640,8 @@
 			{
 				"name": "Set_total_hits",
 				"type": "SetVariable",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup_total_hits",
