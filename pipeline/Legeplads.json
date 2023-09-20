@@ -145,12 +145,20 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteKvartalsbeskaeftigelse']"
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
+								},
+								"sink": {
+									"name": "cvrNummer",
+									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteErstMaanedsbeskaeftigelse']"
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['antalAarsvaerk']"
+								},
+								"sink": {
+									"name": "nyesteAntalAarsvaerk",
+									"type": "Int32"
 								}
 							}
 						],
