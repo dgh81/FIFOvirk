@@ -160,7 +160,7 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
-									"sqlReaderQuery": "SELECT _scroll_id FROM cvr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
+									"sqlReaderQuery": "SELECT _scroll_id FROM CVR_penheder\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
