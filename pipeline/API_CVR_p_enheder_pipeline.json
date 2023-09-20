@@ -43,6 +43,16 @@
 						"mappings": [
 							{
 								"source": {
+									"path": "$['hits']['total']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['max_score']"
+								}
+							},
+							{
+								"source": {
 									"path": "$['_scroll_id']"
 								}
 							},
@@ -74,16 +84,6 @@
 							{
 								"source": {
 									"path": "$['_shards']['failed']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['total']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['max_score']"
 								}
 							},
 							{
@@ -155,7 +155,7 @@
 								}
 							}
 						],
-						"collectionReference": "$['hits']['hits']['_source']",
+						"collectionReference": "$['hits']['hits']['_source']['Vrvirksomhed']",
 						"mapComplexValuesToString": false
 					}
 				},
