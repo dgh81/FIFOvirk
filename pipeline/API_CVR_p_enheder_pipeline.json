@@ -25,7 +25,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"EndCondition:$['hits']['hits']['_source'][0]['Vrvirksomhed']['penheder']": "Exist"
+							"supportRFC5988.$['hits']['hits']['_source'][0]['Vrvirksomhed']['penheder']": "true"
 						}
 					},
 					"sink": {
