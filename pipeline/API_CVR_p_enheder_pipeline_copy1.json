@@ -96,7 +96,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "output_CVR_p_enheder",
+						"referenceName": "output_CVR_penhed_to_cvrnr",
 						"type": "DatasetReference"
 					}
 				]
@@ -163,7 +163,7 @@
 									"partitionOption": "None"
 								},
 								"dataset": {
-									"referenceName": "output_CVR_p_enheder",
+									"referenceName": "output_CVR_penhed_to_cvrnr",
 									"type": "DatasetReference"
 								},
 								"firstRowOnly": false
@@ -484,7 +484,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "output_CVR_p_enheder",
+									"referenceName": "output_CVR_penhed_to_cvrnr",
 									"type": "DatasetReference"
 								}
 							]
@@ -593,7 +593,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "output_CVR_p_enheder",
+									"referenceName": "output_CVR_penhed_to_cvrnr",
 									"type": "DatasetReference"
 								}
 							]
@@ -628,7 +628,7 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "output_CVR_p_enheder",
+						"referenceName": "output_CVR_penhed_to_cvrnr",
 						"type": "DatasetReference"
 					}
 				}

@@ -1,5 +1,5 @@
 {
-	"name": "output_CVR_p_enheder",
+	"name": "output_CVR_penhed_to_cvrnr",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase1",
