@@ -147,6 +147,15 @@
 								"source": {
 									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
 								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']"
+								},
+								"sink": {
+									"name": "nyesteAarsbeskaeftigelse",
+									"type": "Int32"
+								}
 							}
 						],
 						"collectionReference": "$['hits']['hits']",
