@@ -2,13 +2,16 @@
 	"name": "test_data_flow",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "RestService3",
+			"referenceName": "RestService1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": ""
+			"relativeUrl": {
+				"value": "'cvr-permanent/virksomhed/_search?scroll=4m'",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	}
