@@ -660,40 +660,32 @@
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['attributter'][0]['vaerdier'][0]['periode']['gyldigFra']"
-											},
-											"sink": {
-												"name": "gyldigFra",
-												"type": "DateTime"
+												"path": "$['Column_1']"
 											}
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['attributter'][0]['vaerdier'][0]['periode']['gyldigTil']"
-											},
-											"sink": {
-												"name": "gyldigTil",
-												"type": "DateTime"
+												"path": "$['Column_2']"
 											}
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['attributter'][0]['sekvensnr']"
+												"path": "$['Column_3']"
 											}
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['attributter'][0]['vaerditype']"
+												"path": "$['Column_4']"
 											}
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBinavne'][0]"
+												"path": "$['Column_5']"
 											}
 										},
 										{
 											"source": {
-												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKontaktoplysninger'][0]"
+												"path": "$['Column_6']"
 											}
 										}
 									],
