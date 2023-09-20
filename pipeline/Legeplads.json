@@ -145,25 +145,16 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
+									"path": "$['hits']['total']"
 								},
 								"sink": {
-									"name": "cvrNummer",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']"
-								},
-								"sink": {
-									"name": "nyesteAarsbeskaeftigelse",
-									"type": "Int32"
+									"name": "total_hits",
+									"type": "String"
 								}
 							}
 						],
 						"collectionReference": "$['hits']['hits']",
-						"mapComplexValuesToString": true
+						"mapComplexValuesToString": false
 					}
 				},
 				"inputs": [
@@ -174,7 +165,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "output_CVR_p_enheder",
+						"referenceName": "output_CVR_penheder",
 						"type": "DatasetReference"
 					}
 				]
