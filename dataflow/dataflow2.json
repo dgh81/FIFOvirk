@@ -5,9 +5,9 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"linkedService": {
-						"referenceName": "RestService1",
-						"type": "LinkedServiceReference"
+					"dataset": {
+						"referenceName": "input_CVR",
+						"type": "DatasetReference"
 					},
 					"name": "source1"
 				}
@@ -18,10 +18,6 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     limit: 1,",
-				"     format: 'rest',",
-				"     timeout: 30,",
-				"     entity: ('cvr-permanent/virksomhed/_search?scroll=4m'),",
-				"     headers: ['Content-Type' -> 'application/json'],",
 				"     httpMethod: 'POST',",
 				"     body: '{",
 				"    \"_source\":[",
@@ -73,10 +69,11 @@
 				"    }",
 				"    ,",
 				"    \"size\":10",
-				"}",
-				"                                    ',",
+				"}',",
+				"     timeout: 30,",
+				"     headers: ['Content-Type' -> 'application/json'],",
 				"     paginationRules: ['supportRFC5988' -> 'true'],",
-				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument']) ~> source1"
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine']) ~> source1"
 			]
 		}
 	}
