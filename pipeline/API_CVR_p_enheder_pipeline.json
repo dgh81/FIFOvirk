@@ -78,7 +78,7 @@
 								}
 							}
 						],
-						"collectionReference": "$['hits']['hits']['_source']['Vrvirksomhed']['penheder']",
+						"collectionReference": "$['hits']['hits']['_source'][0]['Vrvirksomhed']['penheder']",
 						"mapComplexValuesToString": false
 					}
 				},
