@@ -17,11 +17,6 @@
 				"name": "cvrNummer",
 				"type": "int",
 				"precision": 10
-			},
-			{
-				"name": "nyesteAarsbeskaeftigelse",
-				"type": "int",
-				"precision": 10
 			}
 		],
 		"typeProperties": {
