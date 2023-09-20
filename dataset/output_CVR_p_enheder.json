@@ -9,12 +9,17 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
+				"name": "pNummer",
+				"type": "int",
+				"precision": 10
+			},
+			{
 				"name": "cvrNummer",
 				"type": "int",
 				"precision": 10
 			},
 			{
-				"name": "pNummer",
+				"name": "nyesteAarsbeskaeftigelse",
 				"type": "int",
 				"precision": 10
 			}
