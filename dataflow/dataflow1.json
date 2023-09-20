@@ -21,6 +21,7 @@
 				"     limit: 1,",
 				"     format: 'rest',",
 				"     timeout: 30,",
+				"     entity: (@concat('cvr-permanent/virksomhed/_search?scroll=4m')),",
 				"     httpMethod: 'POST',",
 				"     body: '{",
 				"    \"_source\":[",
