@@ -1,0 +1,46 @@
+{
+	"name": "output_CVR_penheder",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "pNummer",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "cvrNummer",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "_scroll_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "total_hits",
+				"type": "nvarchar"
+			},
+			{
+				"name": "nyesteAarsbeskaeftigelse",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "insert_timestamp",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CVR_p_enheder"
+		}
+	}
+}
