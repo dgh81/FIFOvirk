@@ -17,6 +17,14 @@
 				"name": "cvrNummer",
 				"type": "int",
 				"precision": 10
+			},
+			{
+				"name": "_scroll_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "total_hits",
+				"type": "nvarchar"
 			}
 		],
 		"typeProperties": {
