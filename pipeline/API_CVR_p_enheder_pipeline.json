@@ -43,6 +43,29 @@
 						"mappings": [
 							{
 								"source": {
+									"path": "$['hits']['total']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['_scroll_id']"
+								},
+								"sink": {
+									"name": "_scroll_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+								}
+							},
+							{
+								"source": {
 									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
 								},
 								"sink": {
@@ -52,11 +75,31 @@
 							},
 							{
 								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['sidstIndlaest']"
+								}
+							},
+							{
+								"source": {
 									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['penheder'][0]['pNummer']"
 								},
 								"sink": {
 									"name": "pNummer",
 									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['penheder'][0]['sidstOpdateret']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['penheder'][0]['periode']['gyldigFra']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['penheder'][0]['periode']['gyldigTil']"
 								}
 							}
 						],
