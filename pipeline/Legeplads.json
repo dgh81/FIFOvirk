@@ -124,7 +124,7 @@
 						"upsertSettings": {
 							"useTempDB": true,
 							"keys": [
-								"cvrNummer"
+								"pNummer"
 							]
 						},
 						"sqlWriterUseTableLock": false,
