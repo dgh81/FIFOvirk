@@ -23,6 +23,9 @@
 						"requestBody": "{\n        \"query\":{\n            \"bool\":{\n                \"should\":[\n                    {\"term\":{\"Vrvirksomhed.cvrNummer\":\"10000025\"}},\n                    {\"term\":{\"Vrvirksomhed.cvrNummer\":\"34167982\"}}\n                ]\n            }\n        }\n    }",
 						"additionalHeaders": {
 							"Content-Type": "application/json"
+						},
+						"paginationRules": {
+							"EndCondition": "Exist"
 						}
 					},
 					"sink": {
