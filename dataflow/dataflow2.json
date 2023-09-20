@@ -21,6 +21,7 @@
 				"     format: 'rest',",
 				"     timeout: 30,",
 				"     entity: ('cvr-permanent/virksomhed/_search?scroll=4m'),",
+				"     headers: ['Content-Type' -> 'application/json'],",
 				"     httpMethod: 'POST',",
 				"     body: '{",
 				"    \"_source\":[",
