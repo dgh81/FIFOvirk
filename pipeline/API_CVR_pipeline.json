@@ -660,7 +660,7 @@
 										},
 										{
 											"source": {
-												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche1\\\\'][\\\\'branchekode\\\\']']"
+												"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchekode\\']']"
 											},
 											"sink": {
 												"name": "bi_branche1_kode",
@@ -669,7 +669,7 @@
 										},
 										{
 											"source": {
-												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche1\\\\'][\\\\'branchetekst\\\\']']"
+												"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche1\\'][\\'branchetekst\\']']"
 											},
 											"sink": {
 												"name": "bi_branche1_tekst",
@@ -678,7 +678,7 @@
 										},
 										{
 											"source": {
-												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche2\\\\'][\\\\'branchekode\\\\']']"
+												"path": "$['[\\'_source\\'][\\'Vrvirksomhed\\'][\\'virksomhedMetadata\\'][\\'nyesteBibranche2\\'][\\'branchekode\\']']"
 											},
 											"sink": {
 												"name": "bi_branche2_kode",
