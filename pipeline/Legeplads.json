@@ -822,8 +822,10 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table CVR_p_enheder",
 						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -849,7 +851,7 @@
 							},
 							{
 								"source": {
-									"path": "$['hits']['hits'][0]['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']"
+									"path": "$['hits']['hits'][0]['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['antalAarsvaerk']"
 								},
 								"sink": {
 									"name": "nyesteAntalAarsvaerk",
