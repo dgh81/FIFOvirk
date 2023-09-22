@@ -970,27 +970,7 @@
 										},
 										{
 											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['telefaxNummer'][0]['sidstOpdateret']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['telefaxNummer'][0]['hemmelig']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['telefaxNummer'][0]['kontaktoplysning']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['telefaxNummer'][0]['periode']['gyldigFra']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['telefaxNummer'][0]['periode']['gyldigTil']"
+												"path": "['_source']['VrproduktionsEnhed']['telefaxNummer'][0]"
 											}
 										},
 										{
@@ -1149,27 +1129,7 @@
 										},
 										{
 											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['elektroniskPost'][0]['sidstOpdateret']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['elektroniskPost'][0]['hemmelig']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['elektroniskPost'][0]['kontaktoplysning']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['elektroniskPost'][0]['periode']['gyldigFra']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['elektroniskPost'][0]['periode']['gyldigTil']"
+												"path": "['_source']['VrproduktionsEnhed']['elektroniskPost'][0]"
 											}
 										},
 										{
@@ -1243,27 +1203,7 @@
 										},
 										{
 											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['telefonNummer'][0]['sidstOpdateret']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['telefonNummer'][0]['hemmelig']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['telefonNummer'][0]['kontaktoplysning']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['telefonNummer'][0]['periode']['gyldigFra']"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['telefonNummer'][0]['periode']['gyldigTil']"
+												"path": "['_source']['VrproduktionsEnhed']['telefonNummer'][0]"
 											}
 										},
 										{
