@@ -1736,9 +1736,15 @@
 									"httpRequestTimeout": "00:01:40",
 									"requestInterval": "00.00:00:00.010",
 									"requestMethod": "POST",
-									"requestBody": "{\n        \"query\":{\n            \"bool\":{\n                \"should\":[\n                    {\"term\":{\"VrproduktionsEnhed.pNummer\":\"1003147589\"}},\n                    {\"term\":{\"VrproduktionsEnhed.pNummer\":\"1003146569\"}}\n                ]\n            }\n        },\n\"size\":1\n    }",
+									"requestBody": {
+										"value": "@concat('{\n        \"scroll\":\"4m\",\n        \"scroll_id\":\"',variables('last_scroll_id'),'\"\n        }'\n        )",
+										"type": "Expression"
+									},
 									"additionalHeaders": {
 										"Content-Type": "application/json"
+									},
+									"paginationRules": {
+										"EndCondition:$['hits']['hits']": "Empty"
 									}
 								},
 								"sink": {
