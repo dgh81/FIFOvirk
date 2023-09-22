@@ -5,10 +5,18 @@
 			"referenceName": "RestService1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"dynamicURL": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "cvr-permanent/produktionsenhed/_search?scroll=2m"
+			"relativeUrl": {
+				"value": "@dataset().dynamicURL",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	}
