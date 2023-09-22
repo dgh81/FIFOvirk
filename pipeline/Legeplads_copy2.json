@@ -55,11 +55,6 @@
 									"name": "cvrNummer",
 									"type": "Int32"
 								}
-							},
-							{
-								"source": {
-									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']"
-								}
 							}
 						],
 						"collectionReference": "$['hits']['hits']"
