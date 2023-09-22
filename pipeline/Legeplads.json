@@ -817,7 +817,7 @@
 							"Content-Type": "application/json"
 						},
 						"paginationRules": {
-							"EndCondition:$.hits.hits": "Empty"
+							"EndCondition:$[0].hits.hits": "Exist"
 						}
 					},
 					"sink": {
