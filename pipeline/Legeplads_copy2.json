@@ -159,7 +159,14 @@
 			{
 				"name": "If_total_hits_greater_than_thousand",
 				"type": "IfCondition",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Set_total_hits",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
