@@ -153,6 +153,9 @@
 		"variables": {
 			"last_scroll_id": {
 				"type": "String"
+			},
+			"total_hits": {
+				"type": "String"
 			}
 		},
 		"annotations": [],
