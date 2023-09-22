@@ -908,7 +908,7 @@
 									"referenceName": "input_CVR",
 									"type": "DatasetReference",
 									"parameters": {
-										"dynamicURL": "/cvr-permanent/produktionsenhed/_search/scroll"
+										"dynamicURL": "_search/scroll"
 									}
 								}
 							],
