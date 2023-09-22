@@ -793,6 +793,8 @@
 						{
 							"name": "CVR_API_TO_SQL_copy1",
 							"type": "Copy",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
