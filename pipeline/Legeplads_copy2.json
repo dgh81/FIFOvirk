@@ -28,7 +28,13 @@
 					"sink": {
 						"type": "AzureSqlSink",
 						"preCopyScript": "truncate table CVR_p_enheder",
-						"writeBehavior": "insert",
+						"writeBehavior": "upsert",
+						"upsertSettings": {
+							"useTempDB": true,
+							"keys": [
+								"pNummer"
+							]
+						},
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
 					},
