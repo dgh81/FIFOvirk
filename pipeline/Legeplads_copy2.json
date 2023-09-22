@@ -103,7 +103,14 @@
 			{
 				"name": "Lookup_total_hits",
 				"type": "Lookup",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Copy data2",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
