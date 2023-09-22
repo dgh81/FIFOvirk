@@ -1121,7 +1121,10 @@
 									"referenceName": "input_CVR",
 									"type": "DatasetReference",
 									"parameters": {
-										"dynamicURL": "_search/scroll"
+										"dynamicURL": {
+											"value": "@concat('cvr-permanent/produktionsenhed/_search?scroll=4m')",
+											"type": "Expression"
+										}
 									}
 								}
 							],
