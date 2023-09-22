@@ -99,8 +99,62 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Lookup_total_hits",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT total_hits FROM cvr\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "output_CVR",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "Set_total_hits",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Lookup_total_hits",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "total_hits",
+					"value": {
+						"value": "@activity('Lookup_total_hits').output.firstRow.total_hits",
+						"type": "Expression"
+					}
+				}
 			}
 		],
+		"variables": {
+			"last_scroll_id": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2023-09-05T09:01:09Z"
 	},
