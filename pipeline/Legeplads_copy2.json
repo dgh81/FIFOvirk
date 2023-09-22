@@ -90,7 +90,7 @@
 						"referenceName": "input_CVR_p_enheder",
 						"type": "DatasetReference",
 						"parameters": {
-							"dynamicURL": "_search?scroll"
+							"dynamicURL": "_search?scroll=2m"
 						}
 					}
 				],
