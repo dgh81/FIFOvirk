@@ -88,7 +88,10 @@
 				"inputs": [
 					{
 						"referenceName": "input_CVR_p_enheder",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"dynamicURL": "_search?scroll"
+						}
 					}
 				],
 				"outputs": [
