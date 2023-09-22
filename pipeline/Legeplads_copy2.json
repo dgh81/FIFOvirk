@@ -795,14 +795,7 @@
 						{
 							"name": "CVR_API_TO_SQL_copy1",
 							"type": "Copy",
-							"dependsOn": [
-								{
-									"activity": "Set scroll_id",
-									"dependencyConditions": [
-										"Completed"
-									]
-								}
-							],
+							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
@@ -1721,7 +1714,14 @@
 						{
 							"name": "Copy data2_copy1",
 							"type": "Copy",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Set scroll_id",
+									"dependencyConditions": [
+										"Completed"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
