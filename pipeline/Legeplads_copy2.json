@@ -1141,7 +1141,7 @@
 				"type": "String"
 			},
 			"total_hits": {
-				"type": "String"
+				"type": "Integer"
 			}
 		},
 		"annotations": [],
