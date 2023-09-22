@@ -22,6 +22,9 @@
 						"requestMethod": "GET",
 						"additionalHeaders": {
 							"Content-Type": "application/json"
+						},
+						"paginationRules": {
+							"MaxRequestNumber": "30"
 						}
 					},
 					"sink": {
