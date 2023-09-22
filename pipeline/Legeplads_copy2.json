@@ -46,6 +46,42 @@
 									"name": "pNummer",
 									"type": "Int32"
 								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
+								},
+								"sink": {
+									"name": "cvrNummer",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['antalAarsvaerk']"
+								},
+								"sink": {
+									"name": "nyesteAntalAarsvaerk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['total']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['_scroll_id']"
+								},
+								"sink": {
+									"name": "_scroll_id",
+									"type": "String"
+								}
 							}
 						],
 						"collectionReference": "$['hits']['hits']"
