@@ -8,7 +8,7 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "cvr-permanent/produktionsenhed/_search?scroll=1m"
+			"relativeUrl": "cvr-permanent/produktionsenhed/_search?scroll"
 		},
 		"schema": []
 	}
