@@ -157,8 +157,6 @@
 			{
 				"name": "If_total_hits_greater_than_thousand",
 				"type": "IfCondition",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Set_total_hits",
