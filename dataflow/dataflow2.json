@@ -13,7 +13,7 @@
 				},
 				{
 					"dataset": {
-						"referenceName": "input_BBR_enheder",
+						"referenceName": "input_BBR_bygninger",
 						"type": "DatasetReference"
 					},
 					"name": "source2"
@@ -88,7 +88,7 @@
 				"     validateSchema: false,",
 				"     httpMethod: 'GET',",
 				"     timeout: 30,",
-				"     requestInterval: 0) ~> "
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument']) ~> "
 			]
 		}
 	}
