@@ -12,6 +12,10 @@
 					"name": "source1"
 				},
 				{
+					"dataset": {
+						"referenceName": "input_BBR_enheder",
+						"type": "DatasetReference"
+					},
 					"name": "source2"
 				}
 			],
@@ -81,7 +85,10 @@
 				"     paginationRules: ['supportRFC5988' -> 'true'],",
 				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument']) ~> ",
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> "
+				"     validateSchema: false,",
+				"     httpMethod: 'GET',",
+				"     timeout: 30,",
+				"     requestInterval: 0) ~> "
 			]
 		}
 	}
