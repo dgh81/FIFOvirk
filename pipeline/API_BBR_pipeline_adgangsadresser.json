@@ -299,7 +299,11 @@
 				"inputs": [
 					{
 						"referenceName": "input_BBR_adgangsadresser",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"transaktions_id": "3981711",
+							"temp": "https://api.dataforsyningen.dk/replikering/senestetransaktion"
+						}
 					}
 				],
 				"outputs": [
