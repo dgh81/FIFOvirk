@@ -46,7 +46,7 @@
 								},
 								"sink": {
 									"name": "status",
-									"type": "Int32"
+									"type": "Byte"
 								}
 							},
 							{
@@ -55,7 +55,7 @@
 								},
 								"sink": {
 									"name": "kilde",
-									"type": "Int32"
+									"type": "Byte"
 								}
 							},
 							{
@@ -91,7 +91,7 @@
 								},
 								"sink": {
 									"name": "kommunekode",
-									"type": "Int32"
+									"type": "Int16"
 								}
 							},
 							{
@@ -100,7 +100,7 @@
 								},
 								"sink": {
 									"name": "vejkode",
-									"type": "Int32"
+									"type": "Byte"
 								}
 							},
 							{
@@ -118,7 +118,7 @@
 								},
 								"sink": {
 									"name": "postnr",
-									"type": "Int32"
+									"type": "Int16"
 								}
 							},
 							{
@@ -127,7 +127,7 @@
 								},
 								"sink": {
 									"name": "etrs89koordinat_øst",
-									"type": "String"
+									"type": "Decimal"
 								}
 							},
 							{
@@ -136,7 +136,7 @@
 								},
 								"sink": {
 									"name": "etrs89koordinat_nord",
-									"type": "String"
+									"type": "Decimal"
 								}
 							},
 							{
@@ -172,7 +172,7 @@
 								},
 								"sink": {
 									"name": "højde",
-									"type": "String"
+									"type": "Decimal"
 								}
 							},
 							{
@@ -217,7 +217,7 @@
 								},
 								"sink": {
 									"name": "matrikelnr",
-									"type": "String"
+									"type": "Byte"
 								}
 							},
 							{
@@ -244,7 +244,7 @@
 								},
 								"sink": {
 									"name": "tekstretning",
-									"type": "String"
+									"type": "Int16"
 								}
 							},
 							{
