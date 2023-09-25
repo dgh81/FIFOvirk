@@ -79,7 +79,7 @@
 				"    \"size\":1",
 				"}',",
 				"     paginationRules: ['supportRFC5988' -> 'true'],",
-				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine']) ~> ",
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument']) ~> ",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false) ~> "
 			]
