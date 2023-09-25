@@ -74,7 +74,8 @@
 				"    \"size\":1",
 				"}',",
 				"     timeout: 30,",
-				"     headers: ['Content-Type' -> 'application/json']) ~> ",
+				"     headers: ['Content-Type' -> 'application/json'],",
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument']) ~> ",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false) ~> "
 			]
