@@ -21,7 +21,8 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     httpMethod: 'GET',",
-				"     timeout: 30) ~> ",
+				"     timeout: 30,",
+				"     requestInterval: 0) ~> ",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false) ~> "
 			]
