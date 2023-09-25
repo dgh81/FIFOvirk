@@ -100,7 +100,7 @@
 								},
 								"sink": {
 									"name": "vejkode",
-									"type": "Byte"
+									"type": "Int16"
 								}
 							},
 							{
