@@ -23,6 +23,8 @@
 				"     limit: 1,",
 				"     format: 'rest',",
 				"     timeout: 30,",
+				"     entity: '/cvr-permanent/virksomhed/_search',",
+				"     headers: ['Content-Type' -> 'application/json'],",
 				"     httpMethod: 'POST',",
 				"     body: '{    ",
 				"    \"_source\":[",
