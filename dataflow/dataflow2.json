@@ -73,7 +73,8 @@
 				"    ,",
 				"    \"size\":1",
 				"}',",
-				"     timeout: 30) ~> ",
+				"     timeout: 30,",
+				"     headers: ['Content-Type' -> 'application/json']) ~> ",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false) ~> "
 			]
