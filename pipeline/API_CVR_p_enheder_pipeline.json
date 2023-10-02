@@ -1,9 +1,9 @@
 {
-	"name": "API_CVR_p_enheder_pipeline",
+	"name": "Legeplads_copy2",
 	"properties": {
 		"activities": [
 			{
-				"name": "CVR_API_TO_SQL",
+				"name": "Copy data2",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -20,7 +20,7 @@
 						"httpRequestTimeout": "00:01:40",
 						"requestInterval": "00.00:00:00.010",
 						"requestMethod": "POST",
-						"requestBody": "{\n    \"_source\":[\n        \"Vrvirksomhed\"\n    ],\n    \"track_total_hits\": true,\n    \"query\":{\n        \"bool\":{\n            \"must\":[\n                {\"nested\":{\n                    \"path\":\"Vrvirksomhed.livsforloeb\",\n                    \"query\":{\n                        \"bool\": {\n                            \"must_not\":[{\"exists\":{\"field\":\"Vrvirksomhed.livsforloeb.periode.gyldigTil\"}}],\n                            \"filter\": [{\n                                \"range\": {\n                                    \"Vrvirksomhed.livsforloeb.periode.gyldigFra\": {\n                                        \"gte\": \"2023-09-14\"\n                                        ,\n                                        \"lte\": \"2025-12-31\"\n                                    }\n                                }\n                            }]\n                        }\n                    }\n                }}\n                ,\n                {\n                    \"bool\": {\n                        \"filter\": [\n                            {\n                                \"range\": {\n                                    \"Vrvirksomhed.sidstOpdateret\": {\n                                        \"gte\": \"1900-01-01T00:00:00.000\"\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                }\n            ]\n        }\n    }\n    ,\n    \"size\":1\n}\n                                    ",
+						"requestBody": "{\n    \"_source\":[\n        \"VrproduktionsEnhed\"\n    ],\n    \"track_total_hits\": true,\n    \"query\":{\n        \"bool\":{\n            \"must\":[\n                {\"nested\":{\n                    \"path\":\"VrproduktionsEnhed.livsforloeb\",\n                    \"query\":{\n                        \"bool\": {\n                            \"must_not\":[{\"exists\":{\"field\":\"VrproduktionsEnhed.virksomhedsrelation.livsforloeb.periode.gyldigTil\"}},\n                                               {\"exists\":{\"field\":\"VrproduktionsEnhed.livsforloeb.periode.gyldigTil\"}}\n                                               ],\n                            \"filter\": [{\n                                \"range\": {\n                                    \"VrproduktionsEnhed.livsforloeb.periode.gyldigFra\": {\n                                        \"gte\": \"1900-01-01\"\n                                        ,\n                                        \"lte\": \"2023-12-31\"\n                                    }\n                                }\n                            }]\n                        }\n                    }\n                }}\n                ,\n                {\n                    \"bool\": {\n                        \"filter\": [\n                            {\n                                \"range\": {\n                                    \"VrproduktionsEnhed.sidstOpdateret\": {\n                                        \"gte\": \"1900-01-01T00:00:00.000\"\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                }\n            ]\n        }\n    }\n    ,\n    \"size\":1000\n}",
 						"additionalHeaders": {
 							"Content-Type": "application/json"
 						}
@@ -31,7 +31,7 @@
 						"upsertSettings": {
 							"useTempDB": true,
 							"keys": [
-								"cvrNummer"
+								"pNummer"
 							]
 						},
 						"sqlWriterUseTableLock": false,
@@ -43,10 +43,28 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "['pNummer']"
+									"path": "['_source']['VrproduktionsEnhed']['pNummer']"
 								},
 								"sink": {
 									"name": "pNummer",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
+								},
+								"sink": {
+									"name": "cvrNummer",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['antalAarsvaerk']"
+								},
+								"sink": {
+									"name": "nyesteAntalAarsvaerk",
 									"type": "Int32"
 								}
 							},
@@ -56,7 +74,7 @@
 								},
 								"sink": {
 									"name": "total_hits",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -67,28 +85,18 @@
 									"name": "_scroll_id",
 									"type": "String"
 								}
-							},
-							{
-								"source": {
-									"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
-								},
-								"sink": {
-									"name": "cvrNummer",
-									"type": "Int32"
-								}
 							}
 						],
-						"collectionReference": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['penheder']",
-						"mapComplexValuesToString": false
+						"collectionReference": "$['hits']['hits']"
 					}
 				},
 				"inputs": [
 					{
-						"referenceName": "input_CVR",
+						"referenceName": "input_CVR_p_enheder",
 						"type": "DatasetReference",
 						"parameters": {
 							"dynamicURL": {
-								"value": "@concat('cvr-permanent/virksomhed/_search?scroll=4m')",
+								"value": "@concat('cvr-permanent/produktionsenhed/_search?scroll=4m')",
 								"type": "Expression"
 							}
 						}
@@ -96,10 +104,66 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "output_CVR_penhed_to_cvrnr",
+						"referenceName": "output_CVR_penheder",
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Lookup_total_hits",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "Copy data2",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT total_hits FROM cvr_p_enheder\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "output_CVR",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "Set_total_hits",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Lookup_total_hits",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "total_hits",
+					"value": {
+						"value": "@activity('Lookup_total_hits').output.firstRow.total_hits",
+						"type": "Expression"
+					}
+				}
 			},
 			{
 				"name": "If_total_hits_greater_than_thousand",
@@ -158,12 +222,12 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
-									"sqlReaderQuery": "SELECT _scroll_id FROM CVR_penheder\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
+									"sqlReaderQuery": "SELECT _scroll_id FROM cvr_p_enheder\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
 								"dataset": {
-									"referenceName": "output_CVR_penhed_to_cvrnr",
+									"referenceName": "output_CVR",
 									"type": "DatasetReference"
 								},
 								"firstRowOnly": false
@@ -174,324 +238,6 @@
 							"type": "Copy",
 							"state": "Inactive",
 							"onInactiveMarkAs": "Succeeded",
-							"dependsOn": [
-								{
-									"activity": "Set scroll_id",
-									"dependencyConditions": [
-										"Completed"
-									]
-								}
-							],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"source": {
-									"type": "RestSource",
-									"httpRequestTimeout": "00:01:40",
-									"requestInterval": "00.00:00:00.010",
-									"requestMethod": "POST",
-									"requestBody": {
-										"value": "@concat('{\n        \"scroll\":\"4m\",\n        \"scroll_id\":\"',variables('last_scroll_id'),'\"\n        }'\n        )",
-										"type": "Expression"
-									},
-									"additionalHeaders": {
-										"Content-Type": "application/json"
-									},
-									"paginationRules": {
-										"supportRFC5988": "true"
-									}
-								},
-								"sink": {
-									"type": "AzureSqlSink",
-									"writeBehavior": "insert",
-									"sqlWriterUseTableLock": false,
-									"disableMetricsCollection": false
-								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"mappings": [
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
-											},
-											"sink": {
-												"name": "cvrNummer",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['sidstIndlaest']"
-											},
-											"sink": {
-												"name": "sidstIndlaest",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['reklamebeskyttet']"
-											},
-											"sink": {
-												"name": "reklamebeskyttet",
-												"type": "Boolean"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['navn']"
-											},
-											"sink": {
-												"name": "navn",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['branchetekst']"
-											},
-											"sink": {
-												"name": "branchetekst",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['branchekode']"
-											},
-											"sink": {
-												"name": "branchekode",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['adresseId']"
-											},
-											"sink": {
-												"name": "adresseId",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['vejnavn']"
-											},
-											"sink": {
-												"name": "vejnavn",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['bogstavTil']"
-											},
-											"sink": {
-												"name": "bogstavTil",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['bogstavFra']"
-											},
-											"sink": {
-												"name": "bogstavFra",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['kommuneNavn']"
-											},
-											"sink": {
-												"name": "kommuneNavn",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['husnummerFra']"
-											},
-											"sink": {
-												"name": "husnummerFra",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['postnummer']"
-											},
-											"sink": {
-												"name": "postnummer",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['etage']"
-											},
-											"sink": {
-												"name": "etage",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['bynavn']"
-											},
-											"sink": {
-												"name": "bynavn",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['husnummerTil']"
-											},
-											"sink": {
-												"name": "husnummerTil",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['postdistrikt']"
-											},
-											"sink": {
-												"name": "postdistrikt",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['total']"
-											},
-											"sink": {
-												"name": "total_hits",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['_scroll_id']"
-											},
-											"sink": {
-												"name": "_scroll_id",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
-											},
-											"sink": {
-												"name": "gyldigFra",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
-											},
-											"sink": {
-												"name": "gyldigTil",
-												"type": "DateTime"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche1\\\\'][\\\\'branchekode\\\\']']"
-											},
-											"sink": {
-												"name": "bi_branche1_kode",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche1\\\\'][\\\\'branchetekst\\\\']']"
-											},
-											"sink": {
-												"name": "bi_branche1_tekst",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche2\\\\'][\\\\'branchekode\\\\']']"
-											},
-											"sink": {
-												"name": "bi_branche2_kode",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche2\\\\'][\\\\'branchetekst\\\\']']"
-											},
-											"sink": {
-												"name": "bi_branche2_tekst",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche3\\\\'][\\\\'branchekode\\\\']']"
-											},
-											"sink": {
-												"name": "bi_branche3_kode",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][\\\\'nyesteBibranche3\\\\'][\\\\'branchetekst\\\\']']"
-											},
-											"sink": {
-												"name": "bi_branche3_tekst",
-												"type": "String"
-											}
-										},
-										{
-											"source": {
-												"path": "$['[\\\\'_source\\\\'][\\\\'Vrvirksomhed\\\\'][\\\\'virksomhedMetadata\\\\'][nyesteAarsbeskaeftigelse\\\\'][\\\\'antalAarsvaerk\\\\']']"
-											},
-											"sink": {
-												"name": "antalAarsvaerk",
-												"type": "Int32"
-											}
-										}
-									],
-									"collectionReference": "$['hits']['hits']['_source'][0]['Vrvirksomhed']['penheder']"
-								}
-							},
-							"inputs": [
-								{
-									"referenceName": "input_CVR",
-									"type": "DatasetReference",
-									"parameters": {
-										"dynamicURL": "_search/scroll"
-									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "output_CVR_penhed_to_cvrnr",
-									"type": "DatasetReference"
-								}
-							]
-						},
-						{
-							"name": "CVR_API_TO_SQL_copy1",
-							"type": "Copy",
 							"dependsOn": [
 								{
 									"activity": "Set scroll_id",
@@ -543,22 +289,561 @@
 									"mappings": [
 										{
 											"source": {
-												"path": "['pNummer']"
+												"path": "$['_scroll_id']"
 											},
 											"sink": {
-												"name": "pNummer",
-												"type": "Int32"
+												"name": "_scroll_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "$['took']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['timed_out']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['total']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['successful']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['skipped']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['failed']"
 											}
 										},
 										{
 											"source": {
 												"path": "$['hits']['total']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['max_score']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_index']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_type']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_id']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_score']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigFra']"
 											},
 											"sink": {
-												"name": "total_hits",
+												"name": "gyldigFra",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['livsforloeb'][0]['periode']['gyldigTil']"
+											},
+											"sink": {
+												"name": "gyldigTil",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['cvrNummer']"
+											},
+											"sink": {
+												"name": "cvrNummer",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['sidstIndlaest']"
+											},
+											"sink": {
+												"name": "sidstIndlaest",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['reklamebeskyttet']"
+											},
+											"sink": {
+												"name": "reklamebeskyttet",
+												"type": "Boolean"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['enhedstype']"
+											},
+											"sink": {
+												"name": "enhedstype",
 												"type": "String"
 											}
 										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['stiftelsesDato']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['sammensatStatus']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['navn']"
+											},
+											"sink": {
+												"name": "navn",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['periode']['gyldigFra']"
+											},
+											"sink": {
+												"name": "gyldigFra",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteNavn']['periode']['gyldigTil']"
+											},
+											"sink": {
+												"name": "gyldigTil",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteStatus']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche1']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBinavne'][0]"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKvartalsbeskaeftigelse']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteKontaktoplysninger'][0]"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['antalPenheder']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['branchetekst']"
+											},
+											"sink": {
+												"name": "branchetekst",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['branchekode']"
+											},
+											"sink": {
+												"name": "branchekode",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['periode']['gyldigFra']"
+											},
+											"sink": {
+												"name": "gyldigFra",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteHovedbranche']['periode']['gyldigTil']"
+											},
+											"sink": {
+												"name": "gyldigTil",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche3']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBibranche2']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['vejkode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['fritekst']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['adresseId']"
+											},
+											"sink": {
+												"name": "adresseId",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['vejnavn']"
+											},
+											"sink": {
+												"name": "vejnavn",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['bogstavTil']"
+											},
+											"sink": {
+												"name": "bogstavTil",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['conavn']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['bogstavFra']"
+											},
+											"sink": {
+												"name": "bogstavFra",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['periode']['gyldigFra']"
+											},
+											"sink": {
+												"name": "gyldigFra",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['periode']['gyldigTil']"
+											},
+											"sink": {
+												"name": "gyldigTil",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['kommuneNavn']"
+											},
+											"sink": {
+												"name": "kommuneNavn",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['kommuneKode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['periode']['gyldigFra']"
+											},
+											"sink": {
+												"name": "gyldigFra",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['periode']['gyldigTil']"
+											},
+											"sink": {
+												"name": "gyldigTil",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['husnummerFra']"
+											},
+											"sink": {
+												"name": "husnummerFra",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['postboks']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['postnummer']"
+											},
+											"sink": {
+												"name": "postnummer",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['etage']"
+											},
+											"sink": {
+												"name": "etage",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['bynavn']"
+											},
+											"sink": {
+												"name": "bynavn",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['husnummerTil']"
+											},
+											"sink": {
+												"name": "husnummerTil",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['sidedoer']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['landekode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['sidstValideret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteBeliggenhedsadresse']['postdistrikt']"
+											},
+											"sink": {
+												"name": "postdistrikt",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteErstMaanedsbeskaeftigelse']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteAarsbeskaeftigelse']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteMaanedsbeskaeftigelse']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['virksomhedsformkode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['langBeskrivelse']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['kortBeskrivelse']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['ansvarligDataleverandoer']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['periode']['gyldigFra']"
+											},
+											"sink": {
+												"name": "gyldigFra",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['nyesteVirksomhedsform']['periode']['gyldigTil']"
+											},
+											"sink": {
+												"name": "gyldigTil",
+												"type": "DateTime"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['Vrvirksomhed']['virksomhedMetadata']['virkningsDato']"
+											}
+										}
+									],
+									"collectionReference": "$['hits']['hits']"
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "input_CVR",
+									"type": "DatasetReference",
+									"parameters": {
+										"dynamicURL": "_search/scroll"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "output_CVR",
+									"type": "DatasetReference"
+								}
+							]
+						},
+						{
+							"name": "CVR_API_TO_SQL_copy1",
+							"type": "Copy",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "RestSource",
+									"httpRequestTimeout": "00:01:40",
+									"requestInterval": "00.00:00:00.010",
+									"requestMethod": "POST",
+									"additionalHeaders": {
+										"Content-Type": "application/json"
+									},
+									"paginationRules": {
+										"EndCondition:$['hits']['hits']": "Empty"
+									}
+								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"writeBehavior": "upsert",
+									"upsertSettings": {
+										"useTempDB": true,
+										"keys": [
+											"cvrNummer"
+										]
+									},
+									"sqlWriterUseTableLock": false,
+									"disableMetricsCollection": false
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
 										{
 											"source": {
 												"path": "$['_scroll_id']"
@@ -570,15 +855,854 @@
 										},
 										{
 											"source": {
-												"path": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['cvrNummer']"
+												"path": "$['took']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['timed_out']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['total']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['successful']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['skipped']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_shards']['failed']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['total']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['max_score']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_index']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_type']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_id']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_score']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['pNummer']"
+											},
+											"sink": {
+												"name": "pNummer",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['brancheAnsvarskode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['reklamebeskyttet']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['navne'][0]['navn']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['navne'][0]['periode']['gyldigFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['navne'][0]['periode']['gyldigTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['navne'][0]['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['postadresse'][0]"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['landekode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['fritekst']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['vejkode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['kommune']['kommuneKode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['kommune']['kommuneNavn']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['kommune']['periode']['gyldigFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['kommune']['periode']['gyldigTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['kommune']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['husnummerFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['adresseId']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['sidstValideret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['husnummerTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['bogstavFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['bogstavTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['etage']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['sidedoer']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['conavn']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['postboks']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['vejnavn']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['bynavn']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['postnummer']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['postdistrikt']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['periode']['gyldigFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['periode']['gyldigTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['beliggenhedsadresse'][0]['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['telefonNummer'][0]['kontaktoplysning']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['telefonNummer'][0]['hemmelig']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['telefonNummer'][0]['periode']['gyldigFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['telefonNummer'][0]['periode']['gyldigTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['telefonNummer'][0]['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['telefaxNummer'][0]['kontaktoplysning']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['telefaxNummer'][0]['hemmelig']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['telefaxNummer'][0]['periode']['gyldigFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['telefaxNummer'][0]['periode']['gyldigTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['telefaxNummer'][0]['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['elektroniskPost'][0]"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['livsforloeb'][0]['periode']['gyldigFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['livsforloeb'][0]['periode']['gyldigTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['livsforloeb'][0]['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['hovedbranche'][0]['branchekode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['hovedbranche'][0]['branchetekst']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['hovedbranche'][0]['periode']['gyldigFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['hovedbranche'][0]['periode']['gyldigTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['hovedbranche'][0]['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['bibranche1'][0]"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['bibranche2'][0]"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['bibranche3'][0]"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['aarsbeskaeftigelse'][0]['aar']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['aarsbeskaeftigelse'][0]['antalInklusivEjere']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['aarsbeskaeftigelse'][0]['antalAarsvaerk']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['aarsbeskaeftigelse'][0]['antalAnsatte']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['aarsbeskaeftigelse'][0]['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['aarsbeskaeftigelse'][0]['intervalKodeAntalInklusivEjere']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['aarsbeskaeftigelse'][0]['intervalKodeAntalAarsvaerk']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['aarsbeskaeftigelse'][0]['intervalKodeAntalAnsatte']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['kvartalsbeskaeftigelse'][0]['aar']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['kvartalsbeskaeftigelse'][0]['kvartal']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['kvartalsbeskaeftigelse'][0]['antalAarsvaerk']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['kvartalsbeskaeftigelse'][0]['antalAnsatte']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['kvartalsbeskaeftigelse'][0]['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['kvartalsbeskaeftigelse'][0]['intervalKodeAntalAarsvaerk']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['kvartalsbeskaeftigelse'][0]['intervalKodeAntalAnsatte']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['erstMaanedsbeskaeftigelse'][0]['aar']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['erstMaanedsbeskaeftigelse'][0]['maaned']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['erstMaanedsbeskaeftigelse'][0]['antalAarsvaerk']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['erstMaanedsbeskaeftigelse'][0]['antalAnsatte']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['erstMaanedsbeskaeftigelse'][0]['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['erstMaanedsbeskaeftigelse'][0]['intervalKodeAntalAarsvaerk']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['erstMaanedsbeskaeftigelse'][0]['intervalKodeAntalAnsatte']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['virksomhedsrelation'][0]['cvrNummer']"
 											},
 											"sink": {
 												"name": "cvrNummer",
 												"type": "Int32"
 											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['virksomhedsrelation'][0]['periode']['gyldigFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['virksomhedsrelation'][0]['periode']['gyldigTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['virksomhedsrelation'][0]['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['attributter'][0]"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['deltagerRelation'][0]"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteNavn']['navn']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteNavn']['periode']['gyldigFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteNavn']['periode']['gyldigTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteNavn']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['landekode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['fritekst']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['vejkode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['kommuneKode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['kommuneNavn']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['periode']['gyldigFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['periode']['gyldigTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['husnummerFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['adresseId']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['sidstValideret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['husnummerTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['bogstavFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['bogstavTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['etage']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['sidedoer']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['conavn']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['postboks']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['vejnavn']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['bynavn']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['postnummer']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['postdistrikt']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['periode']['gyldigFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['periode']['gyldigTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteHovedbranche']['branchekode']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteHovedbranche']['branchetekst']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteHovedbranche']['periode']['gyldigFra']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteHovedbranche']['periode']['gyldigTil']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteHovedbranche']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBibranche1']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBibranche2']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBibranche3']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteKontaktoplysninger'][0]"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['aar']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['antalInklusivEjere']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['antalAarsvaerk']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['antalAnsatte']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['intervalKodeAntalInklusivEjere']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['intervalKodeAntalAarsvaerk']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['intervalKodeAntalAnsatte']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteKvartalsbeskaeftigelse']['aar']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteKvartalsbeskaeftigelse']['kvartal']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteKvartalsbeskaeftigelse']['antalAarsvaerk']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteKvartalsbeskaeftigelse']['antalAnsatte']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteKvartalsbeskaeftigelse']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteKvartalsbeskaeftigelse']['intervalKodeAntalAarsvaerk']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteKvartalsbeskaeftigelse']['intervalKodeAntalAnsatte']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['aar']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['maaned']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['antalAarsvaerk']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['antalAnsatte']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['intervalKodeAntalAarsvaerk']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteErstMaanedsbeskaeftigelse']['intervalKodeAntalAnsatte']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['sammensatStatus']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['samtId']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['fejlRegistreret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['dataAdgang']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['enhedsNummer']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['enhedstype']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['sidstIndlaest']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['sidstOpdateret']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['fejlVedIndlaesning']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['naermesteFremtidigeDato']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['fejlBeskrivelse']"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['virkningsAktoer']"
+											}
 										}
 									],
-									"collectionReference": "$['hits']['hits'][0]['_source']['Vrvirksomhed']['penheder']",
+									"collectionReference": "$['hits']['hits']",
 									"mapComplexValuesToString": false
 								}
 							},
@@ -593,68 +1717,129 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "output_CVR_penhed_to_cvrnr",
+									"referenceName": "output_CVR_penheder",
+									"type": "DatasetReference"
+								}
+							]
+						},
+						{
+							"name": "Copy data2_copy1",
+							"type": "Copy",
+							"dependsOn": [
+								{
+									"activity": "Set scroll_id",
+									"dependencyConditions": [
+										"Completed"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "RestSource",
+									"httpRequestTimeout": "00:01:40",
+									"requestInterval": "00.00:00:00.010",
+									"requestMethod": "POST",
+									"requestBody": {
+										"value": "@concat('{\n        \"scroll\":\"4m\",\n        \"scroll_id\":\"',variables('last_scroll_id'),'\"\n        }'\n        )",
+										"type": "Expression"
+									},
+									"additionalHeaders": {
+										"Content-Type": "application/json"
+									},
+									"paginationRules": {
+										"EndCondition:$['hits']['hits']": "Empty"
+									}
+								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"writeBehavior": "upsert",
+									"upsertSettings": {
+										"useTempDB": true,
+										"keys": [
+											"pNummer"
+										]
+									},
+									"sqlWriterUseTableLock": false,
+									"disableMetricsCollection": false
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['pNummer']"
+											},
+											"sink": {
+												"name": "pNummer",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
+											},
+											"sink": {
+												"name": "cvrNummer",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['antalAarsvaerk']"
+											},
+											"sink": {
+												"name": "nyesteAntalAarsvaerk",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['total']"
+											},
+											"sink": {
+												"name": "total_hits",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_scroll_id']"
+											},
+											"sink": {
+												"name": "_scroll_id",
+												"type": "String"
+											}
+										}
+									],
+									"collectionReference": "$['hits']['hits']"
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "input_CVR_p_enheder",
+									"type": "DatasetReference",
+									"parameters": {
+										"dynamicURL": "_search/scroll"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "output_CVR_penheder",
 									"type": "DatasetReference"
 								}
 							]
 						}
 					]
-				}
-			},
-			{
-				"name": "Lookup_total_hits",
-				"type": "Lookup",
-				"dependsOn": [
-					{
-						"activity": "CVR_API_TO_SQL",
-						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT total_hits FROM CVR_penheder\nORDER BY insert_timestamp DESC \nOFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"dataset": {
-						"referenceName": "output_CVR_penhed_to_cvrnr",
-						"type": "DatasetReference"
-					}
-				}
-			},
-			{
-				"name": "Set_total_hits",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "Lookup_total_hits",
-						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "total_hits",
-					"value": {
-						"value": "@activity('Lookup_total_hits').output.firstRow.total_hits",
-						"type": "Expression"
-					}
 				}
 			}
 		],
@@ -663,10 +1848,7 @@
 				"type": "String"
 			},
 			"total_hits": {
-				"type": "String"
-			},
-			"test": {
-				"type": "String"
+				"type": "Integer"
 			}
 		},
 		"annotations": [],
