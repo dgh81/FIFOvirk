@@ -94,6 +94,114 @@
 									"name": "vejnavn",
 									"type": "String"
 								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['bogstavTil']"
+								},
+								"sink": {
+									"name": "bogstavTil",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['bogstavFra']"
+								},
+								"sink": {
+									"name": "bogstavFra",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['kommuneNavn']"
+								},
+								"sink": {
+									"name": "kommuneNavn",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['husnummerFra']"
+								},
+								"sink": {
+									"name": "husnummerFra",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['postnummer']"
+								},
+								"sink": {
+									"name": "postnummer",
+									"type": "Int16"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['etage']"
+								},
+								"sink": {
+									"name": "etage",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['bynavn']"
+								},
+								"sink": {
+									"name": "bynavn",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['husnummerTil']"
+								},
+								"sink": {
+									"name": "husnummerTil",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['postdistrikt']"
+								},
+								"sink": {
+									"name": "postdistrikt",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['antalAarsvaerk']"
+								},
+								"sink": {
+									"name": "nyesteAntalAarsvaerk",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hits']['total']"
+								},
+								"sink": {
+									"name": "total_hits",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['_scroll_id']"
+								},
+								"sink": {
+									"name": "_scroll_id",
+									"type": "String"
+								}
 							}
 						],
 						"collectionReference": "$['hits']['hits']"
