@@ -379,7 +379,7 @@
 							}
 						},
 						{
-							"name": "Copy data2_copy1",
+							"name": "Copy data2_copy2",
 							"type": "Copy",
 							"dependsOn": [
 								{
@@ -389,116 +389,6 @@
 									]
 								}
 							],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"source": {
-									"type": "RestSource",
-									"httpRequestTimeout": "00:01:40",
-									"requestInterval": "00.00:00:00.010",
-									"requestMethod": "POST",
-									"requestBody": {
-										"value": "@concat('{\n        \"scroll\":\"4m\",\n        \"scroll_id\":\"',variables('last_scroll_id'),'\"\n        }'\n        )",
-										"type": "Expression"
-									},
-									"additionalHeaders": {
-										"Content-Type": "application/json"
-									},
-									"paginationRules": {
-										"EndCondition:$['hits']['hits']": "Empty"
-									}
-								},
-								"sink": {
-									"type": "AzureSqlSink",
-									"writeBehavior": "upsert",
-									"upsertSettings": {
-										"useTempDB": true,
-										"keys": [
-											"pNummer"
-										]
-									},
-									"sqlWriterUseTableLock": false,
-									"disableMetricsCollection": false
-								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"mappings": [
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['pNummer']"
-											},
-											"sink": {
-												"name": "pNummer",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
-											},
-											"sink": {
-												"name": "cvrNummer",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['antalAarsvaerk']"
-											},
-											"sink": {
-												"name": "nyesteAntalAarsvaerk",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['hits']['total']"
-											},
-											"sink": {
-												"name": "total_hits",
-												"type": "Int32"
-											}
-										},
-										{
-											"source": {
-												"path": "$['_scroll_id']"
-											},
-											"sink": {
-												"name": "_scroll_id",
-												"type": "String"
-											}
-										}
-									],
-									"collectionReference": "$['hits']['hits']"
-								}
-							},
-							"inputs": [
-								{
-									"referenceName": "input_CVR_p_enheder",
-									"type": "DatasetReference",
-									"parameters": {
-										"dynamicURL": "_search/scroll"
-									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "output_CVR_penheder",
-									"type": "DatasetReference"
-								}
-							]
-						},
-						{
-							"name": "Copy data2_copy2",
-							"type": "Copy",
-							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
