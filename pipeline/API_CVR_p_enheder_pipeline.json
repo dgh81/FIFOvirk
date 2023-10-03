@@ -222,7 +222,8 @@
 								}
 							}
 						],
-						"collectionReference": "$['hits']['hits']"
+						"collectionReference": "$['hits']['hits']",
+						"mapComplexValuesToString": true
 					}
 				},
 				"inputs": [
