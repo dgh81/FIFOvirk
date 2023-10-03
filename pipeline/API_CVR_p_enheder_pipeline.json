@@ -61,6 +61,15 @@
 							},
 							{
 								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
+								},
+								"sink": {
+									"name": "cvrNummer",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
 									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteHovedbranche']['branchetekst']"
 								},
 								"sink": {
