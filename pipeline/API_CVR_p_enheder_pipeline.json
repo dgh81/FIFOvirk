@@ -494,6 +494,258 @@
 									"type": "DatasetReference"
 								}
 							]
+						},
+						{
+							"name": "Copy data2_copy2",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "RestSource",
+									"httpRequestTimeout": "00:01:40",
+									"requestInterval": "00.00:00:00.010",
+									"requestMethod": "POST",
+									"requestBody": "{\n    \"_source\":[\n        \"VrproduktionsEnhed\"\n    ],\n    \"track_total_hits\": true,\n    \"query\":{\n        \"bool\":{\n            \"must\":[\n                {\"nested\":{\n                    \"path\":\"VrproduktionsEnhed.livsforloeb\",\n                    \"query\":{\n                        \"bool\": {\n                            \"must_not\":[{\"exists\":{\"field\":\"VrproduktionsEnhed.virksomhedsrelation.livsforloeb.periode.gyldigTil\"}},\n                                               {\"exists\":{\"field\":\"VrproduktionsEnhed.livsforloeb.periode.gyldigTil\"}}\n                                               ],\n                            \"filter\": [{\n                                \"range\": {\n                                    \"VrproduktionsEnhed.livsforloeb.periode.gyldigFra\": {\n                                        \"gte\": \"1900-01-01\"\n                                        ,\n                                        \"lte\": \"1930-12-31\"\n                                    }\n                                }\n                            }]\n                        }\n                    }\n                }}\n                ,\n                {\n                    \"bool\": {\n                        \"filter\": [\n                            {\n                                \"range\": {\n                                    \"VrproduktionsEnhed.sidstOpdateret\": {\n                                        \"gte\": \"1900-01-01T00:00:00.000\"\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                }\n            ]\n        }\n    }\n    ,\n    \"size\":1000\n}",
+									"additionalHeaders": {
+										"Content-Type": "application/json"
+									}
+								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"writeBehavior": "upsert",
+									"upsertSettings": {
+										"useTempDB": true,
+										"keys": [
+											"pNummer"
+										]
+									},
+									"sqlWriterUseTableLock": false,
+									"disableMetricsCollection": false
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['enhedstype']"
+											},
+											"sink": {
+												"name": "enhedstype",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['pNummer']"
+											},
+											"sink": {
+												"name": "pNummer",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteCvrNummerRelation']"
+											},
+											"sink": {
+												"name": "cvrNummer",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteHovedbranche']['branchetekst']"
+											},
+											"sink": {
+												"name": "branchetekst",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteNavn']['navn']"
+											},
+											"sink": {
+												"name": "navn",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['adresseId']"
+											},
+											"sink": {
+												"name": "adresseId",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['vejnavn']"
+											},
+											"sink": {
+												"name": "vejnavn",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['bogstavTil']"
+											},
+											"sink": {
+												"name": "bogstavTil",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['bogstavFra']"
+											},
+											"sink": {
+												"name": "bogstavFra",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['kommune']['kommuneNavn']"
+											},
+											"sink": {
+												"name": "kommuneNavn",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['husnummerFra']"
+											},
+											"sink": {
+												"name": "husnummerFra",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['postnummer']"
+											},
+											"sink": {
+												"name": "postnummer",
+												"type": "Int16"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['etage']"
+											},
+											"sink": {
+												"name": "etage",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['bynavn']"
+											},
+											"sink": {
+												"name": "bynavn",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['husnummerTil']"
+											},
+											"sink": {
+												"name": "husnummerTil",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteBeliggenhedsadresse']['postdistrikt']"
+											},
+											"sink": {
+												"name": "postdistrikt",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteAarsbeskaeftigelse']['antalAarsvaerk']"
+											},
+											"sink": {
+												"name": "nyesteAntalAarsvaerk",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['enhedsNummer']"
+											},
+											"sink": {
+												"name": "enhedsnummer",
+												"type": "Int64"
+											}
+										},
+										{
+											"source": {
+												"path": "$['hits']['total']"
+											},
+											"sink": {
+												"name": "total_hits",
+												"type": "Int32"
+											}
+										},
+										{
+											"source": {
+												"path": "$['_scroll_id']"
+											},
+											"sink": {
+												"name": "_scroll_id",
+												"type": "String"
+											}
+										},
+										{
+											"source": {
+												"path": "['_source']['VrproduktionsEnhed']['produktionsenhedMetadata']['nyesteKontaktoplysninger']"
+											},
+											"sink": {
+												"name": "kontaktoplysninger",
+												"type": "String"
+											}
+										}
+									],
+									"collectionReference": "$['hits']['hits']",
+									"mapComplexValuesToString": true
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "input_CVR_p_enheder",
+									"type": "DatasetReference",
+									"parameters": {
+										"dynamicURL": {
+											"value": "@concat('cvr-permanent/produktionsenhed/_search?scroll=4m')",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "output_CVR_penheder",
+									"type": "DatasetReference"
+								}
+							]
 						}
 					]
 				}
