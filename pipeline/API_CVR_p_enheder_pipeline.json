@@ -187,6 +187,15 @@
 							},
 							{
 								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['enhedsNummer']"
+								},
+								"sink": {
+									"name": "enhedsnummer",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
 									"path": "$['hits']['total']"
 								},
 								"sink": {
