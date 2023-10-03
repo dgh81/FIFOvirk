@@ -32,7 +32,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "CVR_p_enheder"
+			"table": "CVR_p_enheder2"
 		}
 	}
 }
