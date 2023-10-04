@@ -205,7 +205,7 @@
 							},
 							{
 								"source": {
-									"path": "['_source']['VrproduktionsEnhed']['produktionsenhedMetadata']['nyesteKontaktoplysninger']"
+									"path": "['_source']['VrproduktionsEnhed']['produktionsEnhedMetadata']['nyesteKontaktoplysninger']"
 								},
 								"sink": {
 									"name": "kontaktoplysninger",
