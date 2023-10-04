@@ -205,6 +205,15 @@
 							},
 							{
 								"source": {
+									"path": "['_source']['VrproduktionsEnhed']['produktionsenhedMetadata']['nyesteKontaktoplysninger']"
+								},
+								"sink": {
+									"name": "kontaktoplysninger",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"path": "$['hits']['total']"
 								},
 								"sink": {
@@ -218,15 +227,6 @@
 								},
 								"sink": {
 									"name": "_scroll_id",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['_source']['VrproduktionsEnhed']['produktionsenhedMetadata']['nyesteKontaktoplysninger']"
-								},
-								"sink": {
-									"name": "kontaktoplysninger",
 									"type": "String"
 								}
 							}
