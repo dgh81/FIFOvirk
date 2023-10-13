@@ -7,37 +7,7 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [
-			{
-				"name": "id",
-				"type": "nvarchar"
-			},
-			{
-				"name": "author",
-				"type": "nvarchar"
-			},
-			{
-				"name": "title",
-				"type": "nvarchar"
-			},
-			{
-				"name": "genre",
-				"type": "nvarchar"
-			},
-			{
-				"name": "price",
-				"type": "float",
-				"precision": 15
-			},
-			{
-				"name": "publish_date",
-				"type": "date"
-			},
-			{
-				"name": "description",
-				"type": "nvarchar"
-			}
-		],
+		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
 			"table": "books"
