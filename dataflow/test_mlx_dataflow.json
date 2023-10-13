@@ -25,11 +25,7 @@
 					}
 				}
 			],
-			"transformations": [
-				{
-					"name": "AlterRow1"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
 				"source(output(",
 				"          catalog as (book as ({@id} as string, author as string, description as string, genre as string, price as double, publish_date as date, title as string)[])",
@@ -39,8 +35,7 @@
 				"     ignoreNoFilesFound: false,",
 				"     validationMode: 'none',",
 				"     namespaces: true) ~> XMLinput",
-				"XMLinput alterRow(upsertIf(true())) ~> AlterRow1",
-				"AlterRow1 sink(allowSchemaDrift: false,",
+				"XMLinput sink(allowSchemaDrift: false,",
 				"     validateSchema: true,",
 				"     input(",
 				"          id as string,",
@@ -52,10 +47,9 @@
 				"          description as string",
 				"     ),",
 				"     deletable:false,",
-				"     insertable:false,",
+				"     insertable:true,",
 				"     updateable:false,",
-				"     upsertable:true,",
-				"     keys:['id'],",
+				"     upsertable:false,",
 				"     format: 'table',",
 				"     preSQLs:['truncate table books'],",
 				"     skipDuplicateMapInputs: true,",
