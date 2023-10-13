@@ -21,7 +21,11 @@
 					"name": "sink1"
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "AlterRow1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          catalog as (book as ({@id} as string, author as string, description as string, genre as string, price as double, publish_date as date, title as string)[])",
@@ -31,7 +35,8 @@
 				"     ignoreNoFilesFound: false,",
 				"     validationMode: 'none',",
 				"     namespaces: true) ~> XMLinput",
-				"XMLinput sink(allowSchemaDrift: true,",
+				"XMLinput alterRow() ~> AlterRow1",
+				"AlterRow1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          id as string,",
@@ -43,9 +48,9 @@
 				"          description as string",
 				"     ),",
 				"     deletable:false,",
-				"     insertable:true,",
+				"     insertable:false,",
 				"     updateable:false,",
-				"     upsertable:false,",
+				"     upsertable:true,",
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
