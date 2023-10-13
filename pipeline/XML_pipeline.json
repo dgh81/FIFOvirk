@@ -46,7 +46,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "['author']"
+									"path": "$['catalog']['book'][0]['author']"
 								},
 								"sink": {
 									"name": "author",
@@ -55,7 +55,7 @@
 							},
 							{
 								"source": {
-									"path": "['title']"
+									"path": "$['catalog']['book'][0]['title']"
 								},
 								"sink": {
 									"name": "title",
@@ -64,7 +64,7 @@
 							},
 							{
 								"source": {
-									"path": "['genre']"
+									"path": "$['catalog']['book'][0]['genre']"
 								},
 								"sink": {
 									"name": "genre",
@@ -73,7 +73,7 @@
 							},
 							{
 								"source": {
-									"path": "['price']"
+									"path": "$['catalog']['book'][0]['price']"
 								},
 								"sink": {
 									"name": "price",
@@ -82,7 +82,7 @@
 							},
 							{
 								"source": {
-									"path": "['publish_date']"
+									"path": "$['catalog']['book'][0]['publish_date']"
 								},
 								"sink": {
 									"name": "publish_date",
@@ -91,7 +91,7 @@
 							},
 							{
 								"source": {
-									"path": "['description']"
+									"path": "$['catalog']['book'][0]['description']"
 								},
 								"sink": {
 									"name": "description",
@@ -100,15 +100,11 @@
 							},
 							{
 								"source": {
-									"path": "['@id']"
-								},
-								"sink": {
-									"name": "id",
-									"type": "String"
+									"path": "$['catalog']['book'][0]['@id']"
 								}
 							}
 						],
-						"collectionReference": "$['catalog']['book']"
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
