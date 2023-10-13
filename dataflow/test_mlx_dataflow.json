@@ -60,9 +60,9 @@
 				"          author = {catalog.book.author},",
 				"          title = {catalog.book.title},",
 				"          genre = {catalog.book.genre},",
-				"          price = catalog.book,",
-				"          publish_date = catalog.book[1].publish_date,",
-				"          description = catalog.book[1].description",
+				"          price = {catalog.book.price},",
+				"          publish_date = {catalog.book.publish_date},",
+				"          description = {catalog.book.description}",
 				"     )) ~> sink1"
 			]
 		}
