@@ -34,13 +34,82 @@
 						"upsertSettings": {
 							"useTempDB": true,
 							"keys": [
-								""
+								"id"
 							]
 						},
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['author']"
+								},
+								"sink": {
+									"name": "author",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['title']"
+								},
+								"sink": {
+									"name": "title",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['genre']"
+								},
+								"sink": {
+									"name": "genre",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['price']"
+								},
+								"sink": {
+									"name": "price",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"path": "['publish_date']"
+								},
+								"sink": {
+									"name": "publish_date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "['description']"
+								},
+								"sink": {
+									"name": "description",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['@id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "$['catalog']['book']"
+					}
 				},
 				"inputs": [
 					{
