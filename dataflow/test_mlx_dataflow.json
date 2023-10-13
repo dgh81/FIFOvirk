@@ -58,13 +58,13 @@
 				"     skipDuplicateMapOutputs: true,",
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
-				"          id = catalog.book[1].{@id},",
-				"          author = catalog.book[1].author,",
-				"          title = catalog.book[1].title,",
-				"          genre = catalog.book[1].genre,",
-				"          price = catalog.book[1].price,",
-				"          publish_date = catalog.book[1].publish_date,",
-				"          description = catalog.book[1].description",
+				"          id = {catalog.book.{@id}},",
+				"          author = {catalog.book.author},",
+				"          title = {catalog.book.title},",
+				"          genre = {catalog.book.genre},",
+				"          price = {catalog.book.price},",
+				"          publish_date = {catalog.book.publish_date},",
+				"          description = {catalog.book.description}",
 				"     )) ~> sink1"
 			]
 		}
