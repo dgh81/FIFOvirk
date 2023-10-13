@@ -56,7 +56,16 @@
 				"     saveOrder: 1,",
 				"     errorHandlingOption: 'allErrors',",
 				"     transactionCommit: 'batch',",
-				"     reportSuccessOnError: false) ~> sink1"
+				"     reportSuccessOnError: false,",
+				"     mapColumn(",
+				"          id = catalog.book[1].{@id},",
+				"          author = catalog.book[1].author,",
+				"          title = catalog.book[1].title,",
+				"          genre = catalog.book[1].genre,",
+				"          price = catalog.book[1].price,",
+				"          publish_date = catalog.book[1].publish_date,",
+				"          description = catalog.book[1].description",
+				"     )) ~> sink1"
 			]
 		}
 	}
