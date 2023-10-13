@@ -54,7 +54,16 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     saveOrder: 1,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          id = {@id},",
+				"          author = catalog.book[1].author,",
+				"          title = catalog.book[1].title,",
+				"          genre = catalog.book[1].genre,",
+				"          price = catalog.book[1].price,",
+				"          publish_date = catalog.book[1].publish_date,",
+				"          description = catalog.book[1].description",
+				"     )) ~> sink1"
 			]
 		}
 	}
