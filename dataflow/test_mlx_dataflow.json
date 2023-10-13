@@ -63,7 +63,8 @@
 				"          title = catalog.book[1].title,",
 				"          genre = catalog.book[1].genre,",
 				"          price = catalog.book[1].price,",
-				"          publish_date = catalog.book[1].publish_date",
+				"          publish_date = catalog.book[1].publish_date,",
+				"          description = catalog.book[1].description",
 				"     )) ~> sink1"
 			]
 		}
