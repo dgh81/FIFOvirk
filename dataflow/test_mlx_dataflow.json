@@ -14,6 +14,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "test_xml_output",
+						"type": "DatasetReference"
+					},
 					"name": "sink1",
 					"rejectedDataLinkedService": {
 						"referenceName": "AzureBlobStorage1",
@@ -31,13 +35,26 @@
 				"     ignoreNoFilesFound: false,",
 				"     validationMode: 'none',",
 				"     namespaces: true) ~> XMLinput",
-				"XMLinput sink(validateSchema: false,",
+				"XMLinput sink(allowSchemaDrift: false,",
+				"     validateSchema: true,",
+				"     input(",
+				"          id as string,",
+				"          author as string,",
+				"          title as string,",
+				"          genre as string,",
+				"          price as double,",
+				"          publish_date as date,",
+				"          description as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     store: 'cache',",
-				"     format: 'inline',",
-				"     output: false,",
-				"     saveOrder: 1) ~> sink1"
+				"     saveOrder: 1,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
 			]
 		}
 	}
