@@ -42,7 +42,7 @@
 				"          author as string,",
 				"          title as string,",
 				"          genre as string,",
-				"          price as double,",
+				"          price as integer,",
 				"          publish_date as date,",
 				"          description as string",
 				"     ),",
