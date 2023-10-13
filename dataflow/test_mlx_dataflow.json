@@ -34,7 +34,6 @@
 				"XMLinput sink(validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     keys:['catalog.book[1].{@id}'],",
 				"     store: 'cache',",
 				"     format: 'inline',",
 				"     output: true,",
