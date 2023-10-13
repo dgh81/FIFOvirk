@@ -58,7 +58,7 @@
 				"     skipDuplicateMapOutputs: true,",
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
-				"          id = catalog.book[1].{@id},",
+				"          id = {@id},",
 				"          author = catalog.book[1].author,",
 				"          title = catalog.book[1].title,",
 				"          genre = catalog.book[1].genre,",
