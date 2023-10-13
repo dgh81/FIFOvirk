@@ -56,7 +56,16 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          id = catalog.book[1].{@id},",
+				"          author = {catalog.book.author},",
+				"          title = {catalog.book.title},",
+				"          genre = {catalog.book.genre},",
+				"          price = {catalog.book.price},",
+				"          publish_date = {catalog.book.publish_date},",
+				"          description = {catalog.book.description}",
+				"     )) ~> sink1"
 			]
 		}
 	}
