@@ -14,10 +14,6 @@
 			],
 			"sinks": [
 				{
-					"dataset": {
-						"referenceName": "test_xml_output",
-						"type": "DatasetReference"
-					},
 					"name": "sink1",
 					"rejectedDataLinkedService": {
 						"referenceName": "AzureBlobStorage1",
@@ -35,25 +31,14 @@
 				"     ignoreNoFilesFound: false,",
 				"     validationMode: 'none',",
 				"     namespaces: true) ~> XMLinput",
-				"XMLinput sink(allowSchemaDrift: false,",
-				"     validateSchema: false,",
-				"     input(",
-				"          id as string,",
-				"          author as string,",
-				"          title as string,",
-				"          genre as string,",
-				"          price as double,",
-				"          publish_date as date,",
-				"          description as string",
-				"     ),",
-				"     deletable:false,",
-				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:false,",
-				"     format: 'table',",
+				"XMLinput sink(validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+				"     keys:['catalog.book[1].{@id}'],",
+				"     store: 'cache',",
+				"     format: 'inline',",
+				"     output: true,",
+				"     saveOrder: 1) ~> sink1"
 			]
 		}
 	}
