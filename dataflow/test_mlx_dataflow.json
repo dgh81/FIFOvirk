@@ -36,7 +36,7 @@
 				"     validationMode: 'none',",
 				"     namespaces: true) ~> XMLinput",
 				"XMLinput alterRow(upsertIf(true())) ~> AlterRow1",
-				"AlterRow1 sink(allowSchemaDrift: true,",
+				"AlterRow1 sink(allowSchemaDrift: false,",
 				"     validateSchema: false,",
 				"     input(",
 				"          id as string,",
